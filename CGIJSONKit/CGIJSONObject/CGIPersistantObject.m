@@ -1,0 +1,219 @@
+//
+//  CGIPersistantObject.m
+//  CGIJSONKit
+//
+//  Created by Maxthon Chan on 13-5-21.
+//  Copyright (c) 2013年 muski. All rights reserved.
+//
+
+#import "CGIPersistantObject.h"
+#import "CGICommon.h"
+#import <objc/runtime.h>
+#import <objc/message.h>
+
+@implementation CGIPersistantObject
+
+- (id)initFromPersistanceObject:(id)persistance
+{
+    if ([persistance isKindOfClass:[NSDictionary class]])
+    {
+        if (self = [super init])
+        {
+            if (self = [super init])
+            {
+                NSDictionary *dictionary = persistance;
+                
+                // Get a list of properties.
+                unsigned int propertyCount = 0;
+                objc_property_t *properties = class_copyPropertyList([self class], &propertyCount);
+                
+                if (properties)
+                {
+                    // Enumerate all properties.
+                    
+                    for (unsigned int i = 0; i < propertyCount; i++)
+                    {
+                        objc_property_t property = properties[i];
+                        NSString *name = @(property_getName(property));         // Property name.
+                        NSString *attr = @(property_getAttributes(property));   // Property attributes
+                        NSString *type = @"@";
+                        BOOL readonly = NO;
+                        
+                        // Check the property type.
+                        NSArray *attrs = [attr componentsSeparatedByString:@","];
+                        for (NSString *attribute in attrs)
+                        {
+                            if ([attribute hasPrefix:@"R"])
+                            {
+                                readonly = YES;
+                            }
+                        }
+                        
+                        id value = dictionary[name];                            // Find the value.
+                        
+                        if (!value && [name isEqualToString:@"ID"])
+                        {
+                            value = dictionary[@"id"];                          // ID is used instead of id.
+                        }
+                        
+                        if (!readonly && value)
+                        {
+                            // Dispatching would require some tricks.
+                            if ([type hasPrefix:CGIType(id)])                    // Objects. Special requirements is required.
+                            {
+                                Class class = [self classForKey:name];
+                                id object = value;
+                                
+                                if (class && [class isSubclassOfClass:[CGIPersistantObject class]])
+                                {
+                                    if ([value isKindOfClass:[NSDictionary class]])
+                                        object = [[class alloc] initWithDictionary:value];
+                                    else if ([value isKindOfClass:[NSArray class]])
+                                    {
+                                        NSArray *array = value;
+                                        NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:[array count]];
+                                        for (id item in array)
+                                        {
+                                            if ([item isKindOfClass:[NSDictionary class]])
+                                            {
+                                                [mutableArray addObject:[[class alloc] initWithDictionary:item]];
+                                            }
+                                            else
+                                            {
+                                                [mutableArray addObject:item];
+                                            }
+                                        }
+                                        object = [mutableArray copy];
+                                    }
+                                }
+                                value = object;
+                            }
+                            
+                            @try
+                            {
+                                [self setValue:value forKey:name];
+                            }
+                            @catch (NSException *exception)
+                            {
+                                dbgprintf("WARNING: Cannot find property: %s", CGICSTR(name));
+                            }
+                        }
+                    }
+                    free(properties);
+                    properties = NULL;
+                }
+            }
+            
+        }
+        return self;
+    }
+    else
+    {
+        return persistance;
+    }
+}
+
+- (id)persistaceObject
+{
+    // Get a list of properties.
+    unsigned int propertyCount = 0;
+    objc_property_t *properties = class_copyPropertyList([self class], &propertyCount);
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithCapacity:propertyCount];
+    
+    if (properties)
+    {
+        // Enumerate all properties.
+        
+        for (unsigned int i = 0; i < propertyCount; i++)
+        {
+            objc_property_t property = properties[i];
+            NSString *name = @(property_getName(property)); // Property name.
+            
+#if defined(GNUSTEP)                                        // For GNUstep, this _end property is handled.
+            if ([name hasPrefix:@"_end"])
+                continue;
+#endif
+            
+            id value = nil;
+            
+            @try
+            {
+                value = [self valueForKey:name];            // Find the value, using KVO.
+            }
+            @catch (NSException *exception)
+            {
+                dbgprintf("WARNING: Cannot find key: %s", CGICSTR(name));
+            }
+            
+            if (!value)
+            {
+                continue;                                   // Ignore null keys.
+            }
+            
+            if ([name isEqualToString:@"ID"])
+            {
+                name = @"id";                               // ID is used instead of id.
+            }
+            
+            if ([value isKindOfClass:[CGIPersistantObject class]])
+            {
+                value = [value dictionaryRepresentation];
+            }
+            else if ([value isKindOfClass:[NSArray class]])
+            {
+                NSMutableArray *outputArray = [NSMutableArray arrayWithCapacity:[value count]];
+                for (id object in value)
+                {
+                    if ([object isKindOfClass:[CGIPersistantObject class]])
+                    {
+                        [outputArray addObject:[object dictionaryRepresentation]];
+                    }
+                    else
+                    {
+                        [outputArray addObject:object];
+                    }
+                }
+            }
+            
+            dictionary[name] = value;
+        }
+        free(properties);
+        properties = NULL;
+    }
+    return dictionary;
+}
+
+- (Class)classForKey:(id)key
+{
+    objc_property_t objcProperty = class_getProperty([self class], CGICSTR(key));
+    NSString *attributes = @(property_getAttributes(objcProperty));
+    NSString *type = @"@";
+    Class class = Nil;
+    
+    NSString *methodName = CGISTR(@"classForKey%@", key);
+    SEL selector = NSSelectorFromString(methodName);
+    if (selector && [self respondsToSelector:selector])
+        class = objc_msgSend(self, selector);
+    
+    if (class)
+        return class;
+    
+    NSArray *attrs = [attributes componentsSeparatedByString:@","];
+    for (NSString *attribute in attrs)
+    {
+        if ([attribute hasPrefix:@"T"])
+        {
+            type = [attribute substringFromIndex:1];
+        }
+    }
+    
+    if ([type length] > 3)
+    {
+        NSString *className = [type substringWithRange:NSMakeRange(2, [type length] - 3)];
+        class = NSClassFromString(className);
+    }
+    
+    return class;
+}
+
+@end
