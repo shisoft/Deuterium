@@ -6,13 +6,9 @@ CGIJSONKit
 ----------
 This is a dependency from ohttpd2, hence inherited both its CGI* class prefix and its BSDL licensing.
 
-DeuteriumNucleus
-----------------
-This is the core library of Deuterium. Licensed as LGPL.
-
 Deuterium
 ---------
-This project is the UI of Deuterium.
+This project is Deuterium.
 
 DeuteriumDocs
 -------------

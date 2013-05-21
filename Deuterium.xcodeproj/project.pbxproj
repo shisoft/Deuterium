@@ -6,11 +6,45 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		1D02B5F3174BAA5B00158DF5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		1D02B5F4174BAA7500158DF5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		1D02B5FC174BAB9900158DF5 /* CGIJSONKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CGIJSONKit.xcodeproj; path = CGIJSONKit/CGIJSONKit.xcodeproj; sourceTree = "<group>"; };
+		1D02B606174BABBC00158DF5 /* Deuterium.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Deuterium.xcodeproj; path = Deuterium/Deuterium.xcodeproj; sourceTree = "<group>"; };
+		1D02B610174BABE400158DF5 /* DeuteriumDocs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeuteriumDocs.xcodeproj; path = DeuteriumDocs/DeuteriumDocs.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		1D02B5EC174BAA4F00158DF5 = {
 			isa = PBXGroup;
 			children = (
+				1D02B610174BABE400158DF5 /* DeuteriumDocs.xcodeproj */,
+				1D02B606174BABBC00158DF5 /* Deuterium.xcodeproj */,
+				1D02B5FC174BAB9900158DF5 /* CGIJSONKit.xcodeproj */,
+				1D02B5F4174BAA7500158DF5 /* README.md */,
+				1D02B5F3174BAA5B00158DF5 /* .gitignore */,
 			);
+			sourceTree = "<group>";
+		};
+		1D02B5FD174BAB9900158DF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D02B607174BABBC00158DF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D02B611174BABE400158DF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -20,6 +54,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = muski;
 			};
 			buildConfigurationList = 1D02B5F0174BAA4F00158DF5 /* Build configuration list for PBXProject "Deuterium" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -30,6 +65,20 @@
 			);
 			mainGroup = 1D02B5EC174BAA4F00158DF5;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1D02B5FD174BAB9900158DF5 /* Products */;
+					ProjectRef = 1D02B5FC174BAB9900158DF5 /* CGIJSONKit.xcodeproj */;
+				},
+				{
+					ProductGroup = 1D02B607174BABBC00158DF5 /* Products */;
+					ProjectRef = 1D02B606174BABBC00158DF5 /* Deuterium.xcodeproj */;
+				},
+				{
+					ProductGroup = 1D02B611174BABE400158DF5 /* Products */;
+					ProjectRef = 1D02B610174BABE400158DF5 /* DeuteriumDocs.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 			);
