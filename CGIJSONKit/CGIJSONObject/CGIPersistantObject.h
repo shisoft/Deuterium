@@ -29,3 +29,24 @@
 - (void)awakeFromPersistance:(id)persistance;
 
 @end
+
+@interface CGIPersistantObject (CGIJSONObject)
+
+- (id)initWithJSONData:(NSData *)data error:(NSError **)error;
+
+- (BOOL)canRepresentInJSON;
+- (NSData *)JSONDataWithError:(NSError **)error;
+
+@end
+
+@interface CGIPersistantObject (CGIIdentifier)
+
+- (id)ID;
+
+@end
+
+@interface CGIPersistantObject (CGIEquality)
+
+- (BOOL)isEqual:(id)object;
+
+@end

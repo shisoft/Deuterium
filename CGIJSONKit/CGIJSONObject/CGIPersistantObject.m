@@ -219,3 +219,73 @@
 }
 
 @end
+
+@implementation CGIPersistantObject (CGIJSONObject)
+
+- (id)initWithJSONData:(NSData *)data error:(NSError *__autoreleasing *)error
+{
+    NSError *err = nil;
+    id object = [NSJSONSerialization JSONObjectWithData:data
+                                                options:0
+                                                  error:&err];
+    if (!object)
+    {
+        CGIAssignPointer(error, err);
+        return nil;
+    }
+    
+    return [self initFromPersistanceObject:object];
+}
+
+- (BOOL)canRepresentInJSON
+{
+    return [NSJSONSerialization isValidJSONObject:[self persistaceObject]];
+}
+
+- (NSData *)JSONDataWithError:(NSError *__autoreleasing *)error
+{
+    NSError *err = nil;
+    NSDictionary *dict = [self persistaceObject];
+    
+    if (![self canRepresentInJSON])
+    {
+        CGIAssignPointer(error, [NSError errorWithDomain:NSPOSIXErrorDomain
+                                                    code:EBADF
+                                                userInfo:nil]);
+        return nil;
+    }
+    
+    if (!dict)
+    {
+        CGIAssignPointer(error, [NSError errorWithDomain:NSPOSIXErrorDomain
+                                                    code:ENODATA
+                                                userInfo:nil]);
+        return nil;
+    }
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:[self persistaceObject]
+                                                   options:0
+                                                     error:&err];
+    
+    if (!data)
+    {
+        CGIAssignPointer(error, err);
+        return nil;
+    }
+    
+    return data;
+}
+
+@end
+
+@implementation CGIPersistantObject (CGIEquality)
+
+- (BOOL)isEqual:(id)object
+{
+    if ([self respondsToSelector:@selector(ID)] && [object respondsToSelector:@selector(ID)])
+        return [[self ID] isEqual:[object ID]];
+    else
+        return [super isEqual:object];
+}
+
+@end
