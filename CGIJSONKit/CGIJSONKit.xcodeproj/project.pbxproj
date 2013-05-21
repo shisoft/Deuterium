@@ -19,6 +19,9 @@
 		1D02B665174BBB9000158DF5 /* CGIJSONObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D02B664174BBB8400158DF5 /* CGIJSONObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D02B668174BBC8700158DF5 /* CGIJSONObjectTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D02B667174BBC8700158DF5 /* CGIJSONObjectTestModel.m */; };
 		1D02B66B174BBED300158DF5 /* NSDate+CGIPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D02B66A174BBED300158DF5 /* NSDate+CGIPersistance.m */; };
+		1D02B675174BCFCD00158DF5 /* GNUmakefile in Resources */ = {isa = PBXBuildFile; fileRef = 1D02B672174BCFCD00158DF5 /* GNUmakefile */; };
+		1D02B676174BCFCD00158DF5 /* GNUmakefile.postamble in Resources */ = {isa = PBXBuildFile; fileRef = 1D02B673174BCFCD00158DF5 /* GNUmakefile.postamble */; };
+		1D02B677174BCFCD00158DF5 /* GNUmakefile.preamble in Resources */ = {isa = PBXBuildFile; fileRef = 1D02B674174BCFCD00158DF5 /* GNUmakefile.preamble */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		1D02B669174BBED300158DF5 /* NSDate+CGIPersistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CGIPersistance.h"; sourceTree = "<group>"; };
 		1D02B66A174BBED300158DF5 /* NSDate+CGIPersistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CGIPersistance.m"; sourceTree = "<group>"; };
 		1D02B66C174BBF9B00158DF5 /* CGICommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGICommon.h; sourceTree = "<group>"; };
+		1D02B672174BCFCD00158DF5 /* GNUmakefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GNUmakefile; sourceTree = "<group>"; };
+		1D02B673174BCFCD00158DF5 /* GNUmakefile.postamble */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GNUmakefile.postamble; sourceTree = "<group>"; };
+		1D02B674174BCFCD00158DF5 /* GNUmakefile.preamble */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GNUmakefile.preamble; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 				1D02B66C174BBF9B00158DF5 /* CGICommon.h */,
 				1D02B646174BB4CD00158DF5 /* CGIPersistantObject.h */,
 				1D02B647174BB4CD00158DF5 /* CGIPersistantObject.m */,
+				1D02B671174BCF8200158DF5 /* Linux */,
 				1D02B624174BB23B00158DF5 /* Supporting Files */,
 			);
 			path = CGIJSONObject;
@@ -150,6 +157,16 @@
 				1D02B65F174BBB0400158DF5 /* CGIJSONObjectTest-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D02B671174BCF8200158DF5 /* Linux */ = {
+			isa = PBXGroup;
+			children = (
+				1D02B672174BCFCD00158DF5 /* GNUmakefile */,
+				1D02B673174BCFCD00158DF5 /* GNUmakefile.postamble */,
+				1D02B674174BCFCD00158DF5 /* GNUmakefile.preamble */,
+			);
+			name = Linux;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +254,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D02B628174BB23B00158DF5 /* InfoPlist.strings in Resources */,
+				1D02B675174BCFCD00158DF5 /* GNUmakefile in Resources */,
+				1D02B676174BCFCD00158DF5 /* GNUmakefile.postamble in Resources */,
+				1D02B677174BCFCD00158DF5 /* GNUmakefile.preamble in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
