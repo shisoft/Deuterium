@@ -10,7 +10,7 @@
 
 @implementation NSDate (CGIPersistance)
 
-- (id)initFromPersistanceObject:(id)persistance
+- (id)initWithPersistanceObject:(id)persistance
 {
     
 }

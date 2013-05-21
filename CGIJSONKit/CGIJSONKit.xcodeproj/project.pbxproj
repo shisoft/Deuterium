@@ -22,6 +22,15 @@
 		1D02B675174BCFCD00158DF5 /* GNUmakefile in Resources */ = {isa = PBXBuildFile; fileRef = 1D02B672174BCFCD00158DF5 /* GNUmakefile */; };
 		1D02B676174BCFCD00158DF5 /* GNUmakefile.postamble in Resources */ = {isa = PBXBuildFile; fileRef = 1D02B673174BCFCD00158DF5 /* GNUmakefile.postamble */; };
 		1D02B677174BCFCD00158DF5 /* GNUmakefile.preamble in Resources */ = {isa = PBXBuildFile; fileRef = 1D02B674174BCFCD00158DF5 /* GNUmakefile.preamble */; };
+		1D02B67E174BD1E300158DF5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D02B61D174BB23B00158DF5 /* Cocoa.framework */; };
+		1D02B684174BD1E300158DF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D02B682174BD1E300158DF5 /* InfoPlist.strings */; };
+		1D02B68C174BD22800158DF5 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D02B61A174BB23B00158DF5 /* CGIJSONObject.framework */; };
+		1D02B68F174BD23B00158DF5 /* CGIRemoteObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D02B68D174BD23B00158DF5 /* CGIRemoteObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D02B690174BD23B00158DF5 /* CGIRemoteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D02B68E174BD23B00158DF5 /* CGIRemoteObject.m */; };
+		1D02B693174BD2EE00158DF5 /* CGIRemoteConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D02B691174BD2EE00158DF5 /* CGIRemoteConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D02B694174BD2EE00158DF5 /* CGIRemoteConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D02B692174BD2EE00158DF5 /* CGIRemoteConnection.m */; };
+		1D02B695174BD2F700158DF5 /* CGIJSONRemoteObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D02B686174BD1E300158DF5 /* CGIJSONRemoteObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D02B699174BD87D00158DF5 /* CGICommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D02B66C174BBF9B00158DF5 /* CGICommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +59,14 @@
 		1D02B672174BCFCD00158DF5 /* GNUmakefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GNUmakefile; sourceTree = "<group>"; };
 		1D02B673174BCFCD00158DF5 /* GNUmakefile.postamble */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GNUmakefile.postamble; sourceTree = "<group>"; };
 		1D02B674174BCFCD00158DF5 /* GNUmakefile.preamble */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GNUmakefile.preamble; sourceTree = "<group>"; };
+		1D02B67D174BD1E300158DF5 /* CGIJSONRemoteObject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CGIJSONRemoteObject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D02B681174BD1E300158DF5 /* CGIJSONRemoteObject-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CGIJSONRemoteObject-Info.plist"; sourceTree = "<group>"; };
+		1D02B683174BD1E300158DF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1D02B686174BD1E300158DF5 /* CGIJSONRemoteObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGIJSONRemoteObject.h; sourceTree = "<group>"; };
+		1D02B68D174BD23B00158DF5 /* CGIRemoteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGIRemoteObject.h; sourceTree = "<group>"; };
+		1D02B68E174BD23B00158DF5 /* CGIRemoteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGIRemoteObject.m; sourceTree = "<group>"; };
+		1D02B691174BD2EE00158DF5 /* CGIRemoteConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGIRemoteConnection.h; sourceTree = "<group>"; };
+		1D02B692174BD2EE00158DF5 /* CGIRemoteConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGIRemoteConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +88,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1D02B679174BD1E300158DF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D02B68C174BD22800158DF5 /* CGIJSONObject.framework in Frameworks */,
+				1D02B67E174BD1E300158DF5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -79,6 +105,7 @@
 			children = (
 				1D02B623174BB23B00158DF5 /* CGIJSONObject */,
 				1D02B656174BBB0400158DF5 /* CGIJSONObjectTest */,
+				1D02B67F174BD1E300158DF5 /* CGIJSONRemoteObject */,
 				1D02B61C174BB23B00158DF5 /* Frameworks */,
 				1D02B61B174BB23B00158DF5 /* Products */,
 			);
@@ -89,6 +116,7 @@
 			children = (
 				1D02B61A174BB23B00158DF5 /* CGIJSONObject.framework */,
 				1D02B652174BBB0400158DF5 /* CGIJSONObjectTest.octest */,
+				1D02B67D174BD1E300158DF5 /* CGIJSONRemoteObject.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +197,28 @@
 			name = Linux;
 			sourceTree = "<group>";
 		};
+		1D02B67F174BD1E300158DF5 /* CGIJSONRemoteObject */ = {
+			isa = PBXGroup;
+			children = (
+				1D02B686174BD1E300158DF5 /* CGIJSONRemoteObject.h */,
+				1D02B68D174BD23B00158DF5 /* CGIRemoteObject.h */,
+				1D02B68E174BD23B00158DF5 /* CGIRemoteObject.m */,
+				1D02B691174BD2EE00158DF5 /* CGIRemoteConnection.h */,
+				1D02B692174BD2EE00158DF5 /* CGIRemoteConnection.m */,
+				1D02B680174BD1E300158DF5 /* Supporting Files */,
+			);
+			path = CGIJSONRemoteObject;
+			sourceTree = "<group>";
+		};
+		1D02B680174BD1E300158DF5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D02B681174BD1E300158DF5 /* CGIJSONRemoteObject-Info.plist */,
+				1D02B682174BD1E300158DF5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -178,6 +228,17 @@
 			files = (
 				1D02B648174BB4CD00158DF5 /* CGIPersistantObject.h in Headers */,
 				1D02B665174BBB9000158DF5 /* CGIJSONObject.h in Headers */,
+				1D02B699174BD87D00158DF5 /* CGICommon.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D02B67A174BD1E300158DF5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D02B68F174BD23B00158DF5 /* CGIRemoteObject.h in Headers */,
+				1D02B693174BD2EE00158DF5 /* CGIRemoteConnection.h in Headers */,
+				1D02B695174BD2F700158DF5 /* CGIJSONRemoteObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +281,24 @@
 			productReference = 1D02B652174BBB0400158DF5 /* CGIJSONObjectTest.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		1D02B67C174BD1E300158DF5 /* CGIJSONRemoteObject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D02B689174BD1E300158DF5 /* Build configuration list for PBXNativeTarget "CGIJSONRemoteObject" */;
+			buildPhases = (
+				1D02B678174BD1E300158DF5 /* Sources */,
+				1D02B679174BD1E300158DF5 /* Frameworks */,
+				1D02B67A174BD1E300158DF5 /* Headers */,
+				1D02B67B174BD1E300158DF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CGIJSONRemoteObject;
+			productName = CGIJSONRemoteObject;
+			productReference = 1D02B67D174BD1E300158DF5 /* CGIJSONRemoteObject.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -244,6 +323,7 @@
 			targets = (
 				1D02B619174BB23B00158DF5 /* CGIJSONObject */,
 				1D02B651174BBB0400158DF5 /* CGIJSONObjectTest */,
+				1D02B67C174BD1E300158DF5 /* CGIJSONRemoteObject */,
 			);
 		};
 /* End PBXProject section */
@@ -265,6 +345,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D02B65B174BBB0400158DF5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D02B67B174BD1E300158DF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D02B684174BD1E300158DF5 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +393,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1D02B678174BD1E300158DF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D02B690174BD23B00158DF5 /* CGIRemoteObject.m in Sources */,
+				1D02B694174BD2EE00158DF5 /* CGIRemoteConnection.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -320,6 +417,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				1D02B65A174BBB0400158DF5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1D02B682174BD1E300158DF5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D02B683174BD1E300158DF5 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -485,6 +590,79 @@
 			};
 			name = Release;
 		};
+		1D02B68A174BD1E300158DF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "CGIJSONRemoteObject/CGIJSONRemoteObject-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		1D02B68B174BD1E300158DF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "CGIJSONRemoteObject/CGIJSONRemoteObject-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -511,6 +689,14 @@
 			buildConfigurations = (
 				1D02B660174BBB0400158DF5 /* Debug */,
 				1D02B661174BBB0400158DF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1D02B689174BD1E300158DF5 /* Build configuration list for PBXNativeTarget "CGIJSONRemoteObject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D02B68A174BD1E300158DF5 /* Debug */,
+				1D02B68B174BD1E300158DF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

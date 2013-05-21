@@ -4,7 +4,7 @@ ifeq ($(shell uname -s),Darwin)
 
 $(error Use Xcode to build on OS X.)
 
-else
+endif
 
 ifeq ($(GNUSTEP_MAKEFILES),)
  GNUSTEP_MAKEFILES := $(shell gnustep-config --variable=GNUSTEP_MAKEFILES 2>/dev/null)
@@ -26,7 +26,7 @@ FRAMEWORK_NAME += CGIJSONObject
 
 # FusionKit
 CGIJSONObject_OBJC_FILES += CGIPersistantObject.m
-CGIJSONObject_HEADER_FILES += CGIPersistantObject.h CGIJSONObject.h
+CGIJSONObject_HEADER_FILES += CGIPersistantObject.h CGIJSONObject.h CGICommon.h
 CGIJSONObject_HEADER_FILES_INSTALL_DIR += CGIJSONObject
 CGIJSONObject_LANGUAGES += en
 CGIJSONObject_CURRENT_VERSION_NAME := D
@@ -42,4 +42,3 @@ include $(GNUSTEP_MAKEFILES)/framework.make
 # Option include to define any additional rules
 -include GNUmakefile.postamble
 
-endif

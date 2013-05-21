@@ -9,6 +9,7 @@
 #ifndef CGIJSONKit_CGIJSONObject_h
 #define CGIJSONKit_CGIJSONObject_h
 
-#import <CGIJSONKit/CGIJSONObject.h>
+#import <CGIJSONObject/CGIPersistantObject.h>
+#import <CGIJSONObject/CGICommon.h>
 
 #endif

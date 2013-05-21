@@ -13,7 +13,7 @@
 
 @protocol CGIPersistantObject <NSObject>
 
-- (id)initFromPersistanceObject:(id)persistance;
+- (id)initWithPersistanceObject:(id)persistance;
 - (id)persistaceObject;
 
 @end

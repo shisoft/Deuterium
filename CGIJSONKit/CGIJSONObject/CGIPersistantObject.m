@@ -13,7 +13,7 @@
 
 @implementation CGIPersistantObject
 
-- (id)initFromPersistanceObject:(id)persistance
+- (id)initWithPersistanceObject:(id)persistance
 {
     if ([persistance isKindOfClass:[NSDictionary class]])
     {
@@ -65,7 +65,7 @@
                             if (class && [class conformsToProtocol:@protocol(CGIPersistantObject)])
                             {
                                 if ([value isKindOfClass:[NSDictionary class]])
-                                    object = [[class alloc] initFromPersistanceObject:value];
+                                    object = [[class alloc] initWithPersistanceObject:value];
                                 else if ([value isKindOfClass:[NSArray class]])
                                 {
                                     NSArray *array = value;
@@ -74,7 +74,7 @@
                                     {
                                         if ([item isKindOfClass:[NSDictionary class]])
                                         {
-                                            [mutableArray addObject:[[class alloc] initFromPersistanceObject:item]];
+                                            [mutableArray addObject:[[class alloc] initWithPersistanceObject:item]];
                                         }
                                         else
                                         {
@@ -234,7 +234,7 @@
         return nil;
     }
     
-    return [self initFromPersistanceObject:object];
+    return [self initWithPersistanceObject:object];
 }
 
 - (BOOL)canRepresentInJSON
