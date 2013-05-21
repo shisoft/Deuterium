@@ -19,95 +19,97 @@
     {
         if (self = [super init])
         {
-            if (self = [super init])
+            NSDictionary *dictionary = persistance;
+            
+            // Get a list of properties.
+            unsigned int propertyCount = 0;
+            objc_property_t *properties = class_copyPropertyList([self class], &propertyCount);
+            
+            if (properties)
             {
-                NSDictionary *dictionary = persistance;
+                // Enumerate all properties.
                 
-                // Get a list of properties.
-                unsigned int propertyCount = 0;
-                objc_property_t *properties = class_copyPropertyList([self class], &propertyCount);
-                
-                if (properties)
+                for (unsigned int i = 0; i < propertyCount; i++)
                 {
-                    // Enumerate all properties.
+                    objc_property_t property = properties[i];
+                    NSString *name = @(property_getName(property));         // Property name.
+                    NSString *attr = @(property_getAttributes(property));   // Property attributes
+                    NSString *type = @"@";
+                    BOOL readonly = NO;
                     
-                    for (unsigned int i = 0; i < propertyCount; i++)
+                    // Check the property type.
+                    NSArray *attrs = [attr componentsSeparatedByString:@","];
+                    for (NSString *attribute in attrs)
                     {
-                        objc_property_t property = properties[i];
-                        NSString *name = @(property_getName(property));         // Property name.
-                        NSString *attr = @(property_getAttributes(property));   // Property attributes
-                        NSString *type = @"@";
-                        BOOL readonly = NO;
-                        
-                        // Check the property type.
-                        NSArray *attrs = [attr componentsSeparatedByString:@","];
-                        for (NSString *attribute in attrs)
+                        if ([attribute hasPrefix:@"R"])
                         {
-                            if ([attribute hasPrefix:@"R"])
-                            {
-                                readonly = YES;
-                            }
-                        }
-                        
-                        id value = dictionary[name];                            // Find the value.
-                        
-                        if (!value && [name isEqualToString:@"ID"])
-                        {
-                            value = dictionary[@"id"];                          // ID is used instead of id.
-                        }
-                        
-                        if (!readonly && value)
-                        {
-                            // Dispatching would require some tricks.
-                            if ([type hasPrefix:CGIType(id)])                    // Objects. Special requirements is required.
-                            {
-                                Class class = [self classForKey:name];
-                                id object = value;
-                                
-                                if (class && [class isSubclassOfClass:[CGIPersistantObject class]])
-                                {
-                                    if ([value isKindOfClass:[NSDictionary class]])
-                                        object = [[class alloc] initWithDictionary:value];
-                                    else if ([value isKindOfClass:[NSArray class]])
-                                    {
-                                        NSArray *array = value;
-                                        NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:[array count]];
-                                        for (id item in array)
-                                        {
-                                            if ([item isKindOfClass:[NSDictionary class]])
-                                            {
-                                                [mutableArray addObject:[[class alloc] initWithDictionary:item]];
-                                            }
-                                            else
-                                            {
-                                                [mutableArray addObject:item];
-                                            }
-                                        }
-                                        object = [mutableArray copy];
-                                    }
-                                }
-                                value = object;
-                            }
-                            
-                            @try
-                            {
-                                [self setValue:value forKey:name];
-                            }
-                            @catch (NSException *exception)
-                            {
-                                dbgprintf("WARNING: Cannot find property: %s", CGICSTR(name));
-                            }
+                            readonly = YES;
                         }
                     }
-                    free(properties);
-                    properties = NULL;
+                    
+                    id value = dictionary[name];                            // Find the value.
+                    
+                    if (!value && [name isEqualToString:@"ID"])
+                    {
+                        value = dictionary[@"id"];                          // ID is used instead of id.
+                    }
+                    
+                    if (!readonly && value)
+                    {
+                        // Dispatching would require some tricks.
+                        if ([type hasPrefix:CGIType(id)])                    // Objects. Special requirements is required.
+                        {
+                            Class class = [self classForKey:name];
+                            id object = value;
+                            
+                            if (class && [class isSubclassOfClass:[CGIPersistantObject class]])
+                            {
+                                if ([value isKindOfClass:[NSDictionary class]])
+                                    object = [[class alloc] initWithDictionary:value];
+                                else if ([value isKindOfClass:[NSArray class]])
+                                {
+                                    NSArray *array = value;
+                                    NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:[array count]];
+                                    for (id item in array)
+                                    {
+                                        if ([item isKindOfClass:[NSDictionary class]])
+                                        {
+                                            [mutableArray addObject:[[class alloc] initWithDictionary:item]];
+                                        }
+                                        else
+                                        {
+                                            [mutableArray addObject:item];
+                                        }
+                                    }
+                                    object = [mutableArray copy];
+                                }
+                            }
+                            value = object;
+                        }
+                        
+                        @try
+                        {
+                            [self setValue:value forKey:name];
+                        }
+                        @catch (NSException *exception)
+                        {
+                            dbgprintf("WARNING: Cannot find property: %s", CGICSTR(name));
+                        }
+                    }
                 }
+                free(properties);
+                properties = NULL;
+            } // (properties)
+            
+            if ([self respondsToSelector:@selector(awakeFromPersistance:)])
+            {
+                [self awakeFromPersistance:persistance];
             }
             
-        }
+        } // (self = [super init])
         return self;
     }
-    else
+    else // ([persistance isKindOfClass:[NSDictionary class]])
     {
         return persistance;
     }
@@ -131,7 +133,7 @@
             
 #if defined(GNUSTEP)                                        // For GNUstep, this _end property is handled.
             if ([name hasPrefix:@"_end"])
-                continue;
+                break;
 #endif
             
             id value = nil;
