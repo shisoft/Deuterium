@@ -62,10 +62,10 @@
                             Class class = [self classForKey:name];
                             id object = value;
                             
-                            if (class && [class isSubclassOfClass:[CGIPersistantObject class]])
+                            if (class && [class conformsToProtocol:@protocol(CGIPersistantObject)])
                             {
                                 if ([value isKindOfClass:[NSDictionary class]])
-                                    object = [[class alloc] initWithDictionary:value];
+                                    object = [[class alloc] initFromPersistanceObject:value];
                                 else if ([value isKindOfClass:[NSArray class]])
                                 {
                                     NSArray *array = value;
@@ -74,7 +74,7 @@
                                     {
                                         if ([item isKindOfClass:[NSDictionary class]])
                                         {
-                                            [mutableArray addObject:[[class alloc] initWithDictionary:item]];
+                                            [mutableArray addObject:[[class alloc] initFromPersistanceObject:item]];
                                         }
                                         else
                                         {
@@ -157,18 +157,18 @@
                 name = @"id";                               // ID is used instead of id.
             }
             
-            if ([value isKindOfClass:[CGIPersistantObject class]])
+            if ([value conformsToProtocol:@protocol(CGIPersistantObject)])
             {
-                value = [value dictionaryRepresentation];
+                value = [value persistaceObject];
             }
             else if ([value isKindOfClass:[NSArray class]])
             {
                 NSMutableArray *outputArray = [NSMutableArray arrayWithCapacity:[value count]];
                 for (id object in value)
                 {
-                    if ([object isKindOfClass:[CGIPersistantObject class]])
+                    if ([object conformsToProtocol:@protocol(CGIPersistantObject)])
                     {
-                        [outputArray addObject:[object dictionaryRepresentation]];
+                        [outputArray addObject:[object persistaceObject]];
                     }
                     else
                     {
