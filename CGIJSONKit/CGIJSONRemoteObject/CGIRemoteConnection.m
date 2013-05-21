@@ -17,9 +17,20 @@ NSString *CGIRemoteConnectionServerRootKey = @"CGIRemoteConnectionServerRoot";
 
 + (instancetype)defaultRemoteConnection
 {
-    if (!__defaultRemoteConnection)
-        __defaultRemoteConnection = [[self alloc] init];
-    return __defaultRemoteConnection;
+    @synchronized (__defaultRemoteConnection)
+    {
+        if (!__defaultRemoteConnection)
+            __defaultRemoteConnection = [[self alloc] init];
+        return __defaultRemoteConnection;
+    }
+}
+
+- (void)makeDefaultServerRoot
+{
+    @synchronized (__defaultRemoteConnection)
+    {
+        __defaultRemoteConnection = self;
+    }
 }
 
 - (id)init

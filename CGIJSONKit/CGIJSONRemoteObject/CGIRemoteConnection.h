@@ -19,6 +19,8 @@ extern NSString *CGIRemoteConnectionServerRootKey; // = @"CGIRemoteConnectionSer
 
 - (id)initWithServerRoot:(NSURL *)serverRoot;
 
+- (void)makeDefaultServerRoot;
+
 - (NSData *)dataWithData:(NSData *)data
               fromMethod:(NSString *)method
                    error:(NSError *__autoreleasing *)error;
