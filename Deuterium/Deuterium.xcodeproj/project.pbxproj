@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1D02895D174C8D8000C76CEB /* DCWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D02895B174C8D8000C76CEB /* DCWrapper.h */; };
 		1D02895E174C8D8000C76CEB /* DCWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D02895C174C8D8000C76CEB /* DCWrapper.m */; };
+		1D028967174CBC5200C76CEB /* DCSignUpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D028965174CBC5200C76CEB /* DCSignUpRequest.h */; };
+		1D028968174CBC5200C76CEB /* DCSignUpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D028966174CBC5200C76CEB /* DCSignUpRequest.m */; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
@@ -23,6 +25,8 @@
 		1D02895F174C8F7000C76CEB /* GPL.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = GPL.md; sourceTree = "<group>"; };
 		1D028960174C903E00C76CEB /* LGPL.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = LGPL.md; sourceTree = "<group>"; };
 		1D028963174C92F400C76CEB /* POSH.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = POSH.md; sourceTree = "<group>"; };
+		1D028965174CBC5200C76CEB /* DCSignUpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSignUpRequest.h; sourceTree = "<group>"; };
+		1D028966174CBC5200C76CEB /* DCSignUpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSignUpRequest.m; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -101,6 +105,8 @@
 				1D02895C174C8D8000C76CEB /* DCWrapper.m */,
 				1DED1D74174C866800AE1D98 /* DCLoginRequest.h */,
 				1DED1D75174C866800AE1D98 /* DCLoginRequest.m */,
+				1D028965174CBC5200C76CEB /* DCSignUpRequest.h */,
+				1D028966174CBC5200C76CEB /* DCSignUpRequest.m */,
 				1DED1D64174C861500AE1D98 /* Supporting Files */,
 			);
 			path = DeuteriumCore;
@@ -125,6 +131,7 @@
 			files = (
 				1DED1D76174C866800AE1D98 /* DCLoginRequest.h in Headers */,
 				1D02895D174C8D8000C76CEB /* DCWrapper.h in Headers */,
+				1D028967174CBC5200C76CEB /* DCSignUpRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +201,7 @@
 			files = (
 				1DED1D77174C866800AE1D98 /* DCLoginRequest.m in Sources */,
 				1D02895E174C8D8000C76CEB /* DCWrapper.m in Sources */,
+				1D028968174CBC5200C76CEB /* DCSignUpRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
