@@ -10,8 +10,8 @@
 
 CGIRemoteConnection *__defaultRemoteConnection;
 
-NSString *CGIHTTPErrorDomain __attribute__((weak)) = @"info.maxchan.error.http";
-NSString *CGIRemoteConnectionServerRootKey = @"CGIRemoteConnectionServerRoot";
+NSString *const CGIHTTPErrorDomain __attribute__((weak)) = @"info.maxchan.error.http";
+NSString *const CGIRemoteConnectionServerRootKey = @"CGIRemoteConnectionServerRoot";
 
 @implementation CGIRemoteConnection
 

@@ -8,8 +8,8 @@
 
 #import <CGIJSONObject/CGIJSONObject.h>
 
-extern NSString *CGIHTTPErrorDomain __attribute__((weak));
-extern NSString *CGIRemoteConnectionServerRootKey; // = @"CGIRemoteConnectionServerRoot";
+extern NSString *const CGIHTTPErrorDomain __attribute__((weak));
+extern NSString *const CGIRemoteConnectionServerRootKey; // = @"CGIRemoteConnectionServerRoot";
 
 @interface CGIRemoteConnection : NSObject
 

@@ -9,6 +9,7 @@
 #import <CGIJSONObject/CGIJSONObject.h>
 
 @class DCUniversalContact;
+@class CLLocation;
 
 @interface DCNews : CGIPersistantObject
 
@@ -16,6 +17,7 @@
 @property NSString *content;
 @property NSString *title;
 @property NSString *href;
+@property CLLocation *location;
 @property NSDate *publishTime;
 @property DCUniversalContact *authorUC;
 @property NSArray *medias;
