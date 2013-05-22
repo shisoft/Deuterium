@@ -21,5 +21,10 @@
 @property NSDate *publishTime;
 @property DCUniversalContact *authorUC;
 @property NSArray *medias;
+@property NSString *lang;
+@property DCNews *refer;
+@property NSString *svr;
+@property NSString *type;
+
 
 @end
