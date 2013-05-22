@@ -17,6 +17,13 @@
 		1DED1D73174C863500AE1D98 /* CGIJSONRemoteObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D71174C863500AE1D98 /* CGIJSONRemoteObject.framework */; };
 		1DED1D76174C866800AE1D98 /* DCLoginRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DED1D74174C866800AE1D98 /* DCLoginRequest.h */; };
 		1DED1D77174C866800AE1D98 /* DCLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DED1D75174C866800AE1D98 /* DCLoginRequest.m */; };
+		F56096CA174CD7ED0033D72B /* DCNews.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096C8174CD7ED0033D72B /* DCNews.h */; };
+		F56096CB174CD7ED0033D72B /* DCNews.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096C9174CD7ED0033D72B /* DCNews.m */; };
+		F56096CE174CD8BF0033D72B /* DCMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096CC174CD8BF0033D72B /* DCMedia.h */; };
+		F56096CF174CD8BF0033D72B /* DCMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096CD174CD8BF0033D72B /* DCMedia.m */; };
+		F56096D1174CDA630033D72B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56096D0174CDA630033D72B /* CoreLocation.framework */; };
+		F56096D4174CDAAB0033D72B /* NSDate+DCPersistance.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096D2174CDAAB0033D72B /* NSDate+DCPersistance.h */; };
+		F56096D5174CDAAB0033D72B /* NSDate+DCPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096D3174CDAAB0033D72B /* NSDate+DCPersistance.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +47,13 @@
 		1DED1D71174C863500AE1D98 /* CGIJSONRemoteObject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CGIJSONRemoteObject.framework; path = ../CGIJSONKit/build/Release/CGIJSONRemoteObject.framework; sourceTree = "<group>"; };
 		1DED1D74174C866800AE1D98 /* DCLoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCLoginRequest.h; sourceTree = "<group>"; };
 		1DED1D75174C866800AE1D98 /* DCLoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCLoginRequest.m; sourceTree = "<group>"; };
+		F56096C8174CD7ED0033D72B /* DCNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNews.h; sourceTree = "<group>"; };
+		F56096C9174CD7ED0033D72B /* DCNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNews.m; sourceTree = "<group>"; };
+		F56096CC174CD8BF0033D72B /* DCMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCMedia.h; sourceTree = "<group>"; };
+		F56096CD174CD8BF0033D72B /* DCMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCMedia.m; sourceTree = "<group>"; };
+		F56096D0174CDA630033D72B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		F56096D2174CDAAB0033D72B /* NSDate+DCPersistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DCPersistance.h"; sourceTree = "<group>"; };
+		F56096D3174CDAAB0033D72B /* NSDate+DCPersistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DCPersistance.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F56096D1174CDA630033D72B /* CoreLocation.framework in Frameworks */,
 				1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */,
 				1DED1D73174C863500AE1D98 /* CGIJSONRemoteObject.framework in Frameworks */,
 				1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */,
@@ -81,6 +96,7 @@
 			children = (
 				1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */,
 				1DED1D71174C863500AE1D98 /* CGIJSONRemoteObject.framework */,
+				F56096D0174CDA630033D72B /* CoreLocation.framework */,
 				1DED1D5D174C861500AE1D98 /* Cocoa.framework */,
 				1DED1D5F174C861500AE1D98 /* Other Frameworks */,
 			);
@@ -107,6 +123,12 @@
 				1DED1D75174C866800AE1D98 /* DCLoginRequest.m */,
 				1D028965174CBC5200C76CEB /* DCSignUpRequest.h */,
 				1D028966174CBC5200C76CEB /* DCSignUpRequest.m */,
+				F56096C8174CD7ED0033D72B /* DCNews.h */,
+				F56096C9174CD7ED0033D72B /* DCNews.m */,
+				F56096D2174CDAAB0033D72B /* NSDate+DCPersistance.h */,
+				F56096D3174CDAAB0033D72B /* NSDate+DCPersistance.m */,
+				F56096CC174CD8BF0033D72B /* DCMedia.h */,
+				F56096CD174CD8BF0033D72B /* DCMedia.m */,
 				1DED1D64174C861500AE1D98 /* Supporting Files */,
 			);
 			path = DeuteriumCore;
@@ -132,6 +154,9 @@
 				1DED1D76174C866800AE1D98 /* DCLoginRequest.h in Headers */,
 				1D02895D174C8D8000C76CEB /* DCWrapper.h in Headers */,
 				1D028967174CBC5200C76CEB /* DCSignUpRequest.h in Headers */,
+				F56096CA174CD7ED0033D72B /* DCNews.h in Headers */,
+				F56096CE174CD8BF0033D72B /* DCMedia.h in Headers */,
+				F56096D4174CDAAB0033D72B /* NSDate+DCPersistance.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +227,9 @@
 				1DED1D77174C866800AE1D98 /* DCLoginRequest.m in Sources */,
 				1D02895E174C8D8000C76CEB /* DCWrapper.m in Sources */,
 				1D028968174CBC5200C76CEB /* DCSignUpRequest.m in Sources */,
+				F56096CB174CD7ED0033D72B /* DCNews.m in Sources */,
+				F56096CF174CD8BF0033D72B /* DCMedia.m in Sources */,
+				F56096D5174CDAAB0033D72B /* NSDate+DCPersistance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

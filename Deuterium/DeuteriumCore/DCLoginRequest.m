@@ -11,6 +11,6 @@
 
 @implementation DCLoginRequest
 
-CGIRemoteMethodClass(login, CGIWrapper);
+CGIRemoteMethodClass(login, DCWrapper);
 
 @end
