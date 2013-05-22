@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D028962174C916800C76CEB /* BSDL.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D028961174C916800C76CEB /* BSDL.md */; };
 		1D02B61E174BB23B00158DF5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D02B61D174BB23B00158DF5 /* Cocoa.framework */; };
 		1D02B628174BB23B00158DF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D02B626174BB23B00158DF5 /* InfoPlist.strings */; };
 		1D02B648174BB4CD00158DF5 /* CGIPersistantObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D02B646174BB4CD00158DF5 /* CGIPersistantObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D028961174C916800C76CEB /* BSDL.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BSDL.md; sourceTree = "<group>"; };
 		1D02B61A174BB23B00158DF5 /* CGIJSONObject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CGIJSONObject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D02B61D174BB23B00158DF5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1D02B620174BB23B00158DF5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -110,6 +112,7 @@
 		1D02B5F5174BAB9900158DF5 = {
 			isa = PBXGroup;
 			children = (
+				1D028961174C916800C76CEB /* BSDL.md */,
 				1D02B623174BB23B00158DF5 /* CGIJSONObject */,
 				1D02B67F174BD1E300158DF5 /* CGIJSONRemoteObject */,
 				1D02B61C174BB23B00158DF5 /* Frameworks */,
@@ -366,6 +369,7 @@
 				1D02B675174BCFCD00158DF5 /* GNUmakefile in Resources */,
 				1D02B676174BCFCD00158DF5 /* GNUmakefile.postamble in Resources */,
 				1D02B677174BCFCD00158DF5 /* GNUmakefile.preamble in Resources */,
+				1D028962174C916800C76CEB /* BSDL.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

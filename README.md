@@ -8,7 +8,7 @@ This is a dependency from ohttpd2, hence inherited both its CGI* class prefix an
 
 Deuterium
 ---------
-This project is Deuterium.
+This project is DeuteriumCore, MobileDeuteriumUI and MobileDeuterium. DeuteriomCore is LGPLv3 licensed, while MobileDeuteriumUI and MobileDeuterium is propertiarary open source software.
 
 DeuteriumDocs
 -------------
