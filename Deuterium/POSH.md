@@ -52,19 +52,19 @@ POSH license, version 4.1.
 ### §1 Rights and limitations of licensee
 
 1.  Licensee have the right to:
-    a)  use,
-    b)  study and research on,
-    c)  obtain the source code of, and
-    d)  redistribute all of, or part of
+    a.  use,
+    b.  study and research on,
+    c.  obtain the source code of, and
+    d.  redistribute all of, or part of
     the work.
 
 2.  Licensee is not allowed to:
-    a)  solicit profit from
-        1)  the use,
-        2)  the exhibition, and
-        3)  the redistribution
+    a.  solicit profit from
+        i.      the use,
+        ii.     the exhibition, and
+        iii.    the redistribution
         of the work, unless under written authorization of the licensor
-    b)  (...)
+    b.  (...)
 
 ### §5 Supermacy and governing
 
