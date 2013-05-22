@@ -22,6 +22,7 @@
 		1D02895C174C8D8000C76CEB /* DCWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCWrapper.m; sourceTree = "<group>"; };
 		1D02895F174C8F7000C76CEB /* GPL.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = GPL.md; sourceTree = "<group>"; };
 		1D028960174C903E00C76CEB /* LGPL.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = LGPL.md; sourceTree = "<group>"; };
+		1D028963174C92F400C76CEB /* POSH.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = POSH.md; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -56,6 +57,7 @@
 			children = (
 				1D02895F174C8F7000C76CEB /* GPL.md */,
 				1D028960174C903E00C76CEB /* LGPL.md */,
+				1D028963174C92F400C76CEB /* POSH.md */,
 				1DED1D63174C861500AE1D98 /* DeuteriumCore */,
 				1DED1D5C174C861500AE1D98 /* Frameworks */,
 				1DED1D5B174C861500AE1D98 /* Products */,
