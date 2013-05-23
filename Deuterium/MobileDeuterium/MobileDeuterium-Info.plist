@@ -23,17 +23,17 @@
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
-            <key>CFBundleIconFiles</key>
-            <array>
-                <string>Icon.png</string>
-                <string>Icon@2x.png</string>
-                <string>Icon-72.png</string>
-                <string>Icon-72@2x.png</string>
-                <string>Icon-Small-50.png</string>
-                <string>Icon-Small-50@2x.png</string>
-                <string>Icon-Small.png</string>
-                <string>Icon-Small@2x.png</string>
-            </array>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Icon.png</string>
+				<string>Icon@2x.png</string>
+				<string>Icon-72.png</string>
+				<string>Icon-72@2x.png</string>
+				<string>Icon-Small-50.png</string>
+				<string>Icon-Small-50@2x.png</string>
+				<string>Icon-Small.png</string>
+				<string>Icon-Small@2x.png</string>
+			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
 		</dict>
@@ -54,8 +54,8 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UIPrerenderedIcon</key>
-	<true/>
+	<key>UIMainStoryboardFile</key>
+	<string>MainStoryboard~iPhone</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

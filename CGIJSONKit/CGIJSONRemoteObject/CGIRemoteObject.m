@@ -13,6 +13,15 @@
 
 @implementation CGIRemoteObject
 
+- (id)init
+{
+    if (self = [super init])
+    {
+        [self setConnection:[CGIRemoteConnection defaultRemoteConnection]];
+    }
+    return self;
+}
+
 - (id)initWithConnection:(CGIRemoteConnection *)connection
 {
     if (self = [super init])
@@ -28,7 +37,7 @@
     {
         if (self = [super initWithPersistanceObject:persistanceObject])
         {
-            self.connection = connection;
+            [self setConnection:connection];
         }
         return self;
     }
@@ -87,6 +96,11 @@
     SEL method = [anInvocation selector];
     Class class = [self classForMethod:method];
     id value = nil;
+    
+    if (!_connection)
+    {
+        [NSException raise:@"CGINoConnectionException" format:@"I am not connected."];
+    }
     
     do
     {
@@ -171,7 +185,7 @@
         
     } while (0);
     
-    CGIRetain(value);
+    if (value) CGIRetain(value);
     [anInvocation setReturnValue:&value];
 }
 

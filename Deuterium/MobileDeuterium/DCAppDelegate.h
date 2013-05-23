@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <DeuteriumCore/DeuteriumCore.h>
+
+@class KeychainItemWrapper;
+
+extern dispatch_group_t DCBackgroundTasks;
+extern NSString *const DCUsernameKeychainItemName;
+extern NSString *const DCDeuteriumKeychainAccessGroup;
 
 @interface DCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property BOOL connected;
+
++ (instancetype)thisDelegate;
++ (KeychainItemWrapper *)keychainItem;
 
 @end

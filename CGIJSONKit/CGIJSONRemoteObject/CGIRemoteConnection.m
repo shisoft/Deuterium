@@ -115,6 +115,7 @@ NSString *const CGIRemoteConnectionServerRootKey = @"CGIRemoteConnectionServerRo
     
     if ([response statusCode] >= 400)
     {
+        NSLog(@"HTTP status %3d from method %@", [response statusCode], method);
         NSDictionary *userInfo = @{
                                    NSLocalizedDescriptionKey:
                                        [NSHTTPURLResponse localizedStringForStatusCode:[response statusCode]],

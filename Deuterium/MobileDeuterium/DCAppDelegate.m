@@ -7,15 +7,92 @@
 //
 
 #import "DCAppDelegate.h"
+#import "KeychainItemWrapper.h"
+#import <CGIJSONRemoteObject/CGIJSONRemoteObject.h>
+
+dispatch_group_t DCBackgroundTasks;
+NSString *const DCUsernameKeychainItemName = @"username";
+NSString *const DCDeuteriumKeychainAccessGroup = @"info.maxchan.deuterium";
+
+@interface DCAppDelegate ()
+
+@property BOOL watchdogActiviated;
+
+@end
 
 @implementation DCAppDelegate
 
++ (instancetype)thisDelegate
+{
+    return [UIApplication sharedApplication].delegate;
+}
+
++ (KeychainItemWrapper *)keychainItem
+{
+    return [[KeychainItemWrapper alloc] initWithIdentifier:DCUsernameKeychainItemName accessGroup:nil];
+}
+
+- (void)watchdog;
+{
+    if (dispatch_group_wait(DCBackgroundTasks, DISPATCH_TIME_NOW))
+    {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        if (!self.watchdogActiviated)
+        {
+            self.watchdogActiviated = YES;
+            dispatch_group_notify(DCBackgroundTasks,
+                                  dispatch_get_main_queue(),
+                                  ^
+            {
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                [DCAppDelegate thisDelegate].watchdogActiviated = NO;
+            }
+                                  );
+        }
+        else
+        {
+            NSLog(@"Current task queue is longer than 1 second.");
+        }
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    DCBackgroundTasks = dispatch_group_create();
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.5
+                                     target:self
+                                   selector:@selector(watchdog)
+                                   userInfo:nil
+                                    repeats:YES];
+    
+    dispatch_group_async(DCBackgroundTasks,
+                         dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                         ^
+    {
+        // Set up default connection.
+        CGIRemoteConnection *connection = [[CGIRemoteConnection alloc] initWithServerRoot:[NSURL URLWithString:@"https://www.shisoft.net/ajax/"]];
+        [connection makeDefaultServerRoot];
+        
+        // Query keychain for previously stored username and password.
+        KeychainItemWrapper *keychainItem = [DCAppDelegate keychainItem];
+        
+        DCLoginRequest *login = [[DCLoginRequest alloc] init];
+        login.user = keychainItem[(__bridge __strong NSString *)(kSecAttrAccount)];
+        login.pass = keychainItem[(__bridge __strong NSString *)(kSecValueData)];
+        
+        if ([login.user length] && [login.pass length])
+        {
+            DCWrapper *rv = [login login];
+            [DCAppDelegate thisDelegate].connected = [rv boolValue];
+        }
+        else
+        {
+            [DCAppDelegate thisDelegate].connected = NO;
+        }
+    }
+                         );
+    
     return YES;
 }
 

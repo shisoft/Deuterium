@@ -21,7 +21,18 @@
 
 - (BOOL)boolValue
 {
-    return ([self.d respondsToSelector:@selector(boolValue)]) ? [self.d boolValue] : NO;
+    if ([self.d isKindOfClass:[NSString class]])
+    {
+        return [self.d isEqualToString:@"+"] || [self.d boolValue];
+    }
+    else if ([self.d respondsToSelector:@selector(boolValue)])
+    {
+        return [self.d boolValue];
+    }
+    else
+    {
+        return NO;
+    }
 }
 
 - (id)objectValueWithClass:(Class)class

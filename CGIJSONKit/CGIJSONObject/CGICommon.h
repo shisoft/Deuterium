@@ -61,12 +61,12 @@ static inline void CGIRelease(id obj)
 
 static inline id CGIRetain(id obj)
 {
-    return (__bridge id)CFRetain((__bridge CFTypeRef)obj);
+    return (obj) ? (__bridge id)CFRetain((__bridge CFTypeRef)obj) : nil;
 }
 
 static inline void CGIRelease(id obj)
 {
-    CFRelease((__bridge CFTypeRef)obj);
+    if (obj) CFRelease((__bridge CFTypeRef)obj);
 }
 
 #endif  // GNUSTEP
