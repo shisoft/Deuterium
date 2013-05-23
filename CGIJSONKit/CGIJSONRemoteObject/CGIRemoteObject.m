@@ -158,7 +158,7 @@
         {
             if ([downlinkObject isKindOfClass:[NSDictionary class]])
             {
-                value = [[class alloc] initWithDictionary:downlinkObject];
+                value = [[class alloc] initWithPersistanceObject:downlinkObject];
             }
             else if ([downlinkObject isKindOfClass:[NSArray class]])
             {
