@@ -49,10 +49,6 @@ NSString *const DCDeuteriumKeychainAccessGroup = @"info.maxchan.deuterium";
             }
                                   );
         }
-        else
-        {
-            NSLog(@"Current task queue is longer than 1 second.");
-        }
     }
 }
 

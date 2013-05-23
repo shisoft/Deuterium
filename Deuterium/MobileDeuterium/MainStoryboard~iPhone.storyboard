@@ -35,11 +35,12 @@
                     </view>
                     <connections>
                         <segue destination="XQX-ur-vZi" kind="modal" identifier="login" id="NIQ-RR-kCc"/>
+                        <segue destination="Seg-YT-UN9" kind="modal" identifier="main" modalTransitionStyle="crossDissolve" id="d9x-Fj-Zb9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1D-YL-vtZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="-49"/>
+            <point key="canvasLocation" x="24" y="-49"/>
         </scene>
         <!--Login View Controller - 登录 WebFusion-->
         <scene sceneID="8i6-w9-dXk">
@@ -173,7 +174,22 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6DJ-b9-sur" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="577" y="-49"/>
+            <point key="canvasLocation" x="564" y="-49"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="zGg-fP-Vq2">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="Seg-YT-UN9" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="A3E-vJ-eit">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u0C-1r-KNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564" y="639"/>
         </scene>
     </scenes>
     <classes>

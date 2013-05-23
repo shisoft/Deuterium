@@ -29,7 +29,7 @@
         {
             if ([DCAppDelegate thisDelegate].connected)
             {
-                
+                [self performSegueWithIdentifier:@"main" sender:self];
             }
             else
             {
