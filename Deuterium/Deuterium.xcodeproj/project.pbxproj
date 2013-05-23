@@ -7,24 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D02895D174C8D8000C76CEB /* DCWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D02895B174C8D8000C76CEB /* DCWrapper.h */; };
+		1D02895D174C8D8000C76CEB /* DCWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D02895B174C8D8000C76CEB /* DCWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D02895E174C8D8000C76CEB /* DCWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D02895C174C8D8000C76CEB /* DCWrapper.m */; };
-		1D028967174CBC5200C76CEB /* DCSignUpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D028965174CBC5200C76CEB /* DCSignUpRequest.h */; };
+		1D028967174CBC5200C76CEB /* DCSignUpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D028965174CBC5200C76CEB /* DCSignUpRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D028968174CBC5200C76CEB /* DCSignUpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D028966174CBC5200C76CEB /* DCSignUpRequest.m */; };
-		1D02896B174CE50200C76CEB /* CLLocation+CGIPersistance.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D028969174CE50200C76CEB /* CLLocation+CGIPersistance.h */; };
+		1D02896B174CE50200C76CEB /* CLLocation+CGIPersistance.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D028969174CE50200C76CEB /* CLLocation+CGIPersistance.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D02896C174CE50200C76CEB /* CLLocation+CGIPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D02896A174CE50200C76CEB /* CLLocation+CGIPersistance.m */; };
+		1D028970174DD95300C76CEB /* DeuteriumCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DED1D6A174C861500AE1D98 /* DeuteriumCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D02897B174DD9B900C76CEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D02897A174DD9B900C76CEB /* Foundation.framework */; };
+		1D028986174DD9CB00C76CEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
+		1D028987174DDA2400C76CEB /* DeuteriumCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DED1D6A174C861500AE1D98 /* DeuteriumCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D028988174DDA2400C76CEB /* DCWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D02895B174C8D8000C76CEB /* DCWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D028989174DDA2400C76CEB /* DCLoginRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DED1D74174C866800AE1D98 /* DCLoginRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D02898A174DDA2400C76CEB /* DCSignUpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D028965174CBC5200C76CEB /* DCSignUpRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D02898B174DDA2400C76CEB /* DCNews.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096C8174CD7ED0033D72B /* DCNews.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D02898C174DDA2400C76CEB /* CLLocation+CGIPersistance.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D028969174CE50200C76CEB /* CLLocation+CGIPersistance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D02898D174DDA2400C76CEB /* NSDate+DCPersistance.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096D2174CDAAB0033D72B /* NSDate+DCPersistance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D02898E174DDA2400C76CEB /* DCMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096CC174CD8BF0033D72B /* DCMedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D02898F174DDA2D00C76CEB /* DCWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D02895C174C8D8000C76CEB /* DCWrapper.m */; };
+		1D028990174DDA2D00C76CEB /* DCLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DED1D75174C866800AE1D98 /* DCLoginRequest.m */; };
+		1D028991174DDA2D00C76CEB /* DCSignUpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D028966174CBC5200C76CEB /* DCSignUpRequest.m */; };
+		1D028992174DDA2D00C76CEB /* DCNews.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096C9174CD7ED0033D72B /* DCNews.m */; };
+		1D028993174DDA2D00C76CEB /* CLLocation+CGIPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D02896A174CE50200C76CEB /* CLLocation+CGIPersistance.m */; };
+		1D028994174DDA2D00C76CEB /* NSDate+DCPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096D3174CDAAB0033D72B /* NSDate+DCPersistance.m */; };
+		1D028995174DDA2D00C76CEB /* DCMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096CD174CD8BF0033D72B /* DCMedia.m */; };
+		1D028998174DDA4600C76CEB /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D028996174DDA4600C76CEB /* CGIJSONObject.framework */; };
+		1D028999174DDA4600C76CEB /* CGIJSONRemoteObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D028997174DDA4600C76CEB /* CGIJSONRemoteObject.framework */; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
 		1DED1D73174C863500AE1D98 /* CGIJSONRemoteObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D71174C863500AE1D98 /* CGIJSONRemoteObject.framework */; };
-		1DED1D76174C866800AE1D98 /* DCLoginRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DED1D74174C866800AE1D98 /* DCLoginRequest.h */; };
+		1DED1D76174C866800AE1D98 /* DCLoginRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DED1D74174C866800AE1D98 /* DCLoginRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DED1D77174C866800AE1D98 /* DCLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DED1D75174C866800AE1D98 /* DCLoginRequest.m */; };
-		F56096CA174CD7ED0033D72B /* DCNews.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096C8174CD7ED0033D72B /* DCNews.h */; };
+		F56096CA174CD7ED0033D72B /* DCNews.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096C8174CD7ED0033D72B /* DCNews.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F56096CB174CD7ED0033D72B /* DCNews.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096C9174CD7ED0033D72B /* DCNews.m */; };
-		F56096CE174CD8BF0033D72B /* DCMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096CC174CD8BF0033D72B /* DCMedia.h */; };
+		F56096CE174CD8BF0033D72B /* DCMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096CC174CD8BF0033D72B /* DCMedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F56096CF174CD8BF0033D72B /* DCMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096CD174CD8BF0033D72B /* DCMedia.m */; };
 		F56096D1174CDA630033D72B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56096D0174CDA630033D72B /* CoreLocation.framework */; };
-		F56096D4174CDAAB0033D72B /* NSDate+DCPersistance.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096D2174CDAAB0033D72B /* NSDate+DCPersistance.h */; };
+		F56096D4174CDAAB0033D72B /* NSDate+DCPersistance.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096D2174CDAAB0033D72B /* NSDate+DCPersistance.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F56096D5174CDAAB0033D72B /* NSDate+DCPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096D3174CDAAB0033D72B /* NSDate+DCPersistance.m */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +58,10 @@
 		1D028966174CBC5200C76CEB /* DCSignUpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSignUpRequest.m; sourceTree = "<group>"; };
 		1D028969174CE50200C76CEB /* CLLocation+CGIPersistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+CGIPersistance.h"; sourceTree = "<group>"; };
 		1D02896A174CE50200C76CEB /* CLLocation+CGIPersistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+CGIPersistance.m"; sourceTree = "<group>"; };
+		1D028979174DD9B900C76CEB /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D02897A174DD9B900C76CEB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D028996174DDA4600C76CEB /* CGIJSONObject.framework */ = {isa = PBXFileReference; lastKnownFileType = file; name = CGIJSONObject.framework; path = "../CGIJSONKit/build/Release-iphoneos/CGIJSONObject.framework"; sourceTree = "<group>"; };
+		1D028997174DDA4600C76CEB /* CGIJSONRemoteObject.framework */ = {isa = PBXFileReference; lastKnownFileType = file; name = CGIJSONRemoteObject.framework; path = "../CGIJSONKit/build/Release-iphoneos/CGIJSONRemoteObject.framework"; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -45,7 +69,6 @@
 		1DED1D62174C861500AE1D98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DED1D65174C861500AE1D98 /* DeuteriumCore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeuteriumCore-Info.plist"; sourceTree = "<group>"; };
 		1DED1D67174C861500AE1D98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1DED1D69174C861500AE1D98 /* DeuteriumCore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeuteriumCore-Prefix.pch"; sourceTree = "<group>"; };
 		1DED1D6A174C861500AE1D98 /* DeuteriumCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeuteriumCore.h; sourceTree = "<group>"; };
 		1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CGIJSONObject.framework; path = ../CGIJSONKit/build/Release/CGIJSONObject.framework; sourceTree = "<group>"; };
 		1DED1D71174C863500AE1D98 /* CGIJSONRemoteObject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CGIJSONRemoteObject.framework; path = ../CGIJSONKit/build/Release/CGIJSONRemoteObject.framework; sourceTree = "<group>"; };
@@ -61,6 +84,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1D028973174DD9B900C76CEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D028998174DDA4600C76CEB /* CGIJSONObject.framework in Frameworks */,
+				1D028999174DDA4600C76CEB /* CGIJSONRemoteObject.framework in Frameworks */,
+				1D02897B174DD9B900C76CEB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DED1D56174C861500AE1D98 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */,
+				1D028979174DD9B900C76CEB /* DeuteriumCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,10 +132,13 @@
 		1DED1D5C174C861500AE1D98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D028996174DDA4600C76CEB /* CGIJSONObject.framework */,
+				1D028997174DDA4600C76CEB /* CGIJSONRemoteObject.framework */,
 				1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */,
 				1DED1D71174C863500AE1D98 /* CGIJSONRemoteObject.framework */,
 				F56096D0174CDA630033D72B /* CoreLocation.framework */,
 				1DED1D5D174C861500AE1D98 /* Cocoa.framework */,
+				1D02897A174DD9B900C76CEB /* Foundation.framework */,
 				1DED1D5F174C861500AE1D98 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -145,7 +182,6 @@
 			children = (
 				1DED1D65174C861500AE1D98 /* DeuteriumCore-Info.plist */,
 				1DED1D66174C861500AE1D98 /* InfoPlist.strings */,
-				1DED1D69174C861500AE1D98 /* DeuteriumCore-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -153,6 +189,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		1D028974174DD9B900C76CEB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D028987174DDA2400C76CEB /* DeuteriumCore.h in Headers */,
+				1D028988174DDA2400C76CEB /* DCWrapper.h in Headers */,
+				1D028989174DDA2400C76CEB /* DCLoginRequest.h in Headers */,
+				1D02898A174DDA2400C76CEB /* DCSignUpRequest.h in Headers */,
+				1D02898B174DDA2400C76CEB /* DCNews.h in Headers */,
+				1D02898C174DDA2400C76CEB /* CLLocation+CGIPersistance.h in Headers */,
+				1D02898D174DDA2400C76CEB /* NSDate+DCPersistance.h in Headers */,
+				1D02898E174DDA2400C76CEB /* DCMedia.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DED1D57174C861500AE1D98 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -164,12 +215,34 @@
 				F56096CE174CD8BF0033D72B /* DCMedia.h in Headers */,
 				F56096D4174CDAAB0033D72B /* NSDate+DCPersistance.h in Headers */,
 				1D02896B174CE50200C76CEB /* CLLocation+CGIPersistance.h in Headers */,
+				1D028970174DD95300C76CEB /* DeuteriumCore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1D028978174DD9B900C76CEB /* MobileDeuteriumCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D028983174DD9BA00C76CEB /* Build configuration list for PBXNativeTarget "MobileDeuteriumCore" */;
+			buildPhases = (
+				1D028971174DD9B900C76CEB /* ShellScript */,
+				1D028972174DD9B900C76CEB /* Sources */,
+				1D028973174DD9B900C76CEB /* Frameworks */,
+				1D028974174DD9B900C76CEB /* Headers */,
+				1D028975174DD9B900C76CEB /* Resources */,
+				1D028976174DD9B900C76CEB /* ShellScript */,
+				1D028977174DD9B900C76CEB /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MobileDeuteriumCore;
+			productName = MobileDeuteriumCore;
+			productReference = 1D028979174DD9B900C76CEB /* DeuteriumCore.framework */;
+			productType = "com.apple.product-type.framework.static";
+		};
 		1DED1D59174C861500AE1D98 /* DeuteriumCore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DED1D6F174C861500AE1D98 /* Build configuration list for PBXNativeTarget "DeuteriumCore" */;
@@ -211,11 +284,20 @@
 			projectRoot = "";
 			targets = (
 				1DED1D59174C861500AE1D98 /* DeuteriumCore */,
+				1D028978174DD9B900C76CEB /* MobileDeuteriumCore */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1D028975174DD9B900C76CEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D028986174DD9CB00C76CEB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DED1D58174C861500AE1D98 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,7 +308,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D028971174DD9B900C76CEB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n\tUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\nONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM:-$ONLY_ACTIVE_ARCH}\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n  ([[ \"${ONLY_ACTIVE_PLATFORM}\" == \"YES\" ]] || \\\n    ([[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n     [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n     [[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n    )\n  )\nthen\n    exit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]]\nthen\n\techo \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\n\techo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\n\txcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n\nif [[ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]]\nthen\n    rm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n    rm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nfi\n";
+		};
+		1D028976174DD9B900C76CEB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "HEADERS_ROOT=$SRCROOT/$PRODUCT_NAME\nFRAMEWORK_HEADERS_DIR=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Versions/$FRAMEWORK_VERSION/Headers\"\n\n## only header files expected at this point\nPUBLIC_HEADERS=$(find $FRAMEWORK_HEADERS_DIR/. -not -type d 2> /dev/null | sed -e \"s@.*/@@g\")\n\nFIND_OPTS=\"\"\nfor PUBLIC_HEADER in $PUBLIC_HEADERS; do\n  if [ -n \"$FIND_OPTS\" ]; then\n    FIND_OPTS=\"$FIND_OPTS -o\"\n  fi\n  FIND_OPTS=\"$FIND_OPTS -name '$PUBLIC_HEADER'\"\ndone\n\nif [ -n \"$FIND_OPTS\" ]; then\n  for ORIG_HEADER in $(eval \"find $HEADERS_ROOT/. $FIND_OPTS\" 2> /dev/null | sed -e \"s@^$HEADERS_ROOT/./@@g\"); do\n    PUBLIC_HEADER=$(basename $ORIG_HEADER)\n    RELATIVE_PATH=$(dirname $ORIG_HEADER)\n    if [ -e $FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER ]; then\n      mkdir -p \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH\"\n      mv \"$FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER\" \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH/$PUBLIC_HEADER\"\n    fi\n  done\nfi\n";
+		};
+		1D028977174DD9B900C76CEB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n        eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n    echo \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\n    exit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    UFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\nONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM:-$ONLY_ACTIVE_ARCH}\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\nif [ \"${ONLY_ACTIVE_PLATFORM}\" == \"YES\" ]\nthen\n    echo \"ONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM}: Skipping other platform build\"\nelse\n    # Make sure the other platform gets built\n    \n    echo \"Build other platform\"\n    \n    echo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n    xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n    \n    \n    # Build the fat static library binary\n    \n    echo \"Create universal static library\"\n    \n    echo \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n    \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n    \n    echo mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n    mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nfi\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\n    if [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\n    then\n        echo ln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n        ln -sfh \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n    fi\ndone\n\n\nif [ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]\nthen\n    # Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n    \n    echo \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n    \n    echo rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    echo cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		1D028972174DD9B900C76CEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D02898F174DDA2D00C76CEB /* DCWrapper.m in Sources */,
+				1D028990174DDA2D00C76CEB /* DCLoginRequest.m in Sources */,
+				1D028991174DDA2D00C76CEB /* DCSignUpRequest.m in Sources */,
+				1D028992174DDA2D00C76CEB /* DCNews.m in Sources */,
+				1D028993174DDA2D00C76CEB /* CLLocation+CGIPersistance.m in Sources */,
+				1D028994174DDA2D00C76CEB /* NSDate+DCPersistance.m in Sources */,
+				1D028995174DDA2D00C76CEB /* DCMedia.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DED1D55174C861500AE1D98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,6 +393,73 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1D028984174DD9BA00C76CEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = D;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "DeuteriumCore/DeuteriumCore-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = DeuteriumCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		1D028985174DD9BA00C76CEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = D;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "DeuteriumCore/DeuteriumCore-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = DeuteriumCore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 		1D02B604174BABBC00158DF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -347,6 +552,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1D028983174DD9BA00C76CEB /* Build configuration list for PBXNativeTarget "MobileDeuteriumCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D028984174DD9BA00C76CEB /* Debug */,
+				1D028985174DD9BA00C76CEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		1D02B603174BABBC00158DF5 /* Build configuration list for PBXProject "Deuterium" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

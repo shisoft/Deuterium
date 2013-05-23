@@ -8,4 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-
+#import <DeuteriumCore/DCWrapper.h>
+#import <DeuteriumCore/DCLoginRequest.h>
+#import <DeuteriumCore/DCSignUpRequest.h>
+#import <DeuteriumCore/DCNews.h>
+#import <DeuteriumCore/DCMedia.h>
