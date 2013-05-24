@@ -76,6 +76,10 @@
 		1D090958174FBFC80037174F /* NSURL+DCPersistance.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D090955174FBFC80037174F /* NSURL+DCPersistance.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D090959174FBFC80037174F /* NSURL+DCPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D090956174FBFC80037174F /* NSURL+DCPersistance.m */; };
 		1D09095A174FBFC80037174F /* NSURL+DCPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D090956174FBFC80037174F /* NSURL+DCPersistance.m */; };
+		1D09095D174FC0710037174F /* DCUniversalContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09095B174FC0710037174F /* DCUniversalContact.h */; };
+		1D09095E174FC0710037174F /* DCUniversalContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09095B174FC0710037174F /* DCUniversalContact.h */; };
+		1D09095F174FC0710037174F /* DCUniversalContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09095C174FC0710037174F /* DCUniversalContact.m */; };
+		1D090960174FC0710037174F /* DCUniversalContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09095C174FC0710037174F /* DCUniversalContact.m */; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
@@ -143,6 +147,8 @@
 		1D0289FD174DF7A900C76CEB /* DCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCLoginViewController.m; sourceTree = "<group>"; };
 		1D090955174FBFC80037174F /* NSURL+DCPersistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+DCPersistance.h"; sourceTree = "<group>"; };
 		1D090956174FBFC80037174F /* NSURL+DCPersistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+DCPersistance.m"; sourceTree = "<group>"; };
+		1D09095B174FC0710037174F /* DCUniversalContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUniversalContact.h; sourceTree = "<group>"; };
+		1D09095C174FC0710037174F /* DCUniversalContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCUniversalContact.m; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -319,6 +325,8 @@
 				1D090956174FBFC80037174F /* NSURL+DCPersistance.m */,
 				F56096CC174CD8BF0033D72B /* DCMedia.h */,
 				F56096CD174CD8BF0033D72B /* DCMedia.m */,
+				1D09095B174FC0710037174F /* DCUniversalContact.h */,
+				1D09095C174FC0710037174F /* DCUniversalContact.m */,
 				1DED1D64174C861500AE1D98 /* Supporting Files */,
 			);
 			path = DeuteriumCore;
@@ -349,6 +357,7 @@
 				1D02898D174DDA2400C76CEB /* NSDate+DCPersistance.h in Headers */,
 				1D02898E174DDA2400C76CEB /* DCMedia.h in Headers */,
 				1D090958174FBFC80037174F /* NSURL+DCPersistance.h in Headers */,
+				1D09095E174FC0710037174F /* DCUniversalContact.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +374,7 @@
 				1D02896B174CE50200C76CEB /* CLLocation+CGIPersistance.h in Headers */,
 				1D028970174DD95300C76CEB /* DeuteriumCore.h in Headers */,
 				1D090957174FBFC80037174F /* NSURL+DCPersistance.h in Headers */,
+				1D09095D174FC0710037174F /* DCUniversalContact.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +575,7 @@
 				1D028994174DDA2D00C76CEB /* NSDate+DCPersistance.m in Sources */,
 				1D028995174DDA2D00C76CEB /* DCMedia.m in Sources */,
 				1D09095A174FBFC80037174F /* NSURL+DCPersistance.m in Sources */,
+				1D090960174FC0710037174F /* DCUniversalContact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +603,7 @@
 				F56096D5174CDAAB0033D72B /* NSDate+DCPersistance.m in Sources */,
 				1D02896C174CE50200C76CEB /* CLLocation+CGIPersistance.m in Sources */,
 				1D090959174FBFC80037174F /* NSURL+DCPersistance.m in Sources */,
+				1D09095F174FC0710037174F /* DCUniversalContact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
