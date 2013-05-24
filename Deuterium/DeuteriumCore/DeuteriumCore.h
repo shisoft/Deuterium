@@ -13,3 +13,4 @@
 #import <DeuteriumCore/DCSignUpRequest.h>
 #import <DeuteriumCore/DCNews.h>
 #import <DeuteriumCore/DCMedia.h>
+#import <DeuteriumCore/DCUniversalContact.h>

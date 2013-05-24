@@ -343,10 +343,10 @@
             </objects>
             <point key="canvasLocation" x="1106" y="1335"/>
         </scene>
-        <!--Table View Controller - 新鲜事-->
+        <!--News View Controller - 新鲜事-->
         <scene sceneID="yLO-FW-Mn4">
             <objects>
-                <tableViewController id="iyx-Kb-Bjb" sceneMemberID="viewController">
+                <tableViewController id="iyx-Kb-Bjb" customClass="DCNewsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rnF-EQ-9oZ">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

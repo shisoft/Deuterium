@@ -76,8 +76,8 @@
 		1D090958174FBFC80037174F /* NSURL+DCPersistance.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D090955174FBFC80037174F /* NSURL+DCPersistance.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D090959174FBFC80037174F /* NSURL+DCPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D090956174FBFC80037174F /* NSURL+DCPersistance.m */; };
 		1D09095A174FBFC80037174F /* NSURL+DCPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D090956174FBFC80037174F /* NSURL+DCPersistance.m */; };
-		1D09095D174FC0710037174F /* DCUniversalContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09095B174FC0710037174F /* DCUniversalContact.h */; };
-		1D09095E174FC0710037174F /* DCUniversalContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09095B174FC0710037174F /* DCUniversalContact.h */; };
+		1D09095D174FC0710037174F /* DCUniversalContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09095B174FC0710037174F /* DCUniversalContact.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D09095E174FC0710037174F /* DCUniversalContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09095B174FC0710037174F /* DCUniversalContact.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D09095F174FC0710037174F /* DCUniversalContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09095C174FC0710037174F /* DCUniversalContact.m */; };
 		1D090960174FC0710037174F /* DCUniversalContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09095C174FC0710037174F /* DCUniversalContact.m */; };
 		1D090963174FCAD60037174F /* DCNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D090962174FCAD60037174F /* DCNewsCell.m */; };

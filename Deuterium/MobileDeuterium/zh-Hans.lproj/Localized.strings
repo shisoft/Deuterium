@@ -6,5 +6,15 @@
   Copyright (c) 2013年 muski. All rights reserved.
 */
 
-"ui.just-now"   = "刚才";
-"ui.yesterday"  = "昨天";
+/* Timing */
+"ui.just-now"       = "刚才";
+"ui.minutes-ago"    = "分钟前";
+"ui.hours-ago"      = "小时前";
+"ui.yesterday"      = "昨天";
+"ui.days-ago"       = "天前";
+"ui.weeks-ago"      = "周前";
+
+/* Missing data */
+"ui.no-content"     = "无内容。";
+"ui.no-title"       = "无标题";
+"ui.no-name"        = "无名氏";

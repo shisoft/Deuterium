@@ -9,7 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <DeuteriumCore/DeuteriumCore.h>
 
-#define DCHasRefreshControl ((NSClassFromString(@"UIRefreshControl")) ? YES : NO)
+static inline BOOL DCHasRefreshControl(void)
+{
+    return ((NSClassFromString(@"UIRefreshControl")) ? YES : NO);
+}
+
+static inline void DCSetFrameWidth(UIView *view, CGFloat newWidth)
+{
+    CGRect rect = view.frame;
+    rect.size.width = newWidth;
+    view.frame = rect;
+}
 
 @class KeychainItemWrapper;
 
