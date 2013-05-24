@@ -13,7 +13,7 @@
 
 @interface DCNews : CGIPersistantObject
 
-@property id ID;
+CGIIdentifierProperty;
 @property NSString *content;
 @property NSString *title;
 @property NSString *href;

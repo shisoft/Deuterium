@@ -10,6 +10,7 @@
 
 @interface DCMedia : CGIPersistantObject
 
+CGIIdentifierProperty;
 @property NSURL *href;
 @property NSString *type;
 @property NSString *title;

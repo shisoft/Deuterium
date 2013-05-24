@@ -10,6 +10,7 @@
 
 #define CGIPersistanceKeyClass(__key, __class) \
 - (Class)classForKey ##__key { return [__class class]; }
+#define CGIIdentifierProperty @property id ID
 
 @protocol CGIPersistantObject <NSObject>
 

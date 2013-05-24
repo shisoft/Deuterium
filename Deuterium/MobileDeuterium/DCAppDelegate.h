@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <DeuteriumCore/DeuteriumCore.h>
 
+#define DCHasRefreshControl ((NSClassFromString(@"UIRefreshControl")) ? YES : NO)
+
 @class KeychainItemWrapper;
 
 extern dispatch_group_t DCBackgroundTasks;
