@@ -344,7 +344,46 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tND-zl-Db2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1640" y="2035"/>
+            <point key="canvasLocation" x="1640" y="2721"/>
+        </scene>
+        <!--Discovery Option View Controller-->
+        <scene sceneID="BCs-dg-pJ3">
+            <objects>
+                <tableViewController id="y3C-hs-8Vc" customClass="DCDiscoveryOptionViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bBo-fm-4hL">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ideaCell" textLabel="fqV-YI-Dj4" style="IBUITableViewCellStyleDefault" id="aac-SJ-cqx">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqV-YI-Dj4">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="y3C-hs-8Vc" id="eLG-P1-olu"/>
+                            <outlet property="delegate" destination="y3C-hs-8Vc" id="PKz-ot-dcx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="KrE-dc-Xcp">
+                        <nil key="title"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oYn-kw-J9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2175" y="2016"/>
         </scene>
         <!--External Services View Controller - 外部服务-->
         <scene sceneID="I9w-70-bny">
@@ -376,7 +415,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXT-xq-vje" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2175" y="2035"/>
+            <point key="canvasLocation" x="2175" y="2721"/>
         </scene>
         <!--Navigation Controller - 偏好设置-->
         <scene sceneID="wX0-xC-AVV">
@@ -392,7 +431,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLn-vV-1pe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="2035"/>
+            <point key="canvasLocation" x="1106" y="2721"/>
         </scene>
         <!--News View Controller - 新鲜事-->
         <scene sceneID="yLO-FW-Mn4">
@@ -675,7 +714,11 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="探索" id="i2P-0C-9Ij">
-                        <barButtonItem key="rightBarButtonItem" title="兴趣" id="JCS-y6-Eve"/>
+                        <barButtonItem key="rightBarButtonItem" title="兴趣" id="JCS-y6-Eve">
+                            <connections>
+                                <segue destination="y3C-hs-8Vc" kind="push" id="alr-W3-Mun"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwI-MZ-ngx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -737,68 +780,6 @@
         <image name="news" width="16" height="16"/>
         <image name="preferences" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="DCDiscoveryViewController" superclassName="DCNewsViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCDiscoveryViewController.h"/>
-        </class>
-        <class className="DCEditableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCEditableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="DCExternalServicesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCExternalServicesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refresh:"/>
-            </relationships>
-        </class>
-        <class className="DCInitialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCInitialViewController.h"/>
-        </class>
-        <class className="DCLoginViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="login:"/>
-                <relationship kind="action" name="usernameDidFinish:"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="DCNewsCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="authorField" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="avatarView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeField" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleField" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DCNewsDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="DCNewsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="loadMore:"/>
-                <relationship kind="action" name="refresh:"/>
-            </relationships>
-        </class>
-        <class className="DCPreferencesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCPreferencesViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="displayNameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="usernameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

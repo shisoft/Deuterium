@@ -132,6 +132,7 @@
 		1D0909DC1750C4CD0037174F /* DCNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0909DB1750C4CD0037174F /* DCNewsDetailViewController.m */; };
 		1D0909DE1750C6770037174F /* NewsTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909DD1750C6770037174F /* NewsTemplate.html */; };
 		1D0909E11750D1BD0037174F /* DCDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0909E01750D1BD0037174F /* DCDiscoveryViewController.m */; };
+		1D0909E41750DDE90037174F /* DCDiscoveryOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0909E31750DDE90037174F /* DCDiscoveryOptionViewController.m */; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
@@ -257,6 +258,8 @@
 		1D0909DD1750C6770037174F /* NewsTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NewsTemplate.html; sourceTree = "<group>"; };
 		1D0909DF1750D1BD0037174F /* DCDiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDiscoveryViewController.h; sourceTree = "<group>"; };
 		1D0909E01750D1BD0037174F /* DCDiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDiscoveryViewController.m; sourceTree = "<group>"; };
+		1D0909E21750DDE90037174F /* DCDiscoveryOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDiscoveryOptionViewController.h; sourceTree = "<group>"; };
+		1D0909E31750DDE90037174F /* DCDiscoveryOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDiscoveryOptionViewController.m; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -357,6 +360,8 @@
 				1D09099017506A6F0037174F /* DCPreferencesViewController.m */,
 				1D0909DF1750D1BD0037174F /* DCDiscoveryViewController.h */,
 				1D0909E01750D1BD0037174F /* DCDiscoveryViewController.m */,
+				1D0909E21750DDE90037174F /* DCDiscoveryOptionViewController.h */,
+				1D0909E31750DDE90037174F /* DCDiscoveryOptionViewController.m */,
 				1D0909B3175081DF0037174F /* DCEditableCell.h */,
 				1D0909B4175081DF0037174F /* DCEditableCell.m */,
 				1D09099217506A920037174F /* DCExternalServicesViewController.h */,
@@ -837,6 +842,7 @@
 				1D0909B5175081DF0037174F /* DCEditableCell.m in Sources */,
 				1D0909DC1750C4CD0037174F /* DCNewsDetailViewController.m in Sources */,
 				1D0909E11750D1BD0037174F /* DCDiscoveryViewController.m in Sources */,
+				1D0909E41750DDE90037174F /* DCDiscoveryOptionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

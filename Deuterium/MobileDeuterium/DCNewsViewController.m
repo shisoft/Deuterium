@@ -15,6 +15,7 @@
 @interface DCNewsViewController ()
 
 @property BOOL loading;
+@property BOOL haveTimer;
 
 - (IBAction)refresh:(id)sender;
 - (IBAction)loadMore:(id)sender;
@@ -67,11 +68,16 @@
         [self refresh:self];
     }
     
-    [NSTimer scheduledTimerWithTimeInterval:5
-                                     target:self.tableView
-                                   selector:@selector(reloadData)
-                                   userInfo:nil
-                                    repeats:YES];
+    if (!self.haveTimer)
+    {
+        [NSTimer scheduledTimerWithTimeInterval:5
+                                         target:self.tableView
+                                       selector:@selector(reloadData)
+                                       userInfo:nil
+                                        repeats:YES];
+        self.haveTimer = YES;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
