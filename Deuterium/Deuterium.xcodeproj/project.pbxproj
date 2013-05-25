@@ -113,8 +113,8 @@
 		1D02896A174CE50200C76CEB /* CLLocation+CGIPersistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+CGIPersistance.m"; sourceTree = "<group>"; };
 		1D028979174DD9B900C76CEB /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D02897A174DD9B900C76CEB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D028996174DDA4600C76CEB /* CGIJSONObject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CGIJSONObject.framework; path = "../CGIJSONKit/build/Release-iphoneos/CGIJSONObject.framework"; sourceTree = "<group>"; };
-		1D028997174DDA4600C76CEB /* CGIJSONRemoteObject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CGIJSONRemoteObject.framework; path = "../CGIJSONKit/build/Release-iphoneos/CGIJSONRemoteObject.framework"; sourceTree = "<group>"; };
+		1D028996174DDA4600C76CEB /* CGIJSONObject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CGIJSONObject.framework; path = "../CGIJSONKit/build/Release-iphoneos/CGIJSONObject.framework"; sourceTree = SOURCE_ROOT; };
+		1D028997174DDA4600C76CEB /* CGIJSONRemoteObject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CGIJSONRemoteObject.framework; path = "../CGIJSONKit/build/Release-iphoneos/CGIJSONRemoteObject.framework"; sourceTree = SOURCE_ROOT; };
 		1D02899E174DDB4300C76CEB /* MobileDeuterium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileDeuterium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D02899F174DDB4300C76CEB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		1D0289A2174DDB4300C76CEB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
@@ -171,8 +171,8 @@
 		1DED1D62174C861500AE1D98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DED1D65174C861500AE1D98 /* DeuteriumCore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeuteriumCore-Info.plist"; sourceTree = "<group>"; };
 		1DED1D6A174C861500AE1D98 /* DeuteriumCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeuteriumCore.h; sourceTree = "<group>"; };
-		1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CGIJSONObject.framework; path = ../CGIJSONKit/build/Release/CGIJSONObject.framework; sourceTree = "<group>"; };
-		1DED1D71174C863500AE1D98 /* CGIJSONRemoteObject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CGIJSONRemoteObject.framework; path = ../CGIJSONKit/build/Release/CGIJSONRemoteObject.framework; sourceTree = "<group>"; };
+		1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CGIJSONObject.framework; path = ../CGIJSONKit/build/Release/CGIJSONObject.framework; sourceTree = SOURCE_ROOT; };
+		1DED1D71174C863500AE1D98 /* CGIJSONRemoteObject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CGIJSONRemoteObject.framework; path = ../CGIJSONKit/build/Release/CGIJSONRemoteObject.framework; sourceTree = SOURCE_ROOT; };
 		1DED1D74174C866800AE1D98 /* DCLoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCLoginRequest.h; sourceTree = "<group>"; };
 		1DED1D75174C866800AE1D98 /* DCLoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCLoginRequest.m; sourceTree = "<group>"; };
 		F56096C8174CD7ED0033D72B /* DCNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNews.h; sourceTree = "<group>"; };
@@ -289,6 +289,19 @@
 			);
 			sourceTree = "<group>";
 		};
+		1D09098A17504BAF0037174F /* External Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				1D028969174CE50200C76CEB /* CLLocation+CGIPersistance.h */,
+				1D02896A174CE50200C76CEB /* CLLocation+CGIPersistance.m */,
+				F56096D2174CDAAB0033D72B /* NSDate+DCPersistance.h */,
+				F56096D3174CDAAB0033D72B /* NSDate+DCPersistance.m */,
+				1D090955174FBFC80037174F /* NSURL+DCPersistance.h */,
+				1D090956174FBFC80037174F /* NSURL+DCPersistance.m */,
+			);
+			name = "External Persistance";
+			sourceTree = "<group>";
+		};
 		1DED1D5B174C861500AE1D98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,16 +354,11 @@
 				F56096C9174CD7ED0033D72B /* DCNews.m */,
 				1D09096A174FD31A0037174F /* DCNewsRequest.h */,
 				1D09096B174FD31A0037174F /* DCNewsRequest.m */,
-				1D028969174CE50200C76CEB /* CLLocation+CGIPersistance.h */,
-				1D02896A174CE50200C76CEB /* CLLocation+CGIPersistance.m */,
-				F56096D2174CDAAB0033D72B /* NSDate+DCPersistance.h */,
-				F56096D3174CDAAB0033D72B /* NSDate+DCPersistance.m */,
-				1D090955174FBFC80037174F /* NSURL+DCPersistance.h */,
-				1D090956174FBFC80037174F /* NSURL+DCPersistance.m */,
 				F56096CC174CD8BF0033D72B /* DCMedia.h */,
 				F56096CD174CD8BF0033D72B /* DCMedia.m */,
 				1D09095B174FC0710037174F /* DCUniversalContact.h */,
 				1D09095C174FC0710037174F /* DCUniversalContact.m */,
+				1D09098A17504BAF0037174F /* External Persistance */,
 				1DED1D64174C861500AE1D98 /* Supporting Files */,
 			);
 			path = DeuteriumCore;

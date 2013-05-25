@@ -366,7 +366,7 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time Field" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cg-ef-iWO">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="78" id="MUJ-GF-QB3"/>
+                                                <constraint firstAttribute="width" constant="78" id="QeH-xk-Fde"/>
                                                 <constraint firstAttribute="height" constant="17" id="wPy-k3-aod"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -386,21 +386,29 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbU-qI-W7F">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="34" id="OLM-3V-8Zy"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="Fqs-MZ-qMW" firstAttribute="top" secondItem="bv7-1I-oha" secondAttribute="bottom" type="user" id="5zl-f3-aN2"/>
                                     <constraint firstAttribute="trailing" secondItem="Fqs-MZ-qMW" secondAttribute="trailing" constant="20" type="default" id="BbV-CI-IIz"/>
+                                    <constraint firstItem="bv7-1I-oha" firstAttribute="bottom" secondItem="DbU-qI-W7F" secondAttribute="bottom" type="default" id="Bik-BS-ImJ"/>
+                                    <constraint firstItem="UkY-4i-v4A" firstAttribute="leading" secondItem="DbU-qI-W7F" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="EUR-I8-qdH"/>
                                     <constraint firstItem="bv7-1I-oha" firstAttribute="top" secondItem="UkY-4i-v4A" secondAttribute="bottom" type="user" id="Ejd-BH-0RF"/>
                                     <constraint firstItem="9cg-ef-iWO" firstAttribute="leading" secondItem="UkY-4i-v4A" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="GhN-x5-RV8"/>
                                     <constraint firstAttribute="trailing" secondItem="bv7-1I-oha" secondAttribute="trailing" constant="20" type="default" id="HJA-i9-XZX"/>
                                     <constraint firstItem="9cg-ef-iWO" firstAttribute="bottom" secondItem="UkY-4i-v4A" secondAttribute="bottom" type="default" id="Jpa-sU-IDj"/>
-                                    <constraint firstItem="bv7-1I-oha" firstAttribute="leading" secondItem="eO1-HJ-u0x" secondAttribute="leading" constant="20" type="default" id="LZA-Dk-P1L"/>
-                                    <constraint firstItem="UkY-4i-v4A" firstAttribute="leading" secondItem="eO1-HJ-u0x" secondAttribute="leading" constant="20" type="user" id="PJ7-gj-QhX"/>
                                     <constraint firstAttribute="trailing" secondItem="9cg-ef-iWO" secondAttribute="trailing" constant="20" type="default" id="evz-Tg-M0z"/>
                                     <constraint firstItem="UkY-4i-v4A" firstAttribute="top" secondItem="eO1-HJ-u0x" secondAttribute="top" type="user" id="kIF-JQ-Woi"/>
                                     <constraint firstItem="Fqs-MZ-qMW" firstAttribute="leading" secondItem="eO1-HJ-u0x" secondAttribute="leading" constant="20" type="default" id="oYx-F0-0rp"/>
+                                    <constraint firstItem="DbU-qI-W7F" firstAttribute="top" secondItem="9cg-ef-iWO" secondAttribute="top" type="default" id="qeK-xd-BlW"/>
+                                    <constraint firstItem="DbU-qI-W7F" firstAttribute="leading" secondItem="eO1-HJ-u0x" secondAttribute="leading" constant="20" type="default" id="tuW-pH-26x"/>
+                                    <constraint firstItem="bv7-1I-oha" firstAttribute="leading" secondItem="DbU-qI-W7F" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="uYm-pw-P8r"/>
                                 </constraints>
                             </tableViewCell>
                         </prototypes>
@@ -480,6 +488,38 @@
             <point key="canvasLocation" x="564" y="639"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="DCInitialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCInitialViewController.h"/>
+        </class>
+        <class className="DCLoginViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCLoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="action" name="usernameDidFinish:"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DCNewsCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="authorField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="contentField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleField" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DCNewsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
