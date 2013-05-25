@@ -12,10 +12,10 @@
 
 @interface DCGetUserNicknameRequest : CGIRemoteObject
 
+@end
+
 @interface DCGetUserNicknameRequest (DCMethods)
 
 - (DCWrapper *)getUserNickname;
-
-@end
 
 @end

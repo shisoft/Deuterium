@@ -10,4 +10,12 @@
 
 @interface DCChangeNicknameRequest : CGIRemoteObject
 
+@property NSString *nn;
+
+@end
+
+@interface DCChangeNicknameRequest (DCMethods)
+
+- (id *)changeNickname;
+
 @end
