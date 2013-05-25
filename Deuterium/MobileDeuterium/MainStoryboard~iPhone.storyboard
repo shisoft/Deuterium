@@ -656,6 +656,22 @@
                                     <segue destination="Bsn-hg-JWS" kind="push" id="shE-Jq-4AN"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="loadingCell" id="Uim-yv-5Ff">
+                                <rect key="frame" x="0.0" y="102" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4Bd-Rw-uUS"/>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="4Bd-Rw-uUS" firstAttribute="centerX" secondItem="Uim-yv-5Ff" secondAttribute="centerX" type="default" id="iAj-pP-rdy"/>
+                                    <constraint firstItem="4Bd-Rw-uUS" firstAttribute="centerY" secondItem="Uim-yv-5Ff" secondAttribute="centerY" type="default" id="org-ra-yeN"/>
+                                </constraints>
+                            </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="探索" id="i2P-0C-9Ij">

@@ -31,7 +31,13 @@
 
 - (NSArray *)nextPage
 {
-    
+    DCDiscoveryRequest *discovery = [[DCDiscoveryRequest alloc] init];
+    discovery.beforeT = [[self.newsControllers lastObject] news].publishTime;
+    discovery.lastT = [NSDate distantPast];
+    discovery.count = 25;
+    discovery.threshold = 0.02;
+    discovery.topics = @[];
+    return [discovery streamDiscover];
 }
 
 @end
