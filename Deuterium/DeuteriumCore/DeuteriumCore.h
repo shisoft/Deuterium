@@ -21,5 +21,7 @@
 #import <DeuteriumCore/DCPollDiscovery.h>
 #import <DeuteriumCore/DCPollRequest.h>
 #import <DeuteriumCore/DCNews.h>
+#import <DeuteriumCore/DCUserServices.h>
+#import <DeuteriumCore/DCNewsRequest.h>
 #import <DeuteriumCore/DCMedia.h>
 #import <DeuteriumCore/DCUniversalContact.h>

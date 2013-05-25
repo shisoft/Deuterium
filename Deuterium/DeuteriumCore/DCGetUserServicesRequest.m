@@ -7,9 +7,10 @@
 //
 
 #import "DCGetUserServicesRequest.h"
+#import "DCUserServices.h"
 
 @implementation DCGetUserServicesRequest
 
-CGIRemoteMethodClass(getUserServices, NSArray);
+CGIRemoteMethodClass(getUserServices, DCUserServices);
 
 @end

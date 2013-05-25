@@ -7,8 +7,14 @@
 //
 
 #import "DCExternalServicesViewController.h"
+#import "DCAppDelegate.h"
+#import <DeuteriumCore/DeuteriumCore.h>
 
 @interface DCExternalServicesViewController ()
+
+@property NSArray *services;
+
+- (IBAction)refresh:(id)sender;
 
 @end
 
@@ -32,6 +38,51 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    if (DCHasRefreshControl())
+    {
+        self.refreshControl = [[UIRefreshControl alloc] init];
+        [self.refreshControl addTarget:self
+                                action:@selector(refresh:)
+                      forControlEvents:UIControlEventValueChanged];
+    }
+    
+    [self refresh:self];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self refresh:self];
+}
+
+- (void)refresh:(id)sender
+{
+    if (DCHasRefreshControl())
+    {
+        [self.refreshControl beginRefreshing];
+    }
+    dispatch_group_async(DCBackgroundTasks,
+                         dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                         ^{
+                             DCGetUserServicesRequest *serviceRequest = [[DCGetUserServicesRequest alloc] init];
+                             NSArray *services = [serviceRequest getUserServices];
+                             if ([services isKindOfClass:[NSArray class]])
+                             {
+                                 self.services = services;
+                                 dispatch_async(dispatch_get_main_queue(),
+                                                ^{
+                                                    [self.tableView reloadData];
+                                                });
+                             }
+                             dispatch_async(dispatch_get_main_queue(),
+                                            ^{
+                                                if (DCHasRefreshControl())
+                                                {
+                                                    [self.refreshControl endRefreshing];
+                                                }
+                                            });
+                         });
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,26 +93,20 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.services count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"serviceCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    DCUserServices *us = self.services[indexPath.row];
+    
+    cell.textLabel.text = CGISTR(@"%@ (%@)", us.account, us.gate);
     
     return cell;
 }

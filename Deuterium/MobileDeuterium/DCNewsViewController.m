@@ -38,7 +38,7 @@
     
     // Set up refresh control if system supports it, otherwise add a button.
     
-    if (DCHasRefreshControl)
+    if (DCHasRefreshControl())
     {
         UIRefreshControl *_refreshControl = [[UIRefreshControl alloc] init];
         
@@ -78,7 +78,7 @@
 
 - (void)refresh:(id)sender
 {
-    if (DCHasRefreshControl)
+    if (DCHasRefreshControl())
     {
         [self.refreshControl beginRefreshing];
     }
@@ -101,7 +101,7 @@
         dispatch_async(dispatch_get_main_queue(),
                        ^
         {
-            if (DCHasRefreshControl)
+            if (DCHasRefreshControl())
             {
                 [self.refreshControl endRefreshing];
             }
