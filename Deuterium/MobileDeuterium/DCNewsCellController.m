@@ -26,6 +26,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)heartbeat:(NSNotification *)notification
 {
     self.newsCell.timeField.text = [self timeDescription];
