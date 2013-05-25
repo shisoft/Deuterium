@@ -11,6 +11,7 @@
 #import "DCNewsCell.h"
 #import "DCAppDelegate.h"
 #import <DeuteriumCore/DeuteriumCore.h>
+#import "NSString+DCUtilities.h"
 
 @implementation DCNewsCellController
 
@@ -125,6 +126,18 @@
     }
 }
 
+- (NSString *)contentDescription
+{
+    if ([self.news.content length])
+    {
+        return [[[self.news.content stringByStrippingHTML] componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] componentsJoinedByString:@" "];
+    }
+    else
+    {
+        return nil;
+    }
+}
+
 - (void)displayNews
 {
     self.newsCell.authorField.text = [self authorDescription];
@@ -139,14 +152,7 @@
     
     // Set up contents
     DCSetFrameWidth(self.newsCell.contentField, 280);
-    if ([self.news.content length])
-    {
-        self.newsCell.contentField.text = self.news.content;
-    }
-    else
-    {
-        self.newsCell.contentField.text = nil;
-    }
+    self.newsCell.contentField.text = [self contentDescription];
     [self.newsCell sizeToFit];
 }
 
@@ -168,10 +174,9 @@
 
 - (CGFloat)heightForCell
 {
-    return MAX(44,
-               38 + [self.news.content sizeWithFont:[UIFont systemFontOfSize:13]
-                                  constrainedToSize:CGSizeMake(280.0, 100.0)
-                                      lineBreakMode:NSLineBreakByCharWrapping].height);
+    return 44 + [[self contentDescription] sizeWithFont:[UIFont systemFontOfSize:13]
+                                      constrainedToSize:CGSizeMake(280.0, 100.0)
+                                          lineBreakMode:NSLineBreakByWordWrapping].height;
 }
 
 @end

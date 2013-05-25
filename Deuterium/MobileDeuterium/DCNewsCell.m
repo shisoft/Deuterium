@@ -8,10 +8,7 @@
 
 #import "DCNewsCell.h"
 #import "DCAppDelegate.h"
-
-#ifndef GNUSTEP
-#import <QuartzCore/QuartzCore.h>
-#endif
+#import "UIImage+DCUtilities.h"
 
 @implementation DCNewsCell
 
@@ -44,28 +41,6 @@
     }
 }
 
--(UIImage *)makeRoundedImage:(UIImage *)image
-                      radius:(CGFloat)radius
-{
-#ifndef GNUSTEP
-    CALayer *imageLayer = [CALayer layer];
-    imageLayer.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-    imageLayer.contents = (id) image.CGImage;
-    
-    imageLayer.masksToBounds = YES;
-    imageLayer.cornerRadius = radius;
-    
-    UIGraphicsBeginImageContext(image.size);
-    [imageLayer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *roundedImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return roundedImage;
-#else
-    return image;
-#endif
-}
-
 - (void)loadAvatar
 {
     NSURL *avatarURL = self.avatarURL;
@@ -95,7 +70,7 @@
                              UIImage *image = [UIImage imageWithData:[cachedResponse data]];
                              if (image)
                              {
-                                 image = [self makeRoundedImage:image radius:5.0];
+                                 image = [[image scaledImageToSize:CGSizeMake(68, 68)] roundedImageWithRadius:5]; // Retina!!
                              }
                              
                              dispatch_async(dispatch_get_main_queue(),

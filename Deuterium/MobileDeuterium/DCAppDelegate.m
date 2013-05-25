@@ -83,7 +83,22 @@ NSString *const DCHeartbeatNotification = @"info.maxchan.deuterium.heartbeat";
         if ([login.user length] && [login.pass length])
         {
             DCWrapper *rv = [login login];
-            [DCAppDelegate thisDelegate].connected = [rv boolValue];
+            if ([rv isKindOfClass:[DCWrapper class]])
+            {
+                [DCAppDelegate thisDelegate].connected = [rv boolValue];
+            }
+            else
+            {
+                dispatch_async(dispatch_get_main_queue(),
+                               ^{
+                                   [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title", @"")
+                                                               message:NSLocalizedString(@"no-server", @"")
+                                                              delegate:nil
+                                                     cancelButtonTitle:NSLocalizedString(@"ui.ok", @"")
+                                                     otherButtonTitles:nil] show];
+                               });
+                [DCAppDelegate thisDelegate].connected = NO;
+            }
         }
         else
         {

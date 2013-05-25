@@ -1,10 +1,15 @@
-/* 
-  Localized.strings
-  Deuterium
+/*
+ Localized.strings
+ Deuterium
+ 
+ Created by Maxthon Chan on 13-5-25.
+ Copyright (c) 2013年 muski. All rights reserved.
+ */
 
-  Created by Maxthon Chan on 13-5-25.
-  Copyright (c) 2013年 muski. All rights reserved.
-*/
+"title"             = "Deuterium";
+
+/* UI elements */
+"ui.ok"             = "确定";
 
 /* Timing */
 "ui.just-now"       = "刚才";
@@ -18,3 +23,6 @@
 "ui.no-content"     = "无内容。";
 "ui.no-title"       = "无标题";
 "ui.no-name"        = "无名氏";
+
+/* Error */
+"err.no-server"     = "无法连接到服务器。";
