@@ -12,9 +12,9 @@
 
 @interface DCDiscoveryRequest : CGIRemoteObject
 
-@property NSString *beforeT;
+@property NSDate *beforeT;
 @property NSString *count;
-@property NSString *lastT;
+@property NSDate *lastT;
 @property NSString *threshold;
 @property NSArray *topics;
 
@@ -22,6 +22,6 @@
 
 @interface DCDiscoveryRequest (DCMethods)
 
-- (DCWrapper *)StreamDiscover;
+- (DCWrapper *)streamDiscover;
 
 @end
