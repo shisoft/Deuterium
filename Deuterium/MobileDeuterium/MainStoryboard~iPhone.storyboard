@@ -467,6 +467,7 @@
                                     <outlet property="contentField" destination="Fqs-MZ-qMW" id="9HM-E8-gwg"/>
                                     <outlet property="timeField" destination="9cg-ef-iWO" id="O4a-Su-xV7"/>
                                     <outlet property="titleField" destination="bv7-1I-oha" id="bYR-hm-n4u"/>
+                                    <segue destination="yWT-GB-5U5" kind="push" id="DQc-2g-05x"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -474,24 +475,38 @@
                     <navigationItem key="navigationItem" title="新鲜事" id="VV6-tC-m3S">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="compose" id="Sml-bi-ABq"/>
                     </navigationItem>
-                    <connections>
-                        <segue destination="yWT-GB-5U5" kind="push" identifier="showDetail" id="ivY-lu-kfD"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jnq-aZ-iXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1640" y="639"/>
         </scene>
-        <!--View Controller-->
+        <!--News Detail View Controller-->
         <scene sceneID="Ki9-ql-HZD">
             <objects>
-                <viewController id="yWT-GB-5U5" sceneMemberID="viewController">
+                <viewController id="yWT-GB-5U5" customClass="DCNewsDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p4G-vt-4Od">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voJ-wK-48p">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yWT-GB-5U5" id="rXa-ND-cVK"/>
+                                </connections>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="voJ-wK-48p" firstAttribute="bottom" secondItem="p4G-vt-4Od" secondAttribute="bottom" type="default" id="I8M-RB-qlh"/>
+                            <constraint firstItem="voJ-wK-48p" firstAttribute="leading" secondItem="p4G-vt-4Od" secondAttribute="leading" type="default" id="PRt-sf-NGS"/>
+                            <constraint firstItem="voJ-wK-48p" firstAttribute="top" secondItem="p4G-vt-4Od" secondAttribute="top" type="default" id="XfE-an-hFd"/>
+                            <constraint firstItem="voJ-wK-48p" firstAttribute="trailing" secondItem="p4G-vt-4Od" secondAttribute="trailing" type="default" id="zqz-Z8-59R"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KrT-jL-LFC"/>
+                    <connections>
+                        <outlet property="webView" destination="voJ-wK-48p" id="mjq-op-dx3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ixr-Av-H9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -585,6 +600,12 @@
                 <relationship kind="outlet" name="contentField" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="timeField" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="titleField" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DCNewsDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="DCNewsViewController" superclassName="UITableViewController">

@@ -129,6 +129,8 @@
 		1D0909D71750BEA90037174F /* preferences@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909C91750BEA90037174F /* preferences@2x.png */; };
 		1D0909D81750BEA90037174F /* store.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909CA1750BEA90037174F /* store.png */; };
 		1D0909D91750BEA90037174F /* store@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909CB1750BEA90037174F /* store@2x.png */; };
+		1D0909DC1750C4CD0037174F /* DCNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0909DB1750C4CD0037174F /* DCNewsDetailViewController.m */; };
+		1D0909DE1750C6770037174F /* NewsTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909DD1750C6770037174F /* NewsTemplate.html */; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
@@ -249,6 +251,9 @@
 		1D0909C91750BEA90037174F /* preferences@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "preferences@2x.png"; sourceTree = "<group>"; };
 		1D0909CA1750BEA90037174F /* store.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = store.png; sourceTree = "<group>"; };
 		1D0909CB1750BEA90037174F /* store@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "store@2x.png"; sourceTree = "<group>"; };
+		1D0909DA1750C4CC0037174F /* DCNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNewsDetailViewController.h; sourceTree = "<group>"; };
+		1D0909DB1750C4CD0037174F /* DCNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsDetailViewController.m; sourceTree = "<group>"; };
+		1D0909DD1750C6770037174F /* NewsTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NewsTemplate.html; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -343,6 +348,8 @@
 				1D0289FD174DF7A900C76CEB /* DCLoginViewController.m */,
 				1D090967174FCF670037174F /* DCNewsViewController.h */,
 				1D090968174FCF670037174F /* DCNewsViewController.m */,
+				1D0909DA1750C4CC0037174F /* DCNewsDetailViewController.h */,
+				1D0909DB1750C4CD0037174F /* DCNewsDetailViewController.m */,
 				1D09098F17506A6F0037174F /* DCPreferencesViewController.h */,
 				1D09099017506A6F0037174F /* DCPreferencesViewController.m */,
 				1D0909B3175081DF0037174F /* DCEditableCell.h */,
@@ -364,6 +371,7 @@
 				1D0289A6174DDB4300C76CEB /* MobileDeuterium-Info.plist */,
 				1D0289A7174DDB4300C76CEB /* InfoPlist.strings */,
 				1D090972174FD6B40037174F /* Localizable.strings */,
+				1D0909DD1750C6770037174F /* NewsTemplate.html */,
 				1D0289AA174DDB4300C76CEB /* main.m */,
 				1D0289AC174DDB4300C76CEB /* MobileDeuterium-Prefix.pch */,
 				1D0909BE1750BEA90037174F /* apps.png */,
@@ -723,6 +731,7 @@
 				1D0909D71750BEA90037174F /* preferences@2x.png in Resources */,
 				1D0909D81750BEA90037174F /* store.png in Resources */,
 				1D0909D91750BEA90037174F /* store@2x.png in Resources */,
+				1D0909DE1750C6770037174F /* NewsTemplate.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,6 +830,7 @@
 				1D09099117506A6F0037174F /* DCPreferencesViewController.m in Sources */,
 				1D09099417506A920037174F /* DCExternalServicesViewController.m in Sources */,
 				1D0909B5175081DF0037174F /* DCEditableCell.m in Sources */,
+				1D0909DC1750C4CD0037174F /* DCNewsDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

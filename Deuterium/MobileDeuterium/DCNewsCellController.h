@@ -15,6 +15,10 @@
 @property (weak) DCNews *news;
 @property (weak) DCNewsCell *newsCell;
 
+- (NSString *)timeDescription;
+- (NSString *)authorDescription;
+- (NSString *)titleDescription;
+
 - (CGFloat)heightForCell;
 - (NSComparisonResult)compare:(DCNewsCellController *)other;
 - (void)displayNews;

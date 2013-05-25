@@ -10,6 +10,7 @@
 #import "DCNewsCellController.h"
 #import "DCNewsCell.h"
 #import "DCAppDelegate.h"
+#import "DCNewsDetailViewController.h"
 
 #define refreshButton navigationItem.leftBarButtonItem
 
@@ -66,6 +67,12 @@
     {
         [self refresh:self];
     }
+    
+    [NSTimer scheduledTimerWithTimeInterval:5
+                                     target:self.tableView
+                                   selector:@selector(reloadData)
+                                   userInfo:nil
+                                    repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -162,6 +169,15 @@
     DCNewsCellController *controller = self.newsControllers[indexPath.row];
     
     return [controller heightForCell];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.destinationViewController isKindOfClass:[DCNewsDetailViewController class]])
+    {
+        DCNewsDetailViewController *detailVC = segue.destinationViewController;
+        detailVC.news = [self.newsControllers[[self.tableView indexPathForSelectedRow].row] news];
+    }
 }
 
 #pragma mark - Table view delegate
