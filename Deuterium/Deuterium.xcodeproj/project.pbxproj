@@ -83,36 +83,47 @@
 		1D090963174FCAD60037174F /* DCNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D090962174FCAD60037174F /* DCNewsCell.m */; };
 		1D090966174FCAFF0037174F /* DCNewsCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D090965174FCAFF0037174F /* DCNewsCellController.m */; };
 		1D090969174FCF670037174F /* DCNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D090968174FCF670037174F /* DCNewsViewController.m */; };
-		1D09096C174FD31A0037174F /* DCNewsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09096A174FD31A0037174F /* DCNewsRequest.h */; };
+		1D09096C174FD31A0037174F /* DCNewsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09096A174FD31A0037174F /* DCNewsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D09096D174FD31A0037174F /* DCNewsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09096B174FD31A0037174F /* DCNewsRequest.m */; };
 		1D090970174FD6B40037174F /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D090972174FD6B40037174F /* Localized.strings */; };
-		1D09098D17505FE90037174F /* DCPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09098B17505FE90037174F /* DCPoll.h */; };
+		1D09098D17505FE90037174F /* DCPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09098B17505FE90037174F /* DCPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D09098E17505FE90037174F /* DCPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09098C17505FE90037174F /* DCPoll.m */; };
 		1D09099117506A6F0037174F /* DCPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09099017506A6F0037174F /* DCPreferencesViewController.m */; };
 		1D09099417506A920037174F /* DCExternalServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09099317506A920037174F /* DCExternalServicesViewController.m */; };
+		1D09099C175078850037174F /* DCDiscoveryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167561750514700FF5DE1 /* DCDiscoveryRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D09099D175078850037174F /* DCGetTopicExplanationsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F501675A1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D09099E175078850037174F /* DCGetUserTopicDistRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F501675E175055BE00FF5DE1 /* DCGetUserTopicDistRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D09099F175078850037174F /* DCGetUserServicesRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F501676E1750677C00FF5DE1 /* DCGetUserServicesRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0909A0175078850037174F /* DCGetUserNicknameRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167801750777800FF5DE1 /* DCGetUserNicknameRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0909A1175078850037174F /* DCChangeNicknameRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167841750779200FF5DE1 /* DCChangeNicknameRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0909A2175078850037174F /* DCPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09098B17505FE90037174F /* DCPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0909A3175078850037174F /* DCPollDiscovery.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167661750617700FF5DE1 /* DCPollDiscovery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0909A4175078850037174F /* DCPollRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5016762175055F300FF5DE1 /* DCPollRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0909A5175078850037174F /* DCUserServices.h in Headers */ = {isa = PBXBuildFile; fileRef = F501676A1750669E00FF5DE1 /* DCUserServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0909A6175078850037174F /* DCNewsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09096A174FD31A0037174F /* DCNewsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
 		1DED1D73174C863500AE1D98 /* CGIJSONRemoteObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D71174C863500AE1D98 /* CGIJSONRemoteObject.framework */; };
 		1DED1D76174C866800AE1D98 /* DCLoginRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DED1D74174C866800AE1D98 /* DCLoginRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DED1D77174C866800AE1D98 /* DCLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DED1D75174C866800AE1D98 /* DCLoginRequest.m */; };
-		F50167581750514700FF5DE1 /* DCDiscoveryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167561750514700FF5DE1 /* DCDiscoveryRequest.h */; };
+		F50167581750514700FF5DE1 /* DCDiscoveryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167561750514700FF5DE1 /* DCDiscoveryRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F50167591750514700FF5DE1 /* DCDiscoveryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167571750514700FF5DE1 /* DCDiscoveryRequest.m */; };
-		F501675C1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F501675A1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.h */; };
+		F501675C1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F501675A1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F501675D1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F501675B1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.m */; };
-		F5016760175055BE00FF5DE1 /* DCGetUserTopicDistRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F501675E175055BE00FF5DE1 /* DCGetUserTopicDistRequest.h */; };
+		F5016760175055BE00FF5DE1 /* DCGetUserTopicDistRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F501675E175055BE00FF5DE1 /* DCGetUserTopicDistRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5016761175055BE00FF5DE1 /* DCGetUserTopicDistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F501675F175055BE00FF5DE1 /* DCGetUserTopicDistRequest.m */; };
-		F5016764175055F400FF5DE1 /* DCPollRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5016762175055F300FF5DE1 /* DCPollRequest.h */; };
+		F5016764175055F400FF5DE1 /* DCPollRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5016762175055F300FF5DE1 /* DCPollRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5016765175055F400FF5DE1 /* DCPollRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5016763175055F400FF5DE1 /* DCPollRequest.m */; };
-		F50167681750617700FF5DE1 /* DCPollDiscovery.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167661750617700FF5DE1 /* DCPollDiscovery.h */; };
+		F50167681750617700FF5DE1 /* DCPollDiscovery.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167661750617700FF5DE1 /* DCPollDiscovery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F50167691750617700FF5DE1 /* DCPollDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167671750617700FF5DE1 /* DCPollDiscovery.m */; };
-		F501676C1750669E00FF5DE1 /* DCUserServices.h in Headers */ = {isa = PBXBuildFile; fileRef = F501676A1750669E00FF5DE1 /* DCUserServices.h */; };
+		F501676C1750669E00FF5DE1 /* DCUserServices.h in Headers */ = {isa = PBXBuildFile; fileRef = F501676A1750669E00FF5DE1 /* DCUserServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F501676D1750669E00FF5DE1 /* DCUserServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F501676B1750669E00FF5DE1 /* DCUserServices.m */; };
-		F50167701750677C00FF5DE1 /* DCGetUserServicesRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F501676E1750677C00FF5DE1 /* DCGetUserServicesRequest.h */; };
+		F50167701750677C00FF5DE1 /* DCGetUserServicesRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F501676E1750677C00FF5DE1 /* DCGetUserServicesRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F50167711750677C00FF5DE1 /* DCGetUserServicesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F501676F1750677C00FF5DE1 /* DCGetUserServicesRequest.m */; };
-		F50167821750777800FF5DE1 /* DCGetUserNicknameRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167801750777800FF5DE1 /* DCGetUserNicknameRequest.h */; };
+		F50167821750777800FF5DE1 /* DCGetUserNicknameRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167801750777800FF5DE1 /* DCGetUserNicknameRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F50167831750777800FF5DE1 /* DCGetUserNicknameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167811750777800FF5DE1 /* DCGetUserNicknameRequest.m */; };
-		F50167861750779200FF5DE1 /* DCChangeNicknameRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167841750779200FF5DE1 /* DCChangeNicknameRequest.h */; };
+		F50167861750779200FF5DE1 /* DCChangeNicknameRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167841750779200FF5DE1 /* DCChangeNicknameRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F50167871750779200FF5DE1 /* DCChangeNicknameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167851750779200FF5DE1 /* DCChangeNicknameRequest.m */; };
 		F56096CA174CD7ED0033D72B /* DCNews.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096C8174CD7ED0033D72B /* DCNews.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F56096CB174CD7ED0033D72B /* DCNews.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096C9174CD7ED0033D72B /* DCNews.m */; };
@@ -460,6 +471,17 @@
 				1D02898E174DDA2400C76CEB /* DCMedia.h in Headers */,
 				1D090958174FBFC80037174F /* NSURL+DCPersistance.h in Headers */,
 				1D09095E174FC0710037174F /* DCUniversalContact.h in Headers */,
+				1D09099C175078850037174F /* DCDiscoveryRequest.h in Headers */,
+				1D09099D175078850037174F /* DCGetTopicExplanationsRequest.h in Headers */,
+				1D09099E175078850037174F /* DCGetUserTopicDistRequest.h in Headers */,
+				1D09099F175078850037174F /* DCGetUserServicesRequest.h in Headers */,
+				1D0909A0175078850037174F /* DCGetUserNicknameRequest.h in Headers */,
+				1D0909A1175078850037174F /* DCChangeNicknameRequest.h in Headers */,
+				1D0909A2175078850037174F /* DCPoll.h in Headers */,
+				1D0909A3175078850037174F /* DCPollDiscovery.h in Headers */,
+				1D0909A4175078850037174F /* DCPollRequest.h in Headers */,
+				1D0909A5175078850037174F /* DCUserServices.h in Headers */,
+				1D0909A6175078850037174F /* DCNewsRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
