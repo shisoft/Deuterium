@@ -13,6 +13,7 @@
 @property NSUInteger count;
 @property NSDate *lastT;
 @property NSString *type;
+@property NSString *exceptions;
 
 @end
 

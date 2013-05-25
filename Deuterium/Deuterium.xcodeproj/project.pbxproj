@@ -85,7 +85,7 @@
 		1D090969174FCF670037174F /* DCNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D090968174FCF670037174F /* DCNewsViewController.m */; };
 		1D09096C174FD31A0037174F /* DCNewsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09096A174FD31A0037174F /* DCNewsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D09096D174FD31A0037174F /* DCNewsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09096B174FD31A0037174F /* DCNewsRequest.m */; };
-		1D090970174FD6B40037174F /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D090972174FD6B40037174F /* Localized.strings */; };
+		1D090970174FD6B40037174F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D090972174FD6B40037174F /* Localizable.strings */; };
 		1D09098D17505FE90037174F /* DCPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09098B17505FE90037174F /* DCPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D09098E17505FE90037174F /* DCPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09098C17505FE90037174F /* DCPoll.m */; };
 		1D09099117506A6F0037174F /* DCPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09099017506A6F0037174F /* DCPreferencesViewController.m */; };
@@ -113,6 +113,22 @@
 		1D0909B0175080DE0037174F /* DCUserServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F501676B1750669E00FF5DE1 /* DCUserServices.m */; };
 		1D0909B1175080DE0037174F /* DCNewsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09096B174FD31A0037174F /* DCNewsRequest.m */; };
 		1D0909B5175081DF0037174F /* DCEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0909B4175081DF0037174F /* DCEditableCell.m */; };
+		1D0909B71750A71D0037174F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0909B61750A71D0037174F /* QuartzCore.framework */; };
+		1D0909BD1750AE1F0037174F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0909BC1750AE1E0037174F /* CoreLocation.framework */; };
+		1D0909CC1750BEA90037174F /* apps.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909BE1750BEA90037174F /* apps.png */; };
+		1D0909CD1750BEA90037174F /* apps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909BF1750BEA90037174F /* apps@2x.png */; };
+		1D0909CE1750BEA90037174F /* contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909C01750BEA90037174F /* contacts.png */; };
+		1D0909CF1750BEA90037174F /* contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909C11750BEA90037174F /* contacts@2x.png */; };
+		1D0909D01750BEA90037174F /* discovery.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909C21750BEA90037174F /* discovery.png */; };
+		1D0909D11750BEA90037174F /* discovery@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909C31750BEA90037174F /* discovery@2x.png */; };
+		1D0909D21750BEA90037174F /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909C41750BEA90037174F /* me.png */; };
+		1D0909D31750BEA90037174F /* me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909C51750BEA90037174F /* me@2x.png */; };
+		1D0909D41750BEA90037174F /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909C61750BEA90037174F /* news.png */; };
+		1D0909D51750BEA90037174F /* news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909C71750BEA90037174F /* news@2x.png */; };
+		1D0909D61750BEA90037174F /* preferences.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909C81750BEA90037174F /* preferences.png */; };
+		1D0909D71750BEA90037174F /* preferences@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909C91750BEA90037174F /* preferences@2x.png */; };
+		1D0909D81750BEA90037174F /* store.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909CA1750BEA90037174F /* store.png */; };
+		1D0909D91750BEA90037174F /* store@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909CB1750BEA90037174F /* store@2x.png */; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
@@ -208,7 +224,7 @@
 		1D090968174FCF670037174F /* DCNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsViewController.m; sourceTree = "<group>"; };
 		1D09096A174FD31A0037174F /* DCNewsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNewsRequest.h; sourceTree = "<group>"; };
 		1D09096B174FD31A0037174F /* DCNewsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsRequest.m; sourceTree = "<group>"; };
-		1D090971174FD6B40037174F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localized.strings"; sourceTree = "<group>"; };
+		1D090971174FD6B40037174F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		1D09098B17505FE90037174F /* DCPoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPoll.h; sourceTree = "<group>"; };
 		1D09098C17505FE90037174F /* DCPoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPoll.m; sourceTree = "<group>"; };
 		1D09098F17506A6F0037174F /* DCPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPreferencesViewController.h; sourceTree = "<group>"; };
@@ -217,6 +233,22 @@
 		1D09099317506A920037174F /* DCExternalServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCExternalServicesViewController.m; sourceTree = "<group>"; };
 		1D0909B3175081DF0037174F /* DCEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCEditableCell.h; sourceTree = "<group>"; };
 		1D0909B4175081DF0037174F /* DCEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCEditableCell.m; sourceTree = "<group>"; };
+		1D0909B61750A71D0037174F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		1D0909BC1750AE1E0037174F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		1D0909BE1750BEA90037174F /* apps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apps.png; sourceTree = "<group>"; };
+		1D0909BF1750BEA90037174F /* apps@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apps@2x.png"; sourceTree = "<group>"; };
+		1D0909C01750BEA90037174F /* contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacts.png; sourceTree = "<group>"; };
+		1D0909C11750BEA90037174F /* contacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contacts@2x.png"; sourceTree = "<group>"; };
+		1D0909C21750BEA90037174F /* discovery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discovery.png; sourceTree = "<group>"; };
+		1D0909C31750BEA90037174F /* discovery@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "discovery@2x.png"; sourceTree = "<group>"; };
+		1D0909C41750BEA90037174F /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
+		1D0909C51750BEA90037174F /* me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me@2x.png"; sourceTree = "<group>"; };
+		1D0909C61750BEA90037174F /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
+		1D0909C71750BEA90037174F /* news@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news@2x.png"; sourceTree = "<group>"; };
+		1D0909C81750BEA90037174F /* preferences.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = preferences.png; sourceTree = "<group>"; };
+		1D0909C91750BEA90037174F /* preferences@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "preferences@2x.png"; sourceTree = "<group>"; };
+		1D0909CA1750BEA90037174F /* store.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = store.png; sourceTree = "<group>"; };
+		1D0909CB1750BEA90037174F /* store@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "store@2x.png"; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -270,6 +302,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D0909BD1750AE1F0037174F /* CoreLocation.framework in Frameworks */,
+				1D0909B71750A71D0037174F /* QuartzCore.framework in Frameworks */,
 				1D0289FB174DEC0400C76CEB /* Security.framework in Frameworks */,
 				1D0289DE174DE34C00C76CEB /* DeuteriumCore.framework in Frameworks */,
 				1D0289A0174DDB4300C76CEB /* UIKit.framework in Frameworks */,
@@ -329,9 +363,23 @@
 			children = (
 				1D0289A6174DDB4300C76CEB /* MobileDeuterium-Info.plist */,
 				1D0289A7174DDB4300C76CEB /* InfoPlist.strings */,
-				1D090972174FD6B40037174F /* Localized.strings */,
+				1D090972174FD6B40037174F /* Localizable.strings */,
 				1D0289AA174DDB4300C76CEB /* main.m */,
 				1D0289AC174DDB4300C76CEB /* MobileDeuterium-Prefix.pch */,
+				1D0909BE1750BEA90037174F /* apps.png */,
+				1D0909BF1750BEA90037174F /* apps@2x.png */,
+				1D0909C01750BEA90037174F /* contacts.png */,
+				1D0909C11750BEA90037174F /* contacts@2x.png */,
+				1D0909C21750BEA90037174F /* discovery.png */,
+				1D0909C31750BEA90037174F /* discovery@2x.png */,
+				1D0909C41750BEA90037174F /* me.png */,
+				1D0909C51750BEA90037174F /* me@2x.png */,
+				1D0909C61750BEA90037174F /* news.png */,
+				1D0909C71750BEA90037174F /* news@2x.png */,
+				1D0909C81750BEA90037174F /* preferences.png */,
+				1D0909C91750BEA90037174F /* preferences@2x.png */,
+				1D0909CA1750BEA90037174F /* store.png */,
+				1D0909CB1750BEA90037174F /* store@2x.png */,
 				1D0289C7174DE1BE00C76CEB /* Icon-72.png */,
 				1D0289C8174DE1BE00C76CEB /* Icon-72@2x.png */,
 				1D0289C9174DE1BE00C76CEB /* Icon-Small-50.png */,
@@ -392,6 +440,8 @@
 		1DED1D5C174C861500AE1D98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D0909BC1750AE1E0037174F /* CoreLocation.framework */,
+				1D0909B61750A71D0037174F /* QuartzCore.framework */,
 				1D0289FA174DEC0400C76CEB /* Security.framework */,
 				1D028996174DDA4600C76CEB /* CGIJSONObject.framework */,
 				1D028997174DDA4600C76CEB /* CGIJSONRemoteObject.framework */,
@@ -658,7 +708,21 @@
 				1D0289C5174DDDB100C76CEB /* Default-Portrait.png in Resources */,
 				1D0289C6174DDDB100C76CEB /* Default-Portrait@2x.png in Resources */,
 				1D0289EE174DE51E00C76CEB /* MainStoryboard~iPhone.storyboard in Resources */,
-				1D090970174FD6B40037174F /* Localized.strings in Resources */,
+				1D090970174FD6B40037174F /* Localizable.strings in Resources */,
+				1D0909CC1750BEA90037174F /* apps.png in Resources */,
+				1D0909CD1750BEA90037174F /* apps@2x.png in Resources */,
+				1D0909CE1750BEA90037174F /* contacts.png in Resources */,
+				1D0909CF1750BEA90037174F /* contacts@2x.png in Resources */,
+				1D0909D01750BEA90037174F /* discovery.png in Resources */,
+				1D0909D11750BEA90037174F /* discovery@2x.png in Resources */,
+				1D0909D21750BEA90037174F /* me.png in Resources */,
+				1D0909D31750BEA90037174F /* me@2x.png in Resources */,
+				1D0909D41750BEA90037174F /* news.png in Resources */,
+				1D0909D51750BEA90037174F /* news@2x.png in Resources */,
+				1D0909D61750BEA90037174F /* preferences.png in Resources */,
+				1D0909D71750BEA90037174F /* preferences@2x.png in Resources */,
+				1D0909D81750BEA90037174F /* store.png in Resources */,
+				1D0909D91750BEA90037174F /* store@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,12 +862,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		1D090972174FD6B40037174F /* Localized.strings */ = {
+		1D090972174FD6B40037174F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1D090971174FD6B40037174F /* zh-Hans */,
 			);
-			name = Localized.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		1DED1D66174C861500AE1D98 /* InfoPlist.strings */ = {
@@ -847,6 +911,10 @@
 				INFOPLIST_FILE = "DeuteriumCore/DeuteriumCore-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = DeuteriumCore;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -876,6 +944,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "DeuteriumCore/DeuteriumCore-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = DeuteriumCore;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -918,6 +990,10 @@
 				INFOPLIST_FILE = "MobileDeuterium/MobileDeuterium-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -952,6 +1028,10 @@
 				INFOPLIST_FILE = "MobileDeuterium/MobileDeuterium-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;

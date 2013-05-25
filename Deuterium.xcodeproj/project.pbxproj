@@ -64,14 +64,12 @@
 		1D02B5FC174BAB9900158DF5 /* CGIJSONKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CGIJSONKit.xcodeproj; path = CGIJSONKit/CGIJSONKit.xcodeproj; sourceTree = "<group>"; };
 		1D02B606174BABBC00158DF5 /* Deuterium.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Deuterium.xcodeproj; path = Deuterium/Deuterium.xcodeproj; sourceTree = "<group>"; };
 		1D02B610174BABE400158DF5 /* DeuteriumDocs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeuteriumDocs.xcodeproj; path = DeuteriumDocs/DeuteriumDocs.xcodeproj; sourceTree = "<group>"; };
-		1D0909891750498C0037174F /* Picons to UIToolBarItem.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "Picons to UIToolBarItem.app"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		1D02B5EC174BAA4F00158DF5 = {
 			isa = PBXGroup;
 			children = (
-				1D090973175049790037174F /* Tools */,
 				1D02B610174BABE400158DF5 /* DeuteriumDocs.xcodeproj */,
 				1D02B606174BABBC00158DF5 /* Deuterium.xcodeproj */,
 				1D02B5FC174BAB9900158DF5 /* CGIJSONKit.xcodeproj */,
@@ -106,14 +104,6 @@
 			children = (
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		1D090973175049790037174F /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				1D0909891750498C0037174F /* Picons to UIToolBarItem.app */,
-			);
-			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

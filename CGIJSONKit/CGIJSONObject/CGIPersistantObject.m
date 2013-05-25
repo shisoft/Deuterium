@@ -64,9 +64,8 @@
                             
                             if (class && [class conformsToProtocol:@protocol(CGIPersistantObject)])
                             {
-                                if ([value isKindOfClass:[NSDictionary class]])
-                                    object = [[class alloc] initWithPersistanceObject:value];
-                                else if ([value isKindOfClass:[NSArray class]])
+                                object = [[class alloc] initWithPersistanceObject:value];
+                                if (object == value && [value isKindOfClass:[NSArray class]])
                                 {
                                     NSArray *array = value;
                                     NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:[array count]];

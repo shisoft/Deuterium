@@ -53,7 +53,7 @@
                         <sections>
                             <tableViewSection id="vXf-9C-6t2">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cJS-NK-TRr" customClass="DCEditableCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cJS-NK-TRr" customClass="DCEditableCell">
                                         <rect key="frame" x="0.0" y="10" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -90,7 +90,7 @@
                                             <outlet property="textField" destination="hVV-9d-xuN" id="C8O-M1-Xbp"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="DbU-Pk-MZ7" customClass="DCEditableCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="DbU-Pk-MZ7" customClass="DCEditableCell">
                                         <rect key="frame" x="0.0" y="55" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -382,7 +382,7 @@
         <scene sceneID="wX0-xC-AVV">
             <objects>
                 <navigationController definesPresentationContext="YES" id="4lZ-63-SJw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="偏好设置" id="CMn-SC-UzS"/>
+                    <tabBarItem key="tabBarItem" title="偏好设置" image="preferences" id="CMn-SC-UzS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d8s-GF-kLs">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -471,7 +471,9 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="新鲜事" id="VV6-tC-m3S"/>
+                    <navigationItem key="navigationItem" title="新鲜事" id="VV6-tC-m3S">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="compose" id="Sml-bi-ABq"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="yWT-GB-5U5" kind="push" identifier="showDetail" id="ivY-lu-kfD"/>
                     </connections>
@@ -495,11 +497,11 @@
             </objects>
             <point key="canvasLocation" x="2175" y="639"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - 新鲜事-->
         <scene sceneID="mMQ-Wp-Q1s">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Oig-SE-m1C" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="9eB-sY-VuM"/>
+                    <tabBarItem key="tabBarItem" title="新鲜事" image="news" id="9eB-sY-VuM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dgy-0d-Dur">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -546,6 +548,62 @@
             <point key="canvasLocation" x="564" y="639"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="news" width="16" height="16"/>
+        <image name="preferences" width="16" height="16"/>
+    </resources>
+    <classes>
+        <class className="DCEditableCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCEditableCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DCExternalServicesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCExternalServicesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
+        </class>
+        <class className="DCInitialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCInitialViewController.h"/>
+        </class>
+        <class className="DCLoginViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCLoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="action" name="usernameDidFinish:"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DCNewsCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="authorField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="avatarView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="contentField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleField" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DCNewsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
+        </class>
+        <class className="DCPreferencesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCPreferencesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="displayNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

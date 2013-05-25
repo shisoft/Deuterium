@@ -24,9 +24,9 @@
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+- (void)setHighlighted:(BOOL)selected animated:(BOOL)animated
 {
-    [super setSelected:selected animated:animated];
+    [super setHighlighted:selected animated:animated];
     
     for (UILabel *label in @[self.titleField, self.authorField, self.contentField, self.timeField])
     {
