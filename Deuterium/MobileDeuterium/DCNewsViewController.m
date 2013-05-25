@@ -66,7 +66,6 @@
     {
         [self refresh:self];
     }
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,7 +153,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.newsControllers count] + ((self.newsControllers) ? 1 : 0);
+    return [self.newsControllers count] + (([self.newsControllers count]) ? 1 : 0);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

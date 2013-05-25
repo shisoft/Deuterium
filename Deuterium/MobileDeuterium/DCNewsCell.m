@@ -70,7 +70,7 @@
                              UIImage *image = [UIImage imageWithData:[cachedResponse data]];
                              if (image)
                              {
-                                 image = [[image scaledImageToSize:CGSizeMake(68, 68)] roundedImageWithRadius:5]; // Retina!!
+                                 image = [[image scaledImageToSize:CGSizeMake(68, 68)] roundedImageWithRadius:10]; // Retina!!
                              }
                              
                              dispatch_async(dispatch_get_main_queue(),
