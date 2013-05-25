@@ -11,3 +11,9 @@
 @interface DCGetUserTopicDistRequest : CGIRemoteObject
 
 @end
+
+@interface DCGetUserTopicDistRequest (DCMethods)
+
+- (NSArray *)getUserTopicDistRequest;
+
+@end

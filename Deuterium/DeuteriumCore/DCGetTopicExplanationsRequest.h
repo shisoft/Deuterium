@@ -8,6 +8,14 @@
 
 #import <CGIJSONRemoteObject/CGIJSONRemoteObject.h>
 
+@class DCWrapper;
+
 @interface DCGetTopicExplanationsRequest : CGIRemoteObject
+
+@end
+
+@interface DCGetTopicExplanationsRequest (DCMethods)
+
+- (DCWrapper *)getTopicExplanations;
 
 @end

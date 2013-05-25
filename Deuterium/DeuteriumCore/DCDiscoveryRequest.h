@@ -8,8 +8,6 @@
 
 #import <CGIJSONRemoteObject/CGIJSONRemoteObject.h>
 
-@class DCWrapper;
-
 @interface DCDiscoveryRequest : CGIRemoteObject
 
 @property NSDate *beforeT;
@@ -22,6 +20,6 @@
 
 @interface DCDiscoveryRequest (DCMethods)
 
-- (DCWrapper *)streamDiscover;
+- (NSArray *)streamDiscover;
 
 @end

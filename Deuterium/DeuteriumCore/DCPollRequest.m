@@ -7,7 +7,10 @@
 //
 
 #import "DCPollRequest.h"
+#import "DCWrapper.h"
 
 @implementation DCPollRequest
+
+CGIRemoteMethodClass(Poll, DCWrapper);
 
 @end

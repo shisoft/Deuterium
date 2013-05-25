@@ -8,6 +8,19 @@
 
 #import <CGIJSONRemoteObject/CGIJSONRemoteObject.h>
 
+@class DCWrapper;
+
 @interface DCPollRequest : CGIRemoteObject
+
+
+@property NSArray *d;
+@property NSNumber *i;
+@property NSNumber *w;
+
+@end
+
+@interface DCPollRequest (DCMethods)
+
+- (DCWrapper *)Poll;
 
 @end

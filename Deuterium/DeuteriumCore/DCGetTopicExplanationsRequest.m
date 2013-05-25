@@ -7,7 +7,10 @@
 //
 
 #import "DCGetTopicExplanationsRequest.h"
+#import "DCWrapper.h"
 
 @implementation DCGetTopicExplanationsRequest
+
+CGIRemoteMethodClass(getTopicExplanations, DCWrapper);
 
 @end
