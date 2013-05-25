@@ -53,7 +53,7 @@
                         <sections>
                             <tableViewSection id="vXf-9C-6t2">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cJS-NK-TRr">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cJS-NK-TRr" customClass="DCEditableCell">
                                         <rect key="frame" x="0.0" y="10" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -86,8 +86,11 @@
                                             <constraint firstAttribute="trailing" secondItem="hVV-9d-xuN" secondAttribute="trailing" constant="20" type="user" id="uGe-FT-1ur"/>
                                             <constraint firstItem="hVV-9d-xuN" firstAttribute="baseline" secondItem="xT1-jB-kOA" secondAttribute="baseline" type="default" id="uH6-cl-r1A"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="textField" destination="hVV-9d-xuN" id="C8O-M1-Xbp"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="DbU-Pk-MZ7">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="DbU-Pk-MZ7" customClass="DCEditableCell">
                                         <rect key="frame" x="0.0" y="55" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -120,6 +123,9 @@
                                             <constraint firstItem="LWn-82-ASb" firstAttribute="top" secondItem="DbU-Pk-MZ7" secondAttribute="top" constant="11" id="bCe-oX-0bb"/>
                                             <constraint firstAttribute="trailing" secondItem="66l-wb-gSo" secondAttribute="trailing" constant="20" type="user" id="vw5-e5-fcD"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="textField" destination="66l-wb-gSo" id="Ike-dQ-aSr"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -161,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="1106" y="-49"/>
         </scene>
-        <!--Table View Controller - 偏好设置-->
+        <!--Preferences View Controller - 偏好设置-->
         <scene sceneID="HY0-Fc-Qia">
             <objects>
-                <tableViewController id="oMJ-Wl-xeq" sceneMemberID="viewController">
+                <tableViewController id="oMJ-Wl-xeq" customClass="DCPreferencesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="O5v-nn-WUo">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,7 +199,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="NBk-bL-z2G">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="NBk-bL-z2G" customClass="DCEditableCell">
                                         <rect key="frame" x="0.0" y="55" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -226,6 +232,9 @@
                                             <constraint firstItem="5dV-iB-cXe" firstAttribute="leading" secondItem="NBk-bL-z2G" secondAttribute="leading" constant="20" type="user" id="hev-TR-dA7"/>
                                             <constraint firstAttribute="trailing" secondItem="70F-of-98r" secondAttribute="trailing" constant="20" type="user" id="vk5-y3-lA5"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="textField" destination="70F-of-98r" id="peR-IZ-Acd"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Fhu-qY-Vb3" style="IBUITableViewCellStyleDefault" id="Rrd-7o-tMf">
                                         <rect key="frame" x="0.0" y="99" width="320" height="45"/>
@@ -252,7 +261,7 @@
                             </tableViewSection>
                             <tableViewSection id="Hcf-Px-6Na">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Hss-N3-pud" style="IBUITableViewCellStyleDefault" id="ixq-fL-QKs">
+                                    <tableViewCell tag="50" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Hss-N3-pud" style="IBUITableViewCellStyleDefault" id="ixq-fL-QKs">
                                         <rect key="frame" x="0.0" y="164" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -323,8 +332,15 @@
                                 </cells>
                             </tableViewSection>
                         </sections>
+                        <connections>
+                            <outlet property="delegate" destination="oMJ-Wl-xeq" id="IaK-KK-rkm"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="偏好设置" id="3n3-tI-7MN"/>
+                    <connections>
+                        <outlet property="displayNameField" destination="70F-of-98r" id="lEf-2U-d5z"/>
+                        <outlet property="usernameLabel" destination="UuD-yA-QZI" id="4mM-iG-qzd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tND-zl-Db2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -523,6 +539,52 @@
             <point key="canvasLocation" x="564" y="639"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="DCEditableCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCEditableCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DCInitialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCInitialViewController.h"/>
+        </class>
+        <class className="DCLoginViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCLoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="action" name="usernameDidFinish:"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DCNewsCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="authorField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="avatarView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="contentField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleField" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DCNewsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
+        </class>
+        <class className="DCPreferencesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCPreferencesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="displayNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

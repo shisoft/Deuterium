@@ -117,7 +117,7 @@
 
 - (id)init
 {
-    if (self = [self init])
+    if (self = [super init])
     {
         if ([self respondsToSelector:@selector(awakeFromPersistance:)])
         {

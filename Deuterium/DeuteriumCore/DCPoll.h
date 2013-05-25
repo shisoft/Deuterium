@@ -15,7 +15,7 @@
 
 @required
 - (id <CGIPersistantObject>)poll:(DCPoll *)poll objectForKey:(NSString *)key;
-- (void)poll:(DCPoll *)poll receivedObject:(id)object forKey:(NSString *)key
+- (void)poll:(DCPoll *)poll receivedObject:(id)object forKey:(NSString *)key;
 
 @end
 

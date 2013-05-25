@@ -101,6 +101,18 @@
 		1D0909A4175078850037174F /* DCPollRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5016762175055F300FF5DE1 /* DCPollRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D0909A5175078850037174F /* DCUserServices.h in Headers */ = {isa = PBXBuildFile; fileRef = F501676A1750669E00FF5DE1 /* DCUserServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D0909A6175078850037174F /* DCNewsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09096A174FD31A0037174F /* DCNewsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0909A7175080DE0037174F /* DCDiscoveryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167571750514700FF5DE1 /* DCDiscoveryRequest.m */; };
+		1D0909A8175080DE0037174F /* DCGetTopicExplanationsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F501675B1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.m */; };
+		1D0909A9175080DE0037174F /* DCGetUserTopicDistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F501675F175055BE00FF5DE1 /* DCGetUserTopicDistRequest.m */; };
+		1D0909AA175080DE0037174F /* DCGetUserServicesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F501676F1750677C00FF5DE1 /* DCGetUserServicesRequest.m */; };
+		1D0909AB175080DE0037174F /* DCGetUserNicknameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167811750777800FF5DE1 /* DCGetUserNicknameRequest.m */; };
+		1D0909AC175080DE0037174F /* DCChangeNicknameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167851750779200FF5DE1 /* DCChangeNicknameRequest.m */; };
+		1D0909AD175080DE0037174F /* DCPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09098C17505FE90037174F /* DCPoll.m */; };
+		1D0909AE175080DE0037174F /* DCPollDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167671750617700FF5DE1 /* DCPollDiscovery.m */; };
+		1D0909AF175080DE0037174F /* DCPollRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5016763175055F400FF5DE1 /* DCPollRequest.m */; };
+		1D0909B0175080DE0037174F /* DCUserServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F501676B1750669E00FF5DE1 /* DCUserServices.m */; };
+		1D0909B1175080DE0037174F /* DCNewsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09096B174FD31A0037174F /* DCNewsRequest.m */; };
+		1D0909B5175081DF0037174F /* DCEditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0909B4175081DF0037174F /* DCEditableCell.m */; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
@@ -203,6 +215,8 @@
 		1D09099017506A6F0037174F /* DCPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPreferencesViewController.m; sourceTree = "<group>"; };
 		1D09099217506A920037174F /* DCExternalServicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCExternalServicesViewController.h; sourceTree = "<group>"; };
 		1D09099317506A920037174F /* DCExternalServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCExternalServicesViewController.m; sourceTree = "<group>"; };
+		1D0909B3175081DF0037174F /* DCEditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCEditableCell.h; sourceTree = "<group>"; };
+		1D0909B4175081DF0037174F /* DCEditableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCEditableCell.m; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -297,6 +311,8 @@
 				1D090968174FCF670037174F /* DCNewsViewController.m */,
 				1D09098F17506A6F0037174F /* DCPreferencesViewController.h */,
 				1D09099017506A6F0037174F /* DCPreferencesViewController.m */,
+				1D0909B3175081DF0037174F /* DCEditableCell.h */,
+				1D0909B4175081DF0037174F /* DCEditableCell.m */,
 				1D09099217506A920037174F /* DCExternalServicesViewController.h */,
 				1D09099317506A920037174F /* DCExternalServicesViewController.m */,
 				1D090961174FCAD60037174F /* DCNewsCell.h */,
@@ -712,6 +728,17 @@
 				1D028995174DDA2D00C76CEB /* DCMedia.m in Sources */,
 				1D09095A174FBFC80037174F /* NSURL+DCPersistance.m in Sources */,
 				1D090960174FC0710037174F /* DCUniversalContact.m in Sources */,
+				1D0909A7175080DE0037174F /* DCDiscoveryRequest.m in Sources */,
+				1D0909A8175080DE0037174F /* DCGetTopicExplanationsRequest.m in Sources */,
+				1D0909A9175080DE0037174F /* DCGetUserTopicDistRequest.m in Sources */,
+				1D0909AA175080DE0037174F /* DCGetUserServicesRequest.m in Sources */,
+				1D0909AB175080DE0037174F /* DCGetUserNicknameRequest.m in Sources */,
+				1D0909AC175080DE0037174F /* DCChangeNicknameRequest.m in Sources */,
+				1D0909AD175080DE0037174F /* DCPoll.m in Sources */,
+				1D0909AE175080DE0037174F /* DCPollDiscovery.m in Sources */,
+				1D0909AF175080DE0037174F /* DCPollRequest.m in Sources */,
+				1D0909B0175080DE0037174F /* DCUserServices.m in Sources */,
+				1D0909B1175080DE0037174F /* DCNewsRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,6 +756,7 @@
 				1D090969174FCF670037174F /* DCNewsViewController.m in Sources */,
 				1D09099117506A6F0037174F /* DCPreferencesViewController.m in Sources */,
 				1D09099417506A920037174F /* DCExternalServicesViewController.m in Sources */,
+				1D0909B5175081DF0037174F /* DCEditableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
