@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CGI>
+#import <CGIJSONRemoteObject/CGIJSONRemoteObject.h>
+
+@class DCPoll;
 
 @protocol DCPollDelegate <NSObject>
 
-- (CGI)
+- (CGIPersistantObject *)pollObjectForPoll:(DCPoll *)poll;
 
 @end
 

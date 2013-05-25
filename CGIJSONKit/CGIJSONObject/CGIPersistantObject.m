@@ -115,6 +115,18 @@
     }
 }
 
+- (id)init
+{
+    if (self = [self init])
+    {
+        if ([self respondsToSelector:@selector(awakeFromPersistance:)])
+        {
+            [self awakeFromPersistance:nil];
+        }
+    }
+    return self;
+}
+
 - (id)persistaceObject
 {
     // Get a list of properties.
