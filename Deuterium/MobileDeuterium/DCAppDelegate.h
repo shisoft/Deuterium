@@ -26,6 +26,7 @@ static inline void DCSetFrameWidth(UIView *view, CGFloat newWidth)
 extern dispatch_group_t DCBackgroundTasks;
 extern NSString *const DCUsernameKeychainItemName;
 extern NSString *const DCDeuteriumKeychainAccessGroup;
+extern NSString *const DCHeartbeatNotification;
 
 @interface DCAppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -8,9 +8,20 @@
 
 #import "DCDiscoveryOptionViewController.h"
 
+#import "DCAppDelegate.h"
+#import <DeuteriumCore/DeuteriumCore.h>
+
 @interface DCDiscoveryOptionViewController ()
 
+@property NSDictionary *interests;
+@property NSArray *orderedInterests;
+@property NSArray *userInterests;
+@property NSMutableArray *currentUserInterests;
+
+@property BOOL loading;
+
 - (IBAction)reset:(id)sender;
+- (IBAction)refresh:(id)sender;
 
 @end
 
@@ -29,11 +40,35 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if (DCHasRefreshControl())
+    {
+        UIRefreshControl *_refreshControl = [[UIRefreshControl alloc] init];
+        
+        [_refreshControl addTarget:self
+                            action:@selector(refresh:)
+                  forControlEvents:UIControlEventValueChanged];
+        
+        self.refreshControl = _refreshControl;
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.currentUserInterests = [[defaults objectForKey:@"DiscoveryAspects"] mutableCopy];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self refresh:self];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[self.currentUserInterests count] ? self.currentUserInterests : self.userInterests forKey:@"DiscoveryAspects"];
+    [defaults synchronize];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,82 +77,132 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Target actions
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)refresh:(id)sender
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    if (self.loading)
+        return;
+    self.loading = YES;
+    
+    if (DCHasRefreshControl())
+    {
+        [self.refreshControl beginRefreshing];
+    }
+    
+    dispatch_group_async(DCBackgroundTasks,
+                         dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                         ^{
+                             @try
+                             {
+                                 // Pull global options
+                                 
+                                 DCGetTopicExplanationsRequest *txq = [[DCGetTopicExplanationsRequest alloc] init];
+                                 DCWrapper *txr = [txq getTopicExplanations];
+                                 self.interests = txr.d;
+                                 
+                                 // Sort them.
+                                 
+                                 self.orderedInterests = [[self.interests allKeys] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                                     return [self.interests[obj1] compare:self.interests[obj2] options:NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch];
+                                 }];
+                                 
+                                 // Pull user options
+                                 
+                                 DCGetUserTopicDistRequest *utdq = [[DCGetUserTopicDistRequest alloc] init];
+                                 NSArray *utdx = [utdq getUserTopicDist];
+                                 
+                                 double sum = 0.0;
+                                 for (NSNumber *x in utdx)
+                                 {
+                                     sum += [x doubleValue];
+                                 }
+                                 sum /= (double)[utdx count];
+                                 
+                                 NSMutableArray *utmark = [NSMutableArray array];
+                                 for (NSUInteger i = 0; i < [utdx count]; i++)
+                                 {
+                                     if ([utdx[i] doubleValue] - sum >= 0.02)
+                                         [utmark addObject:CGISTR(@"%i", i)];
+                                 }
+                                 self.userInterests = [utmark copy];
+                                 
+                                 if (![self.currentUserInterests count])
+                                     self.currentUserInterests = utmark;
+                             }
+                             @finally
+                             {
+                                 // Clean up
+                                 
+                                 dispatch_async(dispatch_get_main_queue(),
+                                                ^{
+                                                    if (DCHasRefreshControl())
+                                                    {
+                                                        [self.refreshControl endRefreshing];
+                                                    }
+                                                    
+                                                    [self.tableView reloadData];
+                                                    self.loading = NO;
+                                                });
+                             }
+                         });
 }
+
+- (void)reset:(id)sender
+{
+    self.currentUserInterests = [self.userInterests mutableCopy];
+    [self.tableView reloadData];
+}
+
+#pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.orderedInterests count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"ideaCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    id key = self.orderedInterests[indexPath.row];
+    cell.textLabel.text = self.interests[key];
+    
+    if ([self.currentUserInterests containsObject:key])
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    id key = self.orderedInterests[indexPath.row];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    if ([self.currentUserInterests containsObject:key])
+    {
+        [self.currentUserInterests removeObject:key];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    else
+    {
+        [self.currentUserInterests addObject:key];
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    
+    [tableView selectRowAtIndexPath:nil
+                           animated:YES
+                     scrollPosition:UITableViewScrollPositionNone];
 }
 
 @end

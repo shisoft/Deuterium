@@ -14,9 +14,24 @@
 
 @interface DCDiscoveryViewController ()
 
+@property NSArray *currentUserInterests;
+
 @end
 
 @implementation DCDiscoveryViewController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *currentUserInterests = [defaults objectForKey:@"DiscoveryAspects"];
+    if (!self.currentUserInterests || ![currentUserInterests isEqual:self.currentUserInterests])
+    {
+        self.currentUserInterests = currentUserInterests ? currentUserInterests : @[];
+        [self.newsControllers removeAllObjects];
+    }
+    
+    [super viewWillAppear:animated];
+}
 
 - (NSArray *)recentNews
 {
@@ -25,7 +40,7 @@
     discovery.lastT = [NSDate distantPast];
     discovery.count = 25;
     discovery.threshold = 0.02;
-    discovery.topics = @[];
+    discovery.topics = self.currentUserInterests;
     return [discovery streamDiscover];
 }
 
@@ -36,7 +51,7 @@
     discovery.lastT = [NSDate distantPast];
     discovery.count = 25;
     discovery.threshold = 0.02;
-    discovery.topics = @[];
+    discovery.topics = self.currentUserInterests;
     return [discovery streamDiscover];
 }
 

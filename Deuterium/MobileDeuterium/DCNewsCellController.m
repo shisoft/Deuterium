@@ -14,6 +14,23 @@
 
 @implementation DCNewsCellController
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(heartbeat:)
+                                                     name:DCHeartbeatNotification
+                                                   object:nil];
+    }
+    return self;
+}
+
+- (void)heartbeat:(NSNotification *)notification
+{
+    self.newsCell.timeField.text = [self timeDescription];
+}
+
 - (NSString *)timeDescription
 {
     // Set up display time:

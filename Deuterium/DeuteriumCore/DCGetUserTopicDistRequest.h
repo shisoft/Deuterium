@@ -14,6 +14,6 @@
 
 @interface DCGetUserTopicDistRequest (DCMethods)
 
-- (NSArray *)getUserTopicDistRequest;
+- (NSArray *)getUserTopicDist;
 
 @end

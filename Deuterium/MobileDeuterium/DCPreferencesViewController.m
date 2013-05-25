@@ -125,6 +125,9 @@
             KeychainItemWrapper *keychainItem = [DCAppDelegate keychainItem];
             [keychainItem resetKeychainItem];
             [DCAppDelegate thisDelegate].connected = NO;
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults removeObjectForKey:@"DiscoveryAspects"];
+            [defaults synchronize];
             [self dismissViewControllerAnimated:YES
                                      completion:nil];
         }

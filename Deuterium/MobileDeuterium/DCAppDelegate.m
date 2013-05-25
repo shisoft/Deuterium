@@ -13,6 +13,7 @@
 dispatch_group_t DCBackgroundTasks;
 NSString *const DCUsernameKeychainItemName = @"username";
 NSString *const DCDeuteriumKeychainAccessGroup = @"info.maxchan.deuterium";
+NSString *const DCHeartbeatNotification = @"info.maxchan.deuterium.heartbeat";
 
 @interface DCAppDelegate ()
 
@@ -34,6 +35,8 @@ NSString *const DCDeuteriumKeychainAccessGroup = @"info.maxchan.deuterium";
 
 - (void)watchdog;
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:DCHeartbeatNotification
+                                                        object:self];
     if (dispatch_group_wait(DCBackgroundTasks, DISPATCH_TIME_NOW))
     {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;

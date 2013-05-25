@@ -15,7 +15,6 @@
 @interface DCNewsViewController ()
 
 @property BOOL loading;
-@property BOOL haveTimer;
 
 - (IBAction)refresh:(id)sender;
 - (IBAction)loadMore:(id)sender;
@@ -66,16 +65,6 @@
     if (![self.newsControllers count])
     {
         [self refresh:self];
-    }
-    
-    if (!self.haveTimer)
-    {
-        [NSTimer scheduledTimerWithTimeInterval:5
-                                         target:self.tableView
-                                       selector:@selector(reloadData)
-                                       userInfo:nil
-                                        repeats:YES];
-        self.haveTimer = YES;
     }
     
 }
@@ -214,7 +203,7 @@
 
 - (void)loadMore:(id)sender
 {
-    if (self.loading)
+    if (self.loading || ![self.newsControllers count])
     {
         return;
     }
