@@ -6,18 +6,72 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		1D090978175049790037174F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D02B5FC174BAB9900158DF5 /* CGIJSONKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D02B61A174BB23B00158DF5;
+			remoteInfo = CGIJSONObject;
+		};
+		1D09097A175049790037174F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D02B5FC174BAB9900158DF5 /* CGIJSONKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D02B67D174BD1E300158DF5;
+			remoteInfo = CGIJSONRemoteObject;
+		};
+		1D09097C175049790037174F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D02B5FC174BAB9900158DF5 /* CGIJSONKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1DED1D06174BF21000AE1D98;
+			remoteInfo = MobileJSONObject;
+		};
+		1D09097E175049790037174F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D02B5FC174BAB9900158DF5 /* CGIJSONKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1DED1D1E174BF2BE00AE1D98;
+			remoteInfo = MobileJSONRemoteObject;
+		};
+		1D090983175049790037174F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D02B606174BABBC00158DF5 /* Deuterium.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1DED1D5A174C861500AE1D98;
+			remoteInfo = DeuteriumCore;
+		};
+		1D090985175049790037174F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D02B606174BABBC00158DF5 /* Deuterium.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D028979174DD9B900C76CEB;
+			remoteInfo = MobileDeuteriumCore;
+		};
+		1D090987175049790037174F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D02B606174BABBC00158DF5 /* Deuterium.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D02899E174DDB4300C76CEB;
+			remoteInfo = MobileDeuterium;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1D02B5F3174BAA5B00158DF5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1D02B5F4174BAA7500158DF5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		1D02B5FC174BAB9900158DF5 /* CGIJSONKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CGIJSONKit.xcodeproj; path = CGIJSONKit/CGIJSONKit.xcodeproj; sourceTree = "<group>"; };
 		1D02B606174BABBC00158DF5 /* Deuterium.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Deuterium.xcodeproj; path = Deuterium/Deuterium.xcodeproj; sourceTree = "<group>"; };
 		1D02B610174BABE400158DF5 /* DeuteriumDocs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeuteriumDocs.xcodeproj; path = DeuteriumDocs/DeuteriumDocs.xcodeproj; sourceTree = "<group>"; };
+		1D0909891750498C0037174F /* Picons to UIToolBarItem.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "Picons to UIToolBarItem.app"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		1D02B5EC174BAA4F00158DF5 = {
 			isa = PBXGroup;
 			children = (
+				1D090973175049790037174F /* Tools */,
 				1D02B610174BABE400158DF5 /* DeuteriumDocs.xcodeproj */,
 				1D02B606174BABBC00158DF5 /* Deuterium.xcodeproj */,
 				1D02B5FC174BAB9900158DF5 /* CGIJSONKit.xcodeproj */,
@@ -29,6 +83,10 @@
 		1D02B5FD174BAB9900158DF5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				1D090979175049790037174F /* CGIJSONObject.framework */,
+				1D09097B175049790037174F /* CGIJSONRemoteObject.framework */,
+				1D09097D175049790037174F /* CGIJSONObject.framework */,
+				1D09097F175049790037174F /* CGIJSONRemoteObject.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -36,6 +94,9 @@
 		1D02B607174BABBC00158DF5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				1D090984175049790037174F /* DeuteriumCore.framework */,
+				1D090986175049790037174F /* DeuteriumCore.framework */,
+				1D090988175049790037174F /* MobileDeuterium.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -45,6 +106,14 @@
 			children = (
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1D090973175049790037174F /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				1D0909891750498C0037174F /* Picons to UIToolBarItem.app */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +153,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1D090979175049790037174F /* CGIJSONObject.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CGIJSONObject.framework;
+			remoteRef = 1D090978175049790037174F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D09097B175049790037174F /* CGIJSONRemoteObject.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CGIJSONRemoteObject.framework;
+			remoteRef = 1D09097A175049790037174F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D09097D175049790037174F /* CGIJSONObject.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework.static;
+			path = CGIJSONObject.framework;
+			remoteRef = 1D09097C175049790037174F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D09097F175049790037174F /* CGIJSONRemoteObject.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework.static;
+			path = CGIJSONRemoteObject.framework;
+			remoteRef = 1D09097E175049790037174F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D090984175049790037174F /* DeuteriumCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DeuteriumCore.framework;
+			remoteRef = 1D090983175049790037174F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D090986175049790037174F /* DeuteriumCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework.static;
+			path = DeuteriumCore.framework;
+			remoteRef = 1D090985175049790037174F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D090988175049790037174F /* MobileDeuterium.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = MobileDeuterium.app;
+			remoteRef = 1D090987175049790037174F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin XCBuildConfiguration section */
 		1D02B5F1174BAA4F00158DF5 /* Debug */ = {
