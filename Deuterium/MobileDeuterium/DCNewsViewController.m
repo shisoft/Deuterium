@@ -12,13 +12,12 @@
 #import "DCAppDelegate.h"
 #import "DCNewsDetailViewController.h"
 
-#define refreshButton navigationItem.leftBarButtonItem
-
 @interface DCNewsViewController ()
 
-@property NSMutableArray *newsControllers;
+@property BOOL loading;
 
 - (IBAction)refresh:(id)sender;
+- (IBAction)loadMore:(id)sender;
 
 @end
 
@@ -83,8 +82,22 @@
 
 #pragma mark - Target actions
 
+- (NSArray *)recentNews
+{
+    DCNewsRequest *newsRequest = [[DCNewsRequest alloc] init];
+    newsRequest.count = 25;
+    newsRequest.lastT = [NSDate distantPast];
+    return [newsRequest getWhatzNew];
+}
+
 - (void)refresh:(id)sender
 {
+    if (self.loading)
+    {
+        return;
+    }
+    self.loading = YES;
+    
     if (DCHasRefreshControl())
     {
         [self.refreshControl beginRefreshing];
@@ -102,10 +115,7 @@
                                  self.newsControllers = [NSMutableArray arrayWithCapacity:25];
                              }
                              
-                             DCNewsRequest *newsRequest = [[DCNewsRequest alloc] init];
-                             newsRequest.count = 25;
-                             newsRequest.lastT = [NSDate distantPast];
-                             NSArray *news = [newsRequest getWhatzNew];
+                             NSArray *news = [self recentNews];
                              
                              if ([news isKindOfClass:[NSArray class]])
                              {
@@ -139,9 +149,9 @@
                                                 }
                                                 
                                                 [self.tableView reloadData];
+                                                self.loading = NO;
                                             });
-                         }
-                         );
+                         });
 }
 
 #pragma mark - Table view data source
@@ -149,26 +159,42 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.newsControllers count];
+    return [self.newsControllers count] + ((self.newsControllers) ? 1 : 0);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"newsCell";
-    DCNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    DCNewsCellController *controller = self.newsControllers[indexPath.row];
-    controller.newsCell = cell;
-    [controller displayNews];
-    
-    return cell;
+    if (indexPath.row < [self.newsControllers count])
+    {
+        NSString *CellIdentifier = @"newsCell";
+        DCNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        DCNewsCellController *controller = self.newsControllers[indexPath.row];
+        controller.newsCell = cell;
+        [controller displayNews];
+        
+        return cell;
+    }
+    else
+    {
+        NSString *CellIdentifier = @"loadingCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        [self loadMore:self];
+        return cell;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DCNewsCellController *controller = self.newsControllers[indexPath.row];
-    
-    return [controller heightForCell];
+    if (indexPath.row < [self.newsControllers count])
+    {
+        DCNewsCellController *controller = self.newsControllers[indexPath.row];
+        return [controller heightForCell];
+    }
+    else
+    {
+        return 44;
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -180,17 +206,76 @@
     }
 }
 
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)loadMore:(id)sender
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if (self.loading)
+    {
+        return;
+    }
+    self.loading = YES;
+    
+    if (DCHasRefreshControl())
+    {
+        [self.refreshControl beginRefreshing];
+    }
+    else
+    {
+        self.refreshButton.enabled = NO;
+    }
+    
+    dispatch_group_async(DCBackgroundTasks,
+                         dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                         ^{
+                             if (!self.newsControllers)
+                             {
+                                 self.newsControllers = [NSMutableArray arrayWithCapacity:25];
+                             }
+                             
+                             NSArray *news = [self nextPage];
+                             
+                             if ([news isKindOfClass:[NSArray class]])
+                             {
+                                 NSMutableArray *controllers = [NSMutableArray arrayWithCapacity:[news count]];
+                                 for (DCNews *newsItem in news)
+                                 {
+                                     DCNewsCellController *controller = [[DCNewsCellController alloc] init];
+                                     controller.news = newsItem;
+                                     [controllers addObject:controller];
+                                 }
+                                 
+                                 [self.newsControllers addObjectsFromArray:controllers];
+                                 
+                                 dispatch_async(dispatch_get_main_queue(),
+                                                ^{
+                                                    [self.tableView reloadData];
+                                                });
+                             }
+                             
+                             // Clean up
+                             
+                             dispatch_async(dispatch_get_main_queue(),
+                                            ^{
+                                                if (DCHasRefreshControl())
+                                                {
+                                                    [self.refreshControl endRefreshing];
+                                                }
+                                                else
+                                                {
+                                                    self.refreshButton.enabled = YES;
+                                                }
+                                                
+                                                [self.tableView reloadData];
+                                                self.loading = NO;
+                                            });
+                         });
+}
+
+- (NSArray *)nextPage
+{
+    DCNewsRequest *newsRequest = [[DCNewsRequest alloc] init];
+    newsRequest.count = 25;
+    newsRequest.lastT = [[self.newsControllers lastObject] news].publishTime;
+    return [newsRequest getWhatzNew];
 }
 
 @end

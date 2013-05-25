@@ -7,10 +7,10 @@
 //
 
 #import "DCDiscoveryRequest.h"
-#import "DCWrapper.h"
+#import "DCNews.h"
 
 @implementation DCDiscoveryRequest
 
-CGIRemoteMethodClass(streamDiscover, DCWrapper);
+CGIRemoteMethodClass(streamDiscover, DCNews);
 
 @end

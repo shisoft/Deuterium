@@ -148,8 +148,8 @@
 {
     return MAX(44,
                38 + [self.news.content sizeWithFont:[UIFont systemFontOfSize:13]
-                                           forWidth:280.0
-                                      lineBreakMode:NSLineBreakByWordWrapping].height);
+                                  constrainedToSize:CGSizeMake(280.0, 100.0)
+                                      lineBreakMode:NSLineBreakByCharWrapping].height);
 }
 
 @end

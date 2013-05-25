@@ -11,9 +11,9 @@
 @interface DCDiscoveryRequest : CGIRemoteObject
 
 @property NSDate *beforeT;
-@property NSString *count;
+@property NSUInteger count;
 @property NSDate *lastT;
-@property NSString *threshold;
+@property double threshold;
 @property NSArray *topics;
 
 @end

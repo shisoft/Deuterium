@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#define refreshButton navigationItem.leftBarButtonItem
+
 @interface DCNewsViewController : UITableViewController
+
+@property NSMutableArray *newsControllers;
+
+- (NSArray *)recentNews;
+- (NSArray *)nextPage;
 
 @end
