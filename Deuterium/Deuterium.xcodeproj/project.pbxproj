@@ -110,6 +110,10 @@
 		F501676D1750669E00FF5DE1 /* DCUserServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F501676B1750669E00FF5DE1 /* DCUserServices.m */; };
 		F50167701750677C00FF5DE1 /* DCGetUserServicesRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F501676E1750677C00FF5DE1 /* DCGetUserServicesRequest.h */; };
 		F50167711750677C00FF5DE1 /* DCGetUserServicesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F501676F1750677C00FF5DE1 /* DCGetUserServicesRequest.m */; };
+		F50167821750777800FF5DE1 /* DCGetUserNicknameRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167801750777800FF5DE1 /* DCGetUserNicknameRequest.h */; };
+		F50167831750777800FF5DE1 /* DCGetUserNicknameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167811750777800FF5DE1 /* DCGetUserNicknameRequest.m */; };
+		F50167861750779200FF5DE1 /* DCChangeNicknameRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167841750779200FF5DE1 /* DCChangeNicknameRequest.h */; };
+		F50167871750779200FF5DE1 /* DCChangeNicknameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167851750779200FF5DE1 /* DCChangeNicknameRequest.m */; };
 		F56096CA174CD7ED0033D72B /* DCNews.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096C8174CD7ED0033D72B /* DCNews.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F56096CB174CD7ED0033D72B /* DCNews.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096C9174CD7ED0033D72B /* DCNews.m */; };
 		F56096CE174CD8BF0033D72B /* DCMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096CC174CD8BF0033D72B /* DCMedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -213,6 +217,10 @@
 		F501676B1750669E00FF5DE1 /* DCUserServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCUserServices.m; sourceTree = "<group>"; };
 		F501676E1750677C00FF5DE1 /* DCGetUserServicesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCGetUserServicesRequest.h; sourceTree = "<group>"; };
 		F501676F1750677C00FF5DE1 /* DCGetUserServicesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGetUserServicesRequest.m; sourceTree = "<group>"; };
+		F50167801750777800FF5DE1 /* DCGetUserNicknameRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCGetUserNicknameRequest.h; sourceTree = "<group>"; };
+		F50167811750777800FF5DE1 /* DCGetUserNicknameRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGetUserNicknameRequest.m; sourceTree = "<group>"; };
+		F50167841750779200FF5DE1 /* DCChangeNicknameRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCChangeNicknameRequest.h; sourceTree = "<group>"; };
+		F50167851750779200FF5DE1 /* DCChangeNicknameRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCChangeNicknameRequest.m; sourceTree = "<group>"; };
 		F56096C8174CD7ED0033D72B /* DCNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNews.h; sourceTree = "<group>"; };
 		F56096C9174CD7ED0033D72B /* DCNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNews.m; sourceTree = "<group>"; };
 		F56096CC174CD8BF0033D72B /* DCMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCMedia.h; sourceTree = "<group>"; };
@@ -397,9 +405,13 @@
 				F501675A1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.h */,
 				F501675B1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.m */,
 				F501675E175055BE00FF5DE1 /* DCGetUserTopicDistRequest.h */,
+				F501675F175055BE00FF5DE1 /* DCGetUserTopicDistRequest.m */,
 				F501676E1750677C00FF5DE1 /* DCGetUserServicesRequest.h */,
 				F501676F1750677C00FF5DE1 /* DCGetUserServicesRequest.m */,
-				F501675F175055BE00FF5DE1 /* DCGetUserTopicDistRequest.m */,
+				F50167801750777800FF5DE1 /* DCGetUserNicknameRequest.h */,
+				F50167811750777800FF5DE1 /* DCGetUserNicknameRequest.m */,
+				F50167841750779200FF5DE1 /* DCChangeNicknameRequest.h */,
+				F50167851750779200FF5DE1 /* DCChangeNicknameRequest.m */,
 				1D09098B17505FE90037174F /* DCPoll.h */,
 				1D09098C17505FE90037174F /* DCPoll.m */,
 				F50167661750617700FF5DE1 /* DCPollDiscovery.h */,
@@ -474,6 +486,8 @@
 				F50167681750617700FF5DE1 /* DCPollDiscovery.h in Headers */,
 				F501676C1750669E00FF5DE1 /* DCUserServices.h in Headers */,
 				F50167701750677C00FF5DE1 /* DCGetUserServicesRequest.h in Headers */,
+				F50167821750777800FF5DE1 /* DCGetUserNicknameRequest.h in Headers */,
+				F50167861750779200FF5DE1 /* DCChangeNicknameRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +732,8 @@
 				F50167691750617700FF5DE1 /* DCPollDiscovery.m in Sources */,
 				F501676D1750669E00FF5DE1 /* DCUserServices.m in Sources */,
 				F50167711750677C00FF5DE1 /* DCGetUserServicesRequest.m in Sources */,
+				F50167831750777800FF5DE1 /* DCGetUserNicknameRequest.m in Sources */,
+				F50167871750779200FF5DE1 /* DCChangeNicknameRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
