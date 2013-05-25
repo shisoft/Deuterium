@@ -106,6 +106,8 @@
 		F50167691750617700FF5DE1 /* DCPollDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167671750617700FF5DE1 /* DCPollDiscovery.m */; };
 		F501676C1750669E00FF5DE1 /* DCUserServices.h in Headers */ = {isa = PBXBuildFile; fileRef = F501676A1750669E00FF5DE1 /* DCUserServices.h */; };
 		F501676D1750669E00FF5DE1 /* DCUserServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F501676B1750669E00FF5DE1 /* DCUserServices.m */; };
+		F50167701750677C00FF5DE1 /* DCGetUserServicesRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F501676E1750677C00FF5DE1 /* DCGetUserServicesRequest.h */; };
+		F50167711750677C00FF5DE1 /* DCGetUserServicesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F501676F1750677C00FF5DE1 /* DCGetUserServicesRequest.m */; };
 		F56096CA174CD7ED0033D72B /* DCNews.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096C8174CD7ED0033D72B /* DCNews.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F56096CB174CD7ED0033D72B /* DCNews.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096C9174CD7ED0033D72B /* DCNews.m */; };
 		F56096CE174CD8BF0033D72B /* DCMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096CC174CD8BF0033D72B /* DCMedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -203,6 +205,8 @@
 		F50167671750617700FF5DE1 /* DCPollDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPollDiscovery.m; sourceTree = "<group>"; };
 		F501676A1750669E00FF5DE1 /* DCUserServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUserServices.h; sourceTree = "<group>"; };
 		F501676B1750669E00FF5DE1 /* DCUserServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCUserServices.m; sourceTree = "<group>"; };
+		F501676E1750677C00FF5DE1 /* DCGetUserServicesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCGetUserServicesRequest.h; sourceTree = "<group>"; };
+		F501676F1750677C00FF5DE1 /* DCGetUserServicesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGetUserServicesRequest.m; sourceTree = "<group>"; };
 		F56096C8174CD7ED0033D72B /* DCNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNews.h; sourceTree = "<group>"; };
 		F56096C9174CD7ED0033D72B /* DCNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNews.m; sourceTree = "<group>"; };
 		F56096CC174CD8BF0033D72B /* DCMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCMedia.h; sourceTree = "<group>"; };
@@ -390,6 +394,8 @@
 				F501675F175055BE00FF5DE1 /* DCGetUserTopicDistRequest.m */,
 				F5016762175055F300FF5DE1 /* DCPollRequest.h */,
 				F5016763175055F400FF5DE1 /* DCPollRequest.m */,
+				F501676E1750677C00FF5DE1 /* DCGetUserServicesRequest.h */,
+				F501676F1750677C00FF5DE1 /* DCGetUserServicesRequest.m */,
 				F56096C8174CD7ED0033D72B /* DCNews.h */,
 				F56096C9174CD7ED0033D72B /* DCNews.m */,
 				F501676A1750669E00FF5DE1 /* DCUserServices.h */,
@@ -457,6 +463,7 @@
 				1D09098D17505FE90037174F /* DCPoll.h in Headers */,
 				F50167681750617700FF5DE1 /* DCPollDiscovery.h in Headers */,
 				F501676C1750669E00FF5DE1 /* DCUserServices.h in Headers */,
+				F50167701750677C00FF5DE1 /* DCGetUserServicesRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,6 +705,7 @@
 				1D09098E17505FE90037174F /* DCPoll.m in Sources */,
 				F50167691750617700FF5DE1 /* DCPollDiscovery.m in Sources */,
 				F501676D1750669E00FF5DE1 /* DCUserServices.m in Sources */,
+				F50167711750677C00FF5DE1 /* DCGetUserServicesRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
