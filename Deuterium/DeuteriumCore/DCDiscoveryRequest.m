@@ -11,6 +11,6 @@
 
 @implementation DCDiscoveryRequest
 
-CGIRemoteMethodClass(streamDiscover, DCWrapper);
+CGIRemoteMethodClass(streamDiscover, NSArray);
 
 @end
