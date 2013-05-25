@@ -15,6 +15,7 @@
 @property (weak) DCNews *news;
 @property (weak) DCNewsCell *newsCell;
 
+- (NSComparisonResult)compare:(DCNewsCellController *)other;
 - (void)displayNews;
 
 @end
