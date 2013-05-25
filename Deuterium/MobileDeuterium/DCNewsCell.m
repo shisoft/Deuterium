@@ -7,6 +7,7 @@
 //
 
 #import "DCNewsCell.h"
+#import "DCAppDelegate.h"
 
 @implementation DCNewsCell
 
@@ -27,6 +28,35 @@
     {
         label.highlighted = self.highlighted;
     }
+}
+
+- (void)loadAvatar
+{
+    NSURL *avatarURL = self.avatarURL;
+    self.avatarView.image = nil;
+    dispatch_group_async(DCBackgroundTasks,
+                         dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                         ^
+    {
+        NSURLRequest *request = [NSURLRequest requestWithURL:avatarURL];
+        
+        NSURLCache *cache = [NSURLCache sharedURLCache];
+        
+        if ([cache cachedResponseForRequest:request])
+        {
+            dispatch_async(dispatch_get_main_queue(),
+                           ^
+            {
+                
+            }
+                           );
+        }
+        else
+        {
+            
+        }
+    }
+                         );
 }
 
 @end

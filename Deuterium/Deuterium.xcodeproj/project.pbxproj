@@ -86,6 +86,8 @@
 		1D09096C174FD31A0037174F /* DCNewsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09096A174FD31A0037174F /* DCNewsRequest.h */; };
 		1D09096D174FD31A0037174F /* DCNewsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09096B174FD31A0037174F /* DCNewsRequest.m */; };
 		1D090970174FD6B40037174F /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D090972174FD6B40037174F /* Localized.strings */; };
+		1D09098D17505FE90037174F /* DCPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09098B17505FE90037174F /* DCPoll.h */; };
+		1D09098E17505FE90037174F /* DCPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09098C17505FE90037174F /* DCPoll.m */; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
@@ -172,6 +174,8 @@
 		1D09096A174FD31A0037174F /* DCNewsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNewsRequest.h; sourceTree = "<group>"; };
 		1D09096B174FD31A0037174F /* DCNewsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsRequest.m; sourceTree = "<group>"; };
 		1D090971174FD6B40037174F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localized.strings"; sourceTree = "<group>"; };
+		1D09098B17505FE90037174F /* DCPoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPoll.h; sourceTree = "<group>"; };
+		1D09098C17505FE90037174F /* DCPoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPoll.m; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -371,6 +375,8 @@
 				F501675A1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.h */,
 				F501675B1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.m */,
 				F501675E175055BE00FF5DE1 /* DCGetUserTopicDistRequest.h */,
+				1D09098B17505FE90037174F /* DCPoll.h */,
+				1D09098C17505FE90037174F /* DCPoll.m */,
 				F501675F175055BE00FF5DE1 /* DCGetUserTopicDistRequest.m */,
 				F5016762175055F300FF5DE1 /* DCPollRequest.h */,
 				F5016763175055F400FF5DE1 /* DCPollRequest.m */,
@@ -436,6 +442,7 @@
 				F501675C1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.h in Headers */,
 				F5016760175055BE00FF5DE1 /* DCGetUserTopicDistRequest.h in Headers */,
 				F5016764175055F400FF5DE1 /* DCPollRequest.h in Headers */,
+				1D09098D17505FE90037174F /* DCPoll.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +681,7 @@
 				F501675D1750558F00FF5DE1 /* DCGetTopicExplanationsRequest.m in Sources */,
 				F5016761175055BE00FF5DE1 /* DCGetUserTopicDistRequest.m in Sources */,
 				F5016765175055F400FF5DE1 /* DCPollRequest.m in Sources */,
+				1D09098E17505FE90037174F /* DCPoll.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,5 +14,9 @@
 @property (weak) IBOutlet UILabel *timeField;
 @property (weak) IBOutlet UILabel *titleField;
 @property (weak) IBOutlet UILabel *contentField;
+@property (weak) IBOutlet UIImageView *avatarView;
+@property NSURL *avatarURL;
+
+- (void)loadAvatar;
 
 @end
