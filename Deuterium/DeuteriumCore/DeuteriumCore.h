@@ -13,7 +13,7 @@
 #import <DeuteriumCore/DCSignUpRequest.h>
 #import <DeuteriumCore/DCDiscoveryRequest.h>
 #import <DeuteriumCore/DCGetTopicExplanationsRequest.h>
-#import <DeuteriumCore/DCUserTopicDistRequest.h>
+#import <DeuteriumCore/DCGetUserTopicDistRequest.h>
 #import <DeuteriumCore/DCGetUserServicesRequest.h>
 #import <DeuteriumCore/DCGetUserNicknameRequest.h>
 #import <DeuteriumCore/DCChangeNicknameRequest.h>
