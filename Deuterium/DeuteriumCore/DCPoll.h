@@ -13,21 +13,12 @@
 
 @protocol DCPollDelegate <NSObject>
 
-@required
-- (id <CGIPersistantObject>)poll:(DCPoll *)poll objectForKey:(NSString *)key;
-- (void)poll:(DCPoll *)poll receivedObject:(id)object forKey:(NSString *)key
+- (CGIPersistantObject *)pollObjectForPoll:(DCPoll *)poll;
 
 @end
 
 @interface DCPoll : NSObject
 
-+ (instancetype)defaultPoll;
-
-- (void)addDelegate:(id<DCPollDelegate>)delegate forKey:(NSString *)key;
-- (void)removeDelegate:(id<DCPollDelegate>)delegate;
-- (void)removeKey:(NSString *)key;
-
-- (void)start;
-- (void)stop;
+@property NSNotificationCenter *pollNotificationCenter;
 
 @end
