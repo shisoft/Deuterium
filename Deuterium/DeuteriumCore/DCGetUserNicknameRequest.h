@@ -8,6 +8,14 @@
 
 #import <CGIJSONRemoteObject/CGIJSONRemoteObject.h>
 
+@class DCWrapper;
+
 @interface DCGetUserNicknameRequest : CGIRemoteObject
+
+@interface DCGetUserNicknameRequest (DCMethods)
+
+- (DCWrapper *)getUserNickname;
+
+@end
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import "DCGetUserNicknameRequest.h"
+#import "DCWrapper.h"
 
 @implementation DCGetUserNicknameRequest
+
+CGIRemoteMethodClass(getUserNickname, DCWrapper);
 
 @end
