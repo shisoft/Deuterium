@@ -10,6 +10,4 @@
 
 @implementation DCGetUserTopicDistRequest
 
-CGIRemoteMethodClass(getUserTopicDistRequest, NSArray);
-
 @end
