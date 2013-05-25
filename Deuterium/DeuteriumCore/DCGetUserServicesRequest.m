@@ -10,4 +10,6 @@
 
 @implementation DCGetUserServicesRequest
 
+CGIRemoteMethodClass(getUserServices, NSArray);
+
 @end

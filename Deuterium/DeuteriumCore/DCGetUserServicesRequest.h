@@ -11,3 +11,9 @@
 @interface DCGetUserServicesRequest : CGIRemoteObject
 
 @end
+
+@interface DCGetUserServicesRequest (DCMethods)
+
+- (NSArray *)getUserServices;
+
+@end
