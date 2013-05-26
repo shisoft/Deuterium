@@ -92,7 +92,7 @@ NSString *const DCHeartbeatNotification = @"info.maxchan.deuterium.heartbeat";
                 dispatch_async(dispatch_get_main_queue(),
                                ^{
                                    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title", @"")
-                                                               message:NSLocalizedString(@"no-server", @"")
+                                                               message:NSLocalizedString(@"err.no-server", @"")
                                                               delegate:nil
                                                      cancelButtonTitle:NSLocalizedString(@"ui.ok", @"")
                                                      otherButtonTitles:nil] show];
