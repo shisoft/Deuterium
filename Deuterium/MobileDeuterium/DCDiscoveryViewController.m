@@ -11,10 +11,13 @@
 #import "DCAppDelegate.h"
 #import "DCNewsCell.h"
 #import "DCNewsCellController.h"
+#import "DCDiscoveryOptionViewController.h"
 
 @interface DCDiscoveryViewController ()
 
 @property NSArray *currentUserInterests;
+
+@property BOOL doLoad;
 
 @end
 
@@ -23,12 +26,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSArray *currentUserInterests = [defaults objectForKey:@"DiscoveryAspects"];
-    if (!self.currentUserInterests || ![currentUserInterests isEqual:self.currentUserInterests])
-    {
-        self.currentUserInterests = currentUserInterests ? currentUserInterests : @[];
-        [self.newsControllers removeAllObjects];
-    }
+    self.currentUserInterests = [defaults objectForKey:@"DiscoveryAspects"];
+    
+    [self.tableView reloadData];
     
     [super viewWillAppear:animated];
 }
