@@ -88,24 +88,25 @@
                                                                 encoding:NSUTF8StringEncoding
                                                                    error:NULL];
     
+    NSMutableString *content = [NSMutableString string];
+    
     for (DCNews *news = self.news; ![news isKindOfClass:[NSNull class]]; news = news.refer)
     {
-        DCNewsCellController *newsController = [[DCNewsCellController alloc] init];
-        newsController.news = news;
+        [content appendString:[self stringFromNews:news]];
+    }
+    
+    NSDictionary *vars = @{
+                           @"content":  content
+                           };
+    
+    for (NSString *var in vars)
+    {
+        NSString *value = vars[var];
         
-        NSDictionary *vars = @{
-                               @"content":  [self stringFromNews:news]
-                               };
-        
-        for (NSString *var in vars)
-        {
-            NSString *value = vars[var];
-            
-            [template replaceOccurrencesOfString:CGISTR(@"$(%@)", [var uppercaseString])
-                                      withString:value
-                                         options:0
-                                           range:NSMakeRange(0, [template length])];
-        }
+        [template replaceOccurrencesOfString:CGISTR(@"$(%@)", [var uppercaseString])
+                                  withString:value
+                                     options:0
+                                       range:NSMakeRange(0, [template length])];
     }
     
     [self.webView loadHTMLString:template

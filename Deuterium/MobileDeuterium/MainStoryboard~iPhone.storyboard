@@ -714,7 +714,7 @@
                     <navigationItem key="navigationItem" title="探索" id="i2P-0C-9Ij">
                         <barButtonItem key="rightBarButtonItem" title="兴趣" id="JCS-y6-Eve">
                             <connections>
-                                <segue destination="y3C-hs-8Vc" kind="push" id="alr-W3-Mun"/>
+                                <segue destination="y3C-hs-8Vc" kind="push" identifier="modify" id="alr-W3-Mun"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

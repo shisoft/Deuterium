@@ -17,20 +17,26 @@
 
 @property NSArray *currentUserInterests;
 
-@property BOOL doLoad;
-
 @end
 
 @implementation DCDiscoveryViewController
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.currentUserInterests = [defaults objectForKey:@"DiscoveryAspects"];
+    NSArray *currentUserInterests = [defaults objectForKey:@"DiscoveryAspects"];
+    if (!currentUserInterests)
+        currentUserInterests = @[];
+    
+    if (![currentUserInterests isEqual:self.currentUserInterests])
+    {
+        self.currentUserInterests = currentUserInterests;
+        self.newsControllers = [NSMutableArray array];
+    }
     
     [self.tableView reloadData];
     
-    [super viewWillAppear:animated];
+    [super viewDidAppear:animated];
 }
 
 - (NSArray *)recentNews
