@@ -56,7 +56,6 @@ NSString *const CGIRemoteConnectionServerRootKey = @"CGIRemoteConnectionServerRo
 - (NSMutableURLRequest *)URLRequestForMethod:(NSString *)method
 {
     NSURL *methodURL = [NSURL URLWithString:method relativeToURL:self.serverRoot];
-    NSLog(@"Requesting URL: %@", [methodURL absoluteString]);
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:methodURL];
     [request setValue:[self userAgent]
    forHTTPHeaderField:@"User-Agent"];

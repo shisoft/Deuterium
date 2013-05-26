@@ -118,7 +118,8 @@
                                  {
                                      DCNewsCellController *controller = [[DCNewsCellController alloc] init];
                                      controller.news = newsItem;
-                                     [controllers addObject:controller];
+                                     if (![controllers containsObject:controller])
+                                         [controllers addObject:controller];
                                  }
                                  
                                  self.newsControllers = controllers;
@@ -234,7 +235,8 @@
                                  {
                                      DCNewsCellController *controller = [[DCNewsCellController alloc] init];
                                      controller.news = newsItem;
-                                     [controllers addObject:controller];
+                                     if (![controllers containsObject:controller])
+                                         [controllers addObject:controller];
                                  }
                                  
                                  [self.newsControllers addObjectsFromArray:controllers];

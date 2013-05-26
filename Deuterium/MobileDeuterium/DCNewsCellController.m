@@ -130,7 +130,7 @@
 {
     if ([self.news.content length])
     {
-        return [[[self.news.content stringByStrippingHTML] componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] componentsJoinedByString:@" "];
+        return [[[[self.news.content stringByStrippingHTML] componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] componentsJoinedByString:@" "] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     }
     else
     {
@@ -177,6 +177,11 @@
     return 44 + [[self contentDescription] sizeWithFont:[UIFont systemFontOfSize:13]
                                       constrainedToSize:CGSizeMake(280.0, 100.0)
                                           lineBreakMode:NSLineBreakByWordWrapping].height;
+}
+
+- (BOOL)isEqual:(DCNewsCellController *)object
+{
+    return [self.news isEqual:object.news];
 }
 
 @end

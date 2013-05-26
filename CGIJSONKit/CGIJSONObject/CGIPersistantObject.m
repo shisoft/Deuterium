@@ -287,16 +287,35 @@
     return data;
 }
 
+- (NSString *)description
+{
+    if ([self respondsToSelector:@selector(ID)])
+        return CGISTR(@"%@: %@", [super description], [self ID]);
+    else
+        return [super description];
+}
+
 @end
 
 @implementation CGIPersistantObject (CGIEquality)
 
 - (BOOL)isEqual:(id)object
 {
+    BOOL rv = NO;
     if ([self respondsToSelector:@selector(ID)] && [object respondsToSelector:@selector(ID)])
-        return [[self ID] isEqual:[object ID]];
+    {
+        if ([[self ID] respondsToSelector:@selector(compare:)])
+        {
+            rv = [[self ID] compare:[object ID]] == NSOrderedSame;
+        }
+        else
+        {
+            rv = [[self ID] isEqual:[object ID]];
+        }
+    }
     else
-        return [super isEqual:object];
+        rv = [super isEqual:object];
+    return rv;
 }
 
 @end

@@ -37,25 +37,33 @@
                                     repeats:YES];
 }
 
-- (void)loadNews
+- (NSString *)contentFromNews:(DCNews *)news
 {
-    self.loaded = NO;
-    
-    NSMutableString *template = [NSMutableString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"NewsTemplate"
+    NSMutableString *string = [NSMutableString stringWithFormat:@"<div>%@</div>\n", news.content];
+    for (DCMedia *media in news.medias)
+    {
+        [string appendFormat:@"<div style=\"text-align: center;\"><a href=\"%@\"><img src=\"%@\" style=\"max-width: 200px;\"/></a></div>\n", [media.href absoluteString], [media.picThumbnail absoluteString]];
+    }
+    return string;
+}
+
+- (NSString *)stringFromNews:(DCNews *)news
+{
+    NSMutableString *template = [NSMutableString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"NewsItem"
                                                                                                  withExtension:@"html"]
                                                                 encoding:NSUTF8StringEncoding
                                                                    error:NULL];
     
     DCNewsCellController *newsController = [[DCNewsCellController alloc] init];
-    newsController.news = self.news;
+    newsController.news = news;
     
     NSDictionary *vars = @{
-                           @"avatar":   [self.news.authorUC.avatar absoluteString],
+                           @"avatar":   [news.authorUC.avatar absoluteString],
                            @"author":   [newsController authorDescription],
                            @"title":    [newsController titleDescription],
-                           @"service_c": self.news.svr,
+                           @"service_c": news.svr,
                            @"time":     [newsController timeDescription],
-                           @"content":  self.news.content
+                           @"content":  [self contentFromNews:news]
                            };
     
     for (NSString *var in vars)
@@ -66,6 +74,38 @@
                                   withString:value
                                      options:0
                                        range:NSMakeRange(0, [template length])];
+    }
+    
+    return template;
+}
+
+- (void)loadNews
+{
+    self.loaded = NO;
+    
+    NSMutableString *template = [NSMutableString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"NewsTemplate"
+                                                                                                 withExtension:@"html"]
+                                                                encoding:NSUTF8StringEncoding
+                                                                   error:NULL];
+    
+    for (DCNews *news = self.news; ![news isKindOfClass:[NSNull class]]; news = news.refer)
+    {
+        DCNewsCellController *newsController = [[DCNewsCellController alloc] init];
+        newsController.news = news;
+        
+        NSDictionary *vars = @{
+                               @"content":  [self stringFromNews:news]
+                               };
+        
+        for (NSString *var in vars)
+        {
+            NSString *value = vars[var];
+            
+            [template replaceOccurrencesOfString:CGISTR(@"$(%@)", [var uppercaseString])
+                                      withString:value
+                                         options:0
+                                           range:NSMakeRange(0, [template length])];
+        }
     }
     
     [self.webView loadHTMLString:template

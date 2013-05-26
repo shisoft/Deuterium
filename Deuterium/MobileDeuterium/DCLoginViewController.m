@@ -86,7 +86,22 @@
             keychainItem[(__bridge __strong NSString *)(kSecAttrAccount)] = login.user;
             
             DCWrapper *rv = [login login];
-            [DCAppDelegate thisDelegate].connected = [rv boolValue];
+            if ([rv isKindOfClass:[DCWrapper class]])
+            {
+                [DCAppDelegate thisDelegate].connected = [rv boolValue];
+            }
+            else
+            {
+                dispatch_async(dispatch_get_main_queue(),
+                               ^{
+                                   [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title", @"")
+                                                               message:NSLocalizedString(@"err.no-server", @"")
+                                                              delegate:nil
+                                                     cancelButtonTitle:NSLocalizedString(@"ui.ok", @"")
+                                                     otherButtonTitles:nil] show];
+                               });
+                [DCAppDelegate thisDelegate].connected = NO;
+            }
         }
         else
         {
