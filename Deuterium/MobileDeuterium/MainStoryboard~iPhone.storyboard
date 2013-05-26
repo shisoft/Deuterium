@@ -12,6 +12,11 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="g3Z-Du-lit">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="Muj-0j-4Jm"/>
+                                </constraints>
+                            </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LOW-jz-r7x"/>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="正在登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ud0-EV-wfc">
                                 <constraints>
@@ -27,13 +32,17 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="g3Z-Du-lit" firstAttribute="trailing" secondItem="5vo-xA-hZT" secondAttribute="trailing" type="default" id="47A-QW-4dd"/>
+                            <constraint firstItem="g3Z-Du-lit" firstAttribute="centerX" secondItem="LOW-jz-r7x" secondAttribute="centerX" type="default" id="8NU-NS-ob1"/>
                             <constraint firstAttribute="bottom" secondItem="LOW-jz-r7x" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Arn-9i-gdB"/>
+                            <constraint firstItem="g3Z-Du-lit" firstAttribute="bottom" secondItem="5vo-xA-hZT" secondAttribute="bottom" type="default" id="Brd-S7-1Kb"/>
+                            <constraint firstItem="g3Z-Du-lit" firstAttribute="leading" secondItem="5vo-xA-hZT" secondAttribute="leading" type="default" id="Fdl-Ox-Foi"/>
                             <constraint firstItem="ud0-EV-wfc" firstAttribute="centerX" secondItem="LOW-jz-r7x" secondAttribute="centerX" type="default" id="TL3-Lh-R4Q"/>
                             <constraint firstItem="LOW-jz-r7x" firstAttribute="top" secondItem="ud0-EV-wfc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hpN-sv-4Jc"/>
-                            <constraint firstItem="ud0-EV-wfc" firstAttribute="centerX" secondItem="5vo-xA-hZT" secondAttribute="centerX" type="default" id="qFz-uQ-LkB"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="g3Z-Du-lit" id="g6q-tQ-cgh"/>
                         <segue destination="XQX-ur-vZi" kind="modal" identifier="login" id="NIQ-RR-kCc"/>
                         <segue destination="Seg-YT-UN9" kind="modal" identifier="main" modalTransitionStyle="crossDissolve" id="d9x-Fj-Zb9"/>
                     </connections>
@@ -778,6 +787,78 @@
         <image name="news" width="16" height="16"/>
         <image name="preferences" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="DCDiscoveryOptionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCDiscoveryOptionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+                <relationship kind="action" name="reset:"/>
+            </relationships>
+        </class>
+        <class className="DCDiscoveryViewController" superclassName="DCNewsViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCDiscoveryViewController.h"/>
+        </class>
+        <class className="DCEditableCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCEditableCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DCExternalServicesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCExternalServicesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
+        </class>
+        <class className="DCInitialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCInitialViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="DCLoginViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCLoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="action" name="usernameDidFinish:"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DCNewsCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="authorField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="avatarView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="contentField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeField" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleField" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DCNewsDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="DCNewsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loadMore:"/>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
+        </class>
+        <class className="DCPreferencesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCPreferencesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="displayNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="usernameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

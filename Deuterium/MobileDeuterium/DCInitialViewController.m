@@ -12,9 +12,35 @@
 
 @interface DCInitialViewController ()
 
+@property (weak) IBOutlet UIImageView *imageView;
+
 @end
 
 @implementation DCInitialViewController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // Relocate the image view
+    
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    self.imageView.frame = CGRectMake(0.0, -20.0, screenSize.width, screenSize.height);
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) // iPad
+    {
+        
+    }
+    else // iPhones
+    {
+        if (self.view.frame.size.height > 500.0) // iPhone 5
+        {
+            self.imageView.image = [UIImage imageNamed:@"Default-568h"];
+        }
+        else
+        {
+            self.imageView.image = [UIImage imageNamed:@"Default"];
+        }
+    }
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
