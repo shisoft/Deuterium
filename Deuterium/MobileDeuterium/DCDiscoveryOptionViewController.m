@@ -115,14 +115,15 @@
                                  double sum = 0.0;
                                  for (NSNumber *x in utdx)
                                  {
-                                     sum += [x doubleValue];
+                                     sum += ([x respondsToSelector:@selector(doubleValue)]) ? [x doubleValue] : 0;
                                  }
                                  sum /= (double)[utdx count];
                                  
                                  NSMutableArray *utmark = [NSMutableArray array];
                                  for (NSUInteger i = 0; i < [utdx count]; i++)
                                  {
-                                     if ([utdx[i] doubleValue] - sum >= 0.02)
+                                     NSNumber *x = utdx[i];
+                                     if ((([x respondsToSelector:@selector(doubleValue)]) ? [x doubleValue] : 0) - sum >= 0.02)
                                          [utmark addObject:CGISTR(@"%i", i)];
                                  }
                                  self.userInterests = [utmark copy];

@@ -629,7 +629,7 @@
             </objects>
             <point key="canvasLocation" x="564" y="639"/>
         </scene>
-        <!--Discovery View Controller - 探索-->
+        <!--Discovery View Controller - 发现-->
         <scene sceneID="SBa-zb-pJO">
             <objects>
                 <tableViewController id="McX-ND-sAc" customClass="DCDiscoveryViewController" sceneMemberID="viewController">
@@ -720,7 +720,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="探索" id="i2P-0C-9Ij">
+                    <navigationItem key="navigationItem" title="发现" id="i2P-0C-9Ij">
                         <barButtonItem key="rightBarButtonItem" title="兴趣" id="JCS-y6-Eve">
                             <connections>
                                 <segue destination="y3C-hs-8Vc" kind="push" identifier="modify" id="alr-W3-Mun"/>
@@ -765,11 +765,11 @@
             </objects>
             <point key="canvasLocation" x="2175" y="1337"/>
         </scene>
-        <!--Navigation Controller - 探索-->
+        <!--Navigation Controller - 发现-->
         <scene sceneID="GhN-9a-hcg">
             <objects>
                 <navigationController definesPresentationContext="YES" id="nQt-fR-ODR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="探索" image="discovery" id="r8j-WD-Pja"/>
+                    <tabBarItem key="tabBarItem" title="发现" image="discovery" id="r8j-WD-Pja"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qMl-qG-EFT">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
