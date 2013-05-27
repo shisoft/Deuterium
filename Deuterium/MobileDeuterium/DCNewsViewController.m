@@ -144,6 +144,7 @@
                                                 }
                                                 
                                                 [self.tableView reloadData];
+                                                [self.tableView setNeedsLayout];
                                                 self.loading = NO;
                                             });
                          });
@@ -261,6 +262,7 @@
                                                 }
                                                 
                                                 [self.tableView reloadData];
+                                                [self.tableView setNeedsLayout];
                                                 self.loading = NO;
                                             });
                          });

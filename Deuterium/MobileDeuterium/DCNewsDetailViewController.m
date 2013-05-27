@@ -14,6 +14,7 @@
 
 @property (weak) IBOutlet UIWebView *webView;
 @property BOOL loaded;
+@property NSTimer *timer;
 
 @end
 
@@ -30,11 +31,17 @@
     [super viewWillAppear:animated];
     
     [self loadNews];
-    [NSTimer scheduledTimerWithTimeInterval:5
-                                     target:self
-                                   selector:@selector(loadNews)
-                                   userInfo:nil
-                                    repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:3600
+                                                  target:self
+                                                selector:@selector(loadNews)
+                                                userInfo:nil
+                                                 repeats:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.timer invalidate];
 }
 
 - (NSString *)contentFromNews:(DCNews *)news
