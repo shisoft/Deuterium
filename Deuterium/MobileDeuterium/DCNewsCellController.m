@@ -140,20 +140,22 @@
 
 - (void)displayNews
 {
-    self.newsCell.authorField.text = [self authorDescription];
+    DCNewsCell *newsCell = self.newsCell;
     
-    self.newsCell.timeField.text = [self timeDescription];
+    newsCell.authorField.text = [self authorDescription];
+    
+    newsCell.timeField.text = [self timeDescription];
     
     // Set up avatar
-    self.newsCell.avatarURL = self.news.authorUC.avatar;
-    [self.newsCell loadAvatar];
+    newsCell.avatarURL = self.news.authorUC.avatar;
+    [newsCell loadAvatar];
     
-    self.newsCell.titleField.text = [self titleDescription];
+    newsCell.titleField.text = [self titleDescription];
     
     // Set up contents
-    DCSetFrameWidth(self.newsCell.contentField, 280);
-    self.newsCell.contentField.text = [self contentDescription];
-    [self.newsCell sizeToFit];
+    DCSetFrameWidth(newsCell.contentField, 280);
+    newsCell.contentField.text = [self contentDescription];
+    [newsCell sizeToFit];
 }
 
 - (NSComparisonResult)compare:(DCNewsCellController *)other

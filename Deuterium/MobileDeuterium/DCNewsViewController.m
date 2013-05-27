@@ -165,8 +165,12 @@
         NSString *CellIdentifier = @"newsCell";
         DCNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
-        DCNewsCellController *controller = self.newsControllers[indexPath.row];
+        NSUInteger index = indexPath.row;
+        DCNewsCellController *controller = self.newsControllers[index];
         controller.newsCell = cell;
+        if (cell.tag > 0)
+            [self.newsControllers[cell.tag - 1] setNewsCell:nil];
+        cell.tag = index + 1;
         [controller displayNews];
         
         return cell;
