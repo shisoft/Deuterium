@@ -128,6 +128,7 @@
 		1D090A0B1751BF8E0037174F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909FE1751BF8D0037174F /* Icon@2x.png */; };
 		1D090A0C1751BF8E0037174F /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909FF1751BF8E0037174F /* iTunesArtwork */; };
 		1D090A0D1751BF8E0037174F /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 1D090A001751BF8E0037174F /* iTunesArtwork@2x */; };
+		1D77B2991753E17900735165 /* BSDL.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D77B2981753E17900735165 /* BSDL.md */; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
@@ -164,9 +165,6 @@
 /* Begin PBXFileReference section */
 		1D02895B174C8D8000C76CEB /* DCWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCWrapper.h; sourceTree = "<group>"; };
 		1D02895C174C8D8000C76CEB /* DCWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCWrapper.m; sourceTree = "<group>"; };
-		1D02895F174C8F7000C76CEB /* GPL.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = GPL.md; sourceTree = "<group>"; };
-		1D028960174C903E00C76CEB /* LGPL.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = LGPL.md; sourceTree = "<group>"; };
-		1D028963174C92F400C76CEB /* POSH.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = POSH.md; sourceTree = "<group>"; };
 		1D028965174CBC5200C76CEB /* DCSignUpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSignUpRequest.h; sourceTree = "<group>"; };
 		1D028966174CBC5200C76CEB /* DCSignUpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSignUpRequest.m; sourceTree = "<group>"; };
 		1D028969174CE50200C76CEB /* CLLocation+CGIPersistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+CGIPersistance.h"; sourceTree = "<group>"; };
@@ -260,6 +258,7 @@
 		1D0909FE1751BF8D0037174F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		1D0909FF1751BF8E0037174F /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		1D090A001751BF8E0037174F /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
+		1D77B2981753E17900735165 /* BSDL.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BSDL.md; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -427,9 +426,7 @@
 		1D02B5FF174BABBC00158DF5 = {
 			isa = PBXGroup;
 			children = (
-				1D02895F174C8F7000C76CEB /* GPL.md */,
-				1D028960174C903E00C76CEB /* LGPL.md */,
-				1D028963174C92F400C76CEB /* POSH.md */,
+				1D77B2981753E17900735165 /* BSDL.md */,
 				1DED1D63174C861500AE1D98 /* DeuteriumCore */,
 				1D0289A4174DDB4300C76CEB /* MobileDeuterium */,
 				1DED1D5C174C861500AE1D98 /* Frameworks */,
@@ -748,6 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */,
+				1D77B2991753E17900735165 /* BSDL.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
