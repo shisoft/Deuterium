@@ -165,6 +165,18 @@
 		F56096D1174CDA630033D72B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56096D0174CDA630033D72B /* CoreLocation.framework */; };
 		F56096D4174CDAAB0033D72B /* NSDate+DCPersistance.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096D2174CDAAB0033D72B /* NSDate+DCPersistance.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F56096D5174CDAAB0033D72B /* NSDate+DCPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096D3174CDAAB0033D72B /* NSDate+DCPersistance.m */; };
+		F5AB26A4175513D100616652 /* DCQuickReplyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26A2175513D100616652 /* DCQuickReplyRequest.h */; };
+		F5AB26A5175513D100616652 /* DCQuickReplyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26A3175513D100616652 /* DCQuickReplyRequest.m */; };
+		F5AB26A81755158900616652 /* DCSetStausRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26A61755158800616652 /* DCSetStausRequest.h */; };
+		F5AB26A91755158900616652 /* DCSetStausRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26A71755158900616652 /* DCSetStausRequest.m */; };
+		F5AB26AC1755174D00616652 /* DCPublishPhotosRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26AA1755174C00616652 /* DCPublishPhotosRequest.h */; };
+		F5AB26AD1755174D00616652 /* DCPublishPhotosRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26AB1755174C00616652 /* DCPublishPhotosRequest.m */; };
+		F5AB26B01755186C00616652 /* DCPublishBlogRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26AE1755186B00616652 /* DCPublishBlogRequest.h */; };
+		F5AB26B11755186C00616652 /* DCPublishBlogRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26AF1755186C00616652 /* DCPublishBlogRequest.m */; };
+		F5AB26B41755198400616652 /* DCAddBookmarkRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26B21755198300616652 /* DCAddBookmarkRequest.h */; };
+		F5AB26B51755198400616652 /* DCAddBookmarkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26B31755198300616652 /* DCAddBookmarkRequest.m */; };
+		F5AB26B817551B0E00616652 /* DCRepostRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26B617551B0D00616652 /* DCRepostRequest.h */; };
+		F5AB26B917551B0E00616652 /* DCRepostRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26B717551B0D00616652 /* DCRepostRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -305,6 +317,18 @@
 		F56096D0174CDA630033D72B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		F56096D2174CDAAB0033D72B /* NSDate+DCPersistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DCPersistance.h"; sourceTree = "<group>"; };
 		F56096D3174CDAAB0033D72B /* NSDate+DCPersistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DCPersistance.m"; sourceTree = "<group>"; };
+		F5AB26A2175513D100616652 /* DCQuickReplyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCQuickReplyRequest.h; sourceTree = "<group>"; };
+		F5AB26A3175513D100616652 /* DCQuickReplyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCQuickReplyRequest.m; sourceTree = "<group>"; };
+		F5AB26A61755158800616652 /* DCSetStausRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSetStausRequest.h; sourceTree = "<group>"; };
+		F5AB26A71755158900616652 /* DCSetStausRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSetStausRequest.m; sourceTree = "<group>"; };
+		F5AB26AA1755174C00616652 /* DCPublishPhotosRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPublishPhotosRequest.h; sourceTree = "<group>"; };
+		F5AB26AB1755174C00616652 /* DCPublishPhotosRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPublishPhotosRequest.m; sourceTree = "<group>"; };
+		F5AB26AE1755186B00616652 /* DCPublishBlogRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPublishBlogRequest.h; sourceTree = "<group>"; };
+		F5AB26AF1755186C00616652 /* DCPublishBlogRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPublishBlogRequest.m; sourceTree = "<group>"; };
+		F5AB26B21755198300616652 /* DCAddBookmarkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAddBookmarkRequest.h; sourceTree = "<group>"; };
+		F5AB26B31755198300616652 /* DCAddBookmarkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAddBookmarkRequest.m; sourceTree = "<group>"; };
+		F5AB26B617551B0D00616652 /* DCRepostRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRepostRequest.h; sourceTree = "<group>"; };
+		F5AB26B717551B0D00616652 /* DCRepostRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRepostRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,7 +413,8 @@
 				1D0909F0175120DB0037174F /* UIImage+DCUtilities.m */,
 				1D0289A5174DDB4300C76CEB /* Supporting Files */,
 			);
-			path = MobileDeuterium;
+			name = MobileDeuterium;
+			path = ../MobileDeuterium;
 			sourceTree = "<group>";
 		};
 		1D0289A5174DDB4300C76CEB /* Supporting Files */ = {
@@ -441,7 +466,6 @@
 			children = (
 				1D77B2981753E17900735165 /* BSDL.md */,
 				1DED1D63174C861500AE1D98 /* DeuteriumCore */,
-				1D0289A4174DDB4300C76CEB /* MobileDeuterium */,
 				1DED1D5C174C861500AE1D98 /* Frameworks */,
 				1DED1D5B174C861500AE1D98 /* Products */,
 			);
@@ -522,6 +546,18 @@
 				F50167811750777800FF5DE1 /* DCGetUserNicknameRequest.m */,
 				F50167841750779200FF5DE1 /* DCChangeNicknameRequest.h */,
 				F50167851750779200FF5DE1 /* DCChangeNicknameRequest.m */,
+				F5AB26A2175513D100616652 /* DCQuickReplyRequest.h */,
+				F5AB26A3175513D100616652 /* DCQuickReplyRequest.m */,
+				F5AB26A61755158800616652 /* DCSetStausRequest.h */,
+				F5AB26A71755158900616652 /* DCSetStausRequest.m */,
+				F5AB26AA1755174C00616652 /* DCPublishPhotosRequest.h */,
+				F5AB26AB1755174C00616652 /* DCPublishPhotosRequest.m */,
+				F5AB26AE1755186B00616652 /* DCPublishBlogRequest.h */,
+				F5AB26AF1755186C00616652 /* DCPublishBlogRequest.m */,
+				F5AB26B21755198300616652 /* DCAddBookmarkRequest.h */,
+				F5AB26B31755198300616652 /* DCAddBookmarkRequest.m */,
+				F5AB26B617551B0D00616652 /* DCRepostRequest.h */,
+				F5AB26B717551B0D00616652 /* DCRepostRequest.m */,
 				1D09098B17505FE90037174F /* DCPoll.h */,
 				1D09098C17505FE90037174F /* DCPoll.m */,
 				F50167661750617700FF5DE1 /* DCDiscoveryPoll.h */,
@@ -540,6 +576,7 @@
 				F56096CD174CD8BF0033D72B /* DCMedia.m */,
 				1D09095B174FC0710037174F /* DCUniversalContact.h */,
 				1D09095C174FC0710037174F /* DCUniversalContact.m */,
+				1D0289A4174DDB4300C76CEB /* MobileDeuterium */,
 				1D09098A17504BAF0037174F /* External Persistance */,
 				1DED1D64174C861500AE1D98 /* Supporting Files */,
 			);
@@ -613,6 +650,12 @@
 				F50167821750777800FF5DE1 /* DCGetUserNicknameRequest.h in Headers */,
 				F50167861750779200FF5DE1 /* DCChangeNicknameRequest.h in Headers */,
 				1D77B2A317543DAC00735165 /* DCNewsPoll.h in Headers */,
+				F5AB26A4175513D100616652 /* DCQuickReplyRequest.h in Headers */,
+				F5AB26A81755158900616652 /* DCSetStausRequest.h in Headers */,
+				F5AB26AC1755174D00616652 /* DCPublishPhotosRequest.h in Headers */,
+				F5AB26B01755186C00616652 /* DCPublishBlogRequest.h in Headers */,
+				F5AB26B41755198400616652 /* DCAddBookmarkRequest.h in Headers */,
+				F5AB26B817551B0E00616652 /* DCRepostRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,6 +931,12 @@
 				F50167831750777800FF5DE1 /* DCGetUserNicknameRequest.m in Sources */,
 				F50167871750779200FF5DE1 /* DCChangeNicknameRequest.m in Sources */,
 				1D77B2A417543DAC00735165 /* DCNewsPoll.m in Sources */,
+				F5AB26A5175513D100616652 /* DCQuickReplyRequest.m in Sources */,
+				F5AB26A91755158900616652 /* DCSetStausRequest.m in Sources */,
+				F5AB26AD1755174D00616652 /* DCPublishPhotosRequest.m in Sources */,
+				F5AB26B11755186C00616652 /* DCPublishBlogRequest.m in Sources */,
+				F5AB26B51755198400616652 /* DCAddBookmarkRequest.m in Sources */,
+				F5AB26B917551B0E00616652 /* DCRepostRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
