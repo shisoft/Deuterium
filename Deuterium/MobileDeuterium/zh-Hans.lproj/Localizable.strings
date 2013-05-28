@@ -10,6 +10,7 @@
 
 /* UI elements */
 "ui.ok"             = "确定";
+"ui.messages-no"    = "条消息";
 
 /* Timing */
 "ui.just-now"       = "刚才";

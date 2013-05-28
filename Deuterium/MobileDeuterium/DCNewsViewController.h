@@ -14,13 +14,16 @@
 
 @property NSMutableArray *newsControllers;
 
+- (void)newsDidUpdate;
+- (BOOL)newsCanUpdate;
+- (BOOL)newsCanPage;
+- (BOOL)useDetails;
+
 @end
 
 @interface DCNewsViewController (DCOverridables)
 
 - (NSArray *)recentNews;
 - (NSArray *)nextPage;
-
-- (void)newsDidUpdate;
 
 @end

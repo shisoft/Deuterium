@@ -38,25 +38,28 @@
     
     // Set up refresh control if system supports it, otherwise add a button.
     
-    if (DCHasRefreshControl())
+    if ([self newsCanUpdate])
     {
-        UIRefreshControl *_refreshControl = [[UIRefreshControl alloc] init];
-        
-        [_refreshControl addTarget:self
-                            action:@selector(refresh:)
-                  forControlEvents:UIControlEventValueChanged];
-        
-        self.refreshControl = _refreshControl;
+        if (DCHasRefreshControl())
+        {
+            UIRefreshControl *_refreshControl = [[UIRefreshControl alloc] init];
+            
+            [_refreshControl addTarget:self
+                                action:@selector(refresh:)
+                      forControlEvents:UIControlEventValueChanged];
+            
+            self.refreshControl = _refreshControl;
+        }
+        else
+        {
+            UIBarButtonItem *_refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                            target:self
+                                                                                            action:@selector(refresh:)];
+            
+            self.refreshButton = _refreshButton;
+        }
     }
-    else
-    {
-        UIBarButtonItem *_refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                        target:self
-                                                                                        action:@selector(refresh:)];
-        
-        self.refreshButton = _refreshButton;
-    }
-}
+}    
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -135,10 +138,7 @@
                                                     self.refreshButton.enabled = YES;
                                                 }
                                                 
-                                                if ([self respondsToSelector:@selector(newsDidUpdate)])
-                                                {
-                                                    [self newsDidUpdate];
-                                                }
+                                                [self newsDidUpdate];
                                                 
                                                 [self.tableView reloadData];
                                                 [self.tableView setNeedsLayout];
@@ -152,7 +152,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.newsControllers count] + (([self.newsControllers count]) ? 1 : 0);
+    return [self.newsControllers count] + (([self.newsControllers count] && [self newsCanPage]) ? 1 : 0);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -196,10 +196,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.destinationViewController isKindOfClass:[DCNewsDetailViewController class]])
+    if ([segue.destinationViewController respondsToSelector:@selector(setNews:)])
     {
-        DCNewsDetailViewController *detailVC = segue.destinationViewController;
-        detailVC.news = [self.newsControllers[[self.tableView indexPathForSelectedRow].row] news];
+        [segue.destinationViewController setNews:[self.newsControllers[self.tableView.indexPathForSelectedRow.row] news]];
     }
 }
 
@@ -269,6 +268,36 @@
                          });
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath)
+    {
+        DCNews *news = [self.newsControllers[indexPath.row] news];
+        if ([news.refer isKindOfClass:[DCNews class]] && self.useDetails)
+            [self performSegueWithIdentifier:@"details" sender:self];
+        else
+            [self performSegueWithIdentifier:@"contents" sender:self];
+    }
+}
 
+- (void)newsDidUpdate
+{
+    // eh
+}
+
+- (BOOL)newsCanPage
+{
+    return [self respondsToSelector:@selector(nextPage)];
+}
+
+- (BOOL)newsCanUpdate
+{
+    return [self respondsToSelector:@selector(recentNews)];
+}
+
+- (BOOL)useDetails
+{
+    return YES;
+}
 
 @end

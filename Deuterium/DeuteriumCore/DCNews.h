@@ -16,7 +16,7 @@
 CGIIdentifierProperty;
 @property NSString *content;
 @property NSString *title;
-@property NSString *href;
+@property NSURL *href;
 @property CLLocation *location;
 @property NSDate *publishTime;
 @property DCUniversalContact *authorUC;

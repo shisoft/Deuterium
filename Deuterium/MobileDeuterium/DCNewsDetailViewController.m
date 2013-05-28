@@ -51,12 +51,20 @@
     {
         [string appendFormat:@"<div style=\"text-align: center;\"><a href=\"%@\"><img src=\"%@\" style=\"max-width: 200px;\"/></a></div>\n", [media.href absoluteString], [media.picThumbnail absoluteString]];
     }
+    if ([[news.href absoluteString] length])
+    {
+        [string appendFormat:@"<div class=\"text-align: right;\"><a href=\"%@\">more &gt;</a></div>", [news.href absoluteString]];
+    }
     return string;
 }
 
-- (NSString *)stringFromNews:(DCNews *)news
+- (void)loadNews
 {
-    NSMutableString *template = [NSMutableString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"NewsItem"
+    self.loaded = NO;
+    
+    DCNews *news = self.news;
+    
+    NSMutableString *template = [NSMutableString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"NewsTemplate"
                                                                                                  withExtension:@"html"]
                                                                 encoding:NSUTF8StringEncoding
                                                                    error:NULL];
@@ -83,38 +91,6 @@
                                        range:NSMakeRange(0, [template length])];
     }
     
-    return template;
-}
-
-- (void)loadNews
-{
-    self.loaded = NO;
-    
-    NSMutableString *template = [NSMutableString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"NewsTemplate"
-                                                                                                 withExtension:@"html"]
-                                                                encoding:NSUTF8StringEncoding
-                                                                   error:NULL];
-    
-    NSMutableString *content = [NSMutableString string];
-    
-    for (DCNews *news = self.news; ![news isKindOfClass:[NSNull class]]; news = news.refer)
-    {
-        [content appendString:[self stringFromNews:news]];
-    }
-    
-    NSDictionary *vars = @{
-                           @"content":  content
-                           };
-    
-    for (NSString *var in vars)
-    {
-        NSString *value = vars[var];
-        
-        [template replaceOccurrencesOfString:CGISTR(@"$(%@)", [var uppercaseString])
-                                  withString:value
-                                     options:0
-                                       range:NSMakeRange(0, [template length])];
-    }
     
     [self.webView loadHTMLString:template
                          baseURL:nil];

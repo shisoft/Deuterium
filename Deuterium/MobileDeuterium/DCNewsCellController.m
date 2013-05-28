@@ -155,7 +155,28 @@
     // Set up contents
     DCSetFrameWidth(newsCell.contentField, 280);
     newsCell.contentField.text = [self contentDescription];
-    [newsCell sizeToFit];
+    
+    CGRect frame = newsCell.contentField.frame;
+    frame.size.height = newsCell.frame.size.height - frame.origin.x - 3;
+    newsCell.contentField.frame = frame;
+    
+    NSUInteger n = 0;
+    for (DCNews *news = self.news;
+         [news isKindOfClass:[DCNews class]];
+         news = news.refer)
+        n++;
+    
+    if (n > 1)
+    {
+        newsCell.numberLabel.text = CGISTR(@"%i", n);
+        newsCell.numberLabel.hidden = NO;
+    }
+    else
+    {
+        newsCell.numberLabel.hidden = YES;
+    }
+    
+    [newsCell setNeedsDisplay];
 }
 
 - (NSComparisonResult)compare:(DCNewsCellController *)other

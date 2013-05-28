@@ -15,6 +15,7 @@
 @property (weak) IBOutlet UILabel *titleField;
 @property (weak) IBOutlet UILabel *contentField;
 @property (weak) IBOutlet UIImageView *avatarView;
+@property (weak) IBOutlet UILabel *numberLabel;
 @property (weak) id controller;
 @property NSURL *avatarURL;
 
