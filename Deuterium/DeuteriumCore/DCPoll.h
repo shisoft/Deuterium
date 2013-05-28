@@ -32,5 +32,6 @@
 
 - (void)start;
 - (void)stop;
+- (void)repoll;
 
 @end

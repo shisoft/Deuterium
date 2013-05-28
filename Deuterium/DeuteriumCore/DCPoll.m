@@ -191,4 +191,14 @@ static inline NSInteger __DCPollTimeFromTimeInterval(NSTimeInterval iv)
     }
 }
 
+- (void)repoll
+{
+    if (_connection)
+    {
+        [_connection cancel];
+        _connection = nil;
+    }
+    [self __poll];
+}
+
 @end

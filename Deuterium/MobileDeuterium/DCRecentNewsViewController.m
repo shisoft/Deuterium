@@ -79,6 +79,7 @@
 {
     self.unread = 0;
     self.navigationController.tabBarItem.badgeValue = nil;
+    [[DCPoll defaultPoll] repoll];
 }
 
 @end
