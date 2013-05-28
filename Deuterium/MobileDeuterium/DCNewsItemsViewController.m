@@ -10,9 +10,32 @@
 
 @interface DCNewsItemsViewController ()
 
+@property BOOL copied;
+
 @end
 
 @implementation DCNewsItemsViewController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (![self.news.content length])
+    {
+        self.copied = YES;
+        self.news.content = self.news.title;
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    if (self.copied)
+    {
+        self.news.content = @"";
+    }
+    
+    [super viewDidDisappear:animated];
+}
 
 - (NSArray *)recentNews
 {
