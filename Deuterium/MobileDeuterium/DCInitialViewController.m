@@ -9,6 +9,7 @@
 #import "DCInitialViewController.h"
 
 #import "DCAppDelegate.h"
+#import <DeuteriumCore/DeuteriumCore.h>
 
 @interface DCInitialViewController ()
 
@@ -55,6 +56,7 @@
         {
             if ([DCAppDelegate thisDelegate].connected)
             {
+                [[DCPoll defaultPoll] start];
                 [self performSegueWithIdentifier:@"main" sender:self];
             }
             else

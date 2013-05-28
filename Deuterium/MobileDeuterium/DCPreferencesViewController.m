@@ -182,6 +182,7 @@
             KeychainItemWrapper *keychainItem = [DCAppDelegate keychainItem];
             [keychainItem resetKeychainItem];
             [DCAppDelegate thisDelegate].connected = NO;
+            [[DCPoll defaultPoll] stop];
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults removeObjectForKey:@"DiscoveryAspects"];
             [defaults synchronize];

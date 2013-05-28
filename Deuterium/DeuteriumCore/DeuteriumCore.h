@@ -18,7 +18,8 @@
 #import <DeuteriumCore/DCGetUserNicknameRequest.h>
 #import <DeuteriumCore/DCChangeNicknameRequest.h>
 #import <DeuteriumCore/DCPoll.h>
-#import <DeuteriumCore/DCPollDiscovery.h>
+#import <DeuteriumCore/DCDiscoveryPoll.h>
+#import <DeuteriumCore/DCNewsPoll.h>
 #import <DeuteriumCore/DCPollRequest.h>
 #import <DeuteriumCore/DCNews.h>
 #import <DeuteriumCore/DCUserServices.h>

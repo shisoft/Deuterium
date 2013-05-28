@@ -76,7 +76,7 @@
 		1D0909A0175078850037174F /* DCGetUserNicknameRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167801750777800FF5DE1 /* DCGetUserNicknameRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D0909A1175078850037174F /* DCChangeNicknameRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167841750779200FF5DE1 /* DCChangeNicknameRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D0909A2175078850037174F /* DCPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09098B17505FE90037174F /* DCPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D0909A3175078850037174F /* DCPollDiscovery.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167661750617700FF5DE1 /* DCPollDiscovery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0909A3175078850037174F /* DCDiscoveryPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167661750617700FF5DE1 /* DCDiscoveryPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D0909A4175078850037174F /* DCPollRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5016762175055F300FF5DE1 /* DCPollRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D0909A5175078850037174F /* DCUserServices.h in Headers */ = {isa = PBXBuildFile; fileRef = F501676A1750669E00FF5DE1 /* DCUserServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D0909A6175078850037174F /* DCNewsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D09096A174FD31A0037174F /* DCNewsRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -87,7 +87,7 @@
 		1D0909AB175080DE0037174F /* DCGetUserNicknameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167811750777800FF5DE1 /* DCGetUserNicknameRequest.m */; };
 		1D0909AC175080DE0037174F /* DCChangeNicknameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167851750779200FF5DE1 /* DCChangeNicknameRequest.m */; };
 		1D0909AD175080DE0037174F /* DCPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09098C17505FE90037174F /* DCPoll.m */; };
-		1D0909AE175080DE0037174F /* DCPollDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167671750617700FF5DE1 /* DCPollDiscovery.m */; };
+		1D0909AE175080DE0037174F /* DCDiscoveryPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167671750617700FF5DE1 /* DCDiscoveryPoll.m */; };
 		1D0909AF175080DE0037174F /* DCPollRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5016763175055F400FF5DE1 /* DCPollRequest.m */; };
 		1D0909B0175080DE0037174F /* DCUserServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F501676B1750669E00FF5DE1 /* DCUserServices.m */; };
 		1D0909B1175080DE0037174F /* DCNewsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D09096B174FD31A0037174F /* DCNewsRequest.m */; };
@@ -129,6 +129,9 @@
 		1D090A0C1751BF8E0037174F /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909FF1751BF8E0037174F /* iTunesArtwork */; };
 		1D090A0D1751BF8E0037174F /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 1D090A001751BF8E0037174F /* iTunesArtwork@2x */; };
 		1D77B2991753E17900735165 /* BSDL.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D77B2981753E17900735165 /* BSDL.md */; };
+		1D77B2A317543DAC00735165 /* DCNewsPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D77B2A117543DAC00735165 /* DCNewsPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D77B2A417543DAC00735165 /* DCNewsPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77B2A217543DAC00735165 /* DCNewsPoll.m */; };
+		1D77B2A517543E5900735165 /* DCNewsPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D77B2A117543DAC00735165 /* DCNewsPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
@@ -143,8 +146,8 @@
 		F5016761175055BE00FF5DE1 /* DCGetUserTopicDistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F501675F175055BE00FF5DE1 /* DCGetUserTopicDistRequest.m */; };
 		F5016764175055F400FF5DE1 /* DCPollRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5016762175055F300FF5DE1 /* DCPollRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5016765175055F400FF5DE1 /* DCPollRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5016763175055F400FF5DE1 /* DCPollRequest.m */; };
-		F50167681750617700FF5DE1 /* DCPollDiscovery.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167661750617700FF5DE1 /* DCPollDiscovery.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F50167691750617700FF5DE1 /* DCPollDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167671750617700FF5DE1 /* DCPollDiscovery.m */; };
+		F50167681750617700FF5DE1 /* DCDiscoveryPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = F50167661750617700FF5DE1 /* DCDiscoveryPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F50167691750617700FF5DE1 /* DCDiscoveryPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = F50167671750617700FF5DE1 /* DCDiscoveryPoll.m */; };
 		F501676C1750669E00FF5DE1 /* DCUserServices.h in Headers */ = {isa = PBXBuildFile; fileRef = F501676A1750669E00FF5DE1 /* DCUserServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F501676D1750669E00FF5DE1 /* DCUserServices.m in Sources */ = {isa = PBXBuildFile; fileRef = F501676B1750669E00FF5DE1 /* DCUserServices.m */; };
 		F50167701750677C00FF5DE1 /* DCGetUserServicesRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F501676E1750677C00FF5DE1 /* DCGetUserServicesRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -259,6 +262,8 @@
 		1D0909FF1751BF8E0037174F /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		1D090A001751BF8E0037174F /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		1D77B2981753E17900735165 /* BSDL.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BSDL.md; sourceTree = "<group>"; };
+		1D77B2A117543DAC00735165 /* DCNewsPoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNewsPoll.h; sourceTree = "<group>"; };
+		1D77B2A217543DAC00735165 /* DCNewsPoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsPoll.m; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -278,8 +283,8 @@
 		F501675F175055BE00FF5DE1 /* DCGetUserTopicDistRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGetUserTopicDistRequest.m; sourceTree = "<group>"; };
 		F5016762175055F300FF5DE1 /* DCPollRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPollRequest.h; sourceTree = "<group>"; };
 		F5016763175055F400FF5DE1 /* DCPollRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPollRequest.m; sourceTree = "<group>"; };
-		F50167661750617700FF5DE1 /* DCPollDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPollDiscovery.h; sourceTree = "<group>"; };
-		F50167671750617700FF5DE1 /* DCPollDiscovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPollDiscovery.m; sourceTree = "<group>"; };
+		F50167661750617700FF5DE1 /* DCDiscoveryPoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDiscoveryPoll.h; sourceTree = "<group>"; };
+		F50167671750617700FF5DE1 /* DCDiscoveryPoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDiscoveryPoll.m; sourceTree = "<group>"; };
 		F501676A1750669E00FF5DE1 /* DCUserServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUserServices.h; sourceTree = "<group>"; };
 		F501676B1750669E00FF5DE1 /* DCUserServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCUserServices.m; sourceTree = "<group>"; };
 		F501676E1750677C00FF5DE1 /* DCGetUserServicesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCGetUserServicesRequest.h; sourceTree = "<group>"; };
@@ -511,8 +516,10 @@
 				F50167851750779200FF5DE1 /* DCChangeNicknameRequest.m */,
 				1D09098B17505FE90037174F /* DCPoll.h */,
 				1D09098C17505FE90037174F /* DCPoll.m */,
-				F50167661750617700FF5DE1 /* DCPollDiscovery.h */,
-				F50167671750617700FF5DE1 /* DCPollDiscovery.m */,
+				F50167661750617700FF5DE1 /* DCDiscoveryPoll.h */,
+				F50167671750617700FF5DE1 /* DCDiscoveryPoll.m */,
+				1D77B2A117543DAC00735165 /* DCNewsPoll.h */,
+				1D77B2A217543DAC00735165 /* DCNewsPoll.m */,
 				F5016762175055F300FF5DE1 /* DCPollRequest.h */,
 				F5016763175055F400FF5DE1 /* DCPollRequest.m */,
 				F56096C8174CD7ED0033D72B /* DCNews.h */,
@@ -564,10 +571,11 @@
 				1D0909A0175078850037174F /* DCGetUserNicknameRequest.h in Headers */,
 				1D0909A1175078850037174F /* DCChangeNicknameRequest.h in Headers */,
 				1D0909A2175078850037174F /* DCPoll.h in Headers */,
-				1D0909A3175078850037174F /* DCPollDiscovery.h in Headers */,
+				1D0909A3175078850037174F /* DCDiscoveryPoll.h in Headers */,
 				1D0909A4175078850037174F /* DCPollRequest.h in Headers */,
 				1D0909A5175078850037174F /* DCUserServices.h in Headers */,
 				1D0909A6175078850037174F /* DCNewsRequest.h in Headers */,
+				1D77B2A517543E5900735165 /* DCNewsPoll.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,11 +599,12 @@
 				F5016760175055BE00FF5DE1 /* DCGetUserTopicDistRequest.h in Headers */,
 				F5016764175055F400FF5DE1 /* DCPollRequest.h in Headers */,
 				1D09098D17505FE90037174F /* DCPoll.h in Headers */,
-				F50167681750617700FF5DE1 /* DCPollDiscovery.h in Headers */,
+				F50167681750617700FF5DE1 /* DCDiscoveryPoll.h in Headers */,
 				F501676C1750669E00FF5DE1 /* DCUserServices.h in Headers */,
 				F50167701750677C00FF5DE1 /* DCGetUserServicesRequest.h in Headers */,
 				F50167821750777800FF5DE1 /* DCGetUserNicknameRequest.h in Headers */,
 				F50167861750779200FF5DE1 /* DCChangeNicknameRequest.h in Headers */,
+				1D77B2A317543DAC00735165 /* DCNewsPoll.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,7 +823,7 @@
 				1D0909AB175080DE0037174F /* DCGetUserNicknameRequest.m in Sources */,
 				1D0909AC175080DE0037174F /* DCChangeNicknameRequest.m in Sources */,
 				1D0909AD175080DE0037174F /* DCPoll.m in Sources */,
-				1D0909AE175080DE0037174F /* DCPollDiscovery.m in Sources */,
+				1D0909AE175080DE0037174F /* DCDiscoveryPoll.m in Sources */,
 				1D0909AF175080DE0037174F /* DCPollRequest.m in Sources */,
 				1D0909B0175080DE0037174F /* DCUserServices.m in Sources */,
 				1D0909B1175080DE0037174F /* DCNewsRequest.m in Sources */,
@@ -863,11 +872,12 @@
 				F5016761175055BE00FF5DE1 /* DCGetUserTopicDistRequest.m in Sources */,
 				F5016765175055F400FF5DE1 /* DCPollRequest.m in Sources */,
 				1D09098E17505FE90037174F /* DCPoll.m in Sources */,
-				F50167691750617700FF5DE1 /* DCPollDiscovery.m in Sources */,
+				F50167691750617700FF5DE1 /* DCDiscoveryPoll.m in Sources */,
 				F501676D1750669E00FF5DE1 /* DCUserServices.m in Sources */,
 				F50167711750677C00FF5DE1 /* DCGetUserServicesRequest.m in Sources */,
 				F50167831750777800FF5DE1 /* DCGetUserNicknameRequest.m in Sources */,
 				F50167871750779200FF5DE1 /* DCChangeNicknameRequest.m in Sources */,
+				1D77B2A417543DAC00735165 /* DCNewsPoll.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 #import <CGIJSONObject/CGIJSONObject.h>
 
-@interface DCPollDiscovery : CGIPersistantObject
+@interface DCDiscoveryPoll : CGIPersistantObject
 
 @property NSString *t;
 @property NSNumber *c;

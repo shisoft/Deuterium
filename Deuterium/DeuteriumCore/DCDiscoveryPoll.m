@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 muski. All rights reserved.
 //
 
-#import "DCPollDiscovery.h"
+#import "DCDiscoveryPoll.h"
 
-@implementation DCPollDiscovery
+@implementation DCDiscoveryPoll
 
 - (void)awakeFromPersistance:(id)persistance
 {

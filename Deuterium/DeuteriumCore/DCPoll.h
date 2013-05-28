@@ -14,12 +14,15 @@
 @protocol DCPollDelegate <NSObject>
 
 @required
-- (id <CGIPersistantObject>)poll:(DCPoll *)poll objectForKey:(NSString *)key;
+- (id)poll:(DCPoll *)poll objectForKey:(NSString *)key;
 - (void)poll:(DCPoll *)poll receivedObject:(id)object forKey:(NSString *)key;
 
 @end
 
 @interface DCPoll : NSObject
+
+@property NSTimeInterval interval;
+@property NSTimeInterval wait;
 
 + (instancetype)defaultPoll;
 

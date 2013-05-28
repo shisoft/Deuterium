@@ -14,8 +14,8 @@
 
 
 @property NSArray *d;
-@property NSNumber *i;
-@property NSNumber *w;
+@property NSInteger i;
+@property NSInteger w;
 
 @end
 
