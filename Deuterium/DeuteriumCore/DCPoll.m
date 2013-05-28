@@ -176,6 +176,9 @@ static inline NSInteger __DCPollTimeFromTimeInterval(NSTimeInterval iv)
 
 - (void)start
 {
+    if (_go)
+        return;
+    
     _connection = nil;
     _go = YES;
     [self __poll];
@@ -183,6 +186,9 @@ static inline NSInteger __DCPollTimeFromTimeInterval(NSTimeInterval iv)
 
 - (void)stop
 {
+    if (!_go)
+        return;
+    
     _go = NO;
     if (_connection)
     {

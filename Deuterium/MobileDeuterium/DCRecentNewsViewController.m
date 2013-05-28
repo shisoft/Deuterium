@@ -23,13 +23,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    if (!self.polling)
-    {
-        self.polling = YES;
-        [[DCPoll defaultPoll] addDelegate:self
-                                   forKey:@"newsc"];
-    }
+    [[DCPoll defaultPoll] addDelegate:self
+                               forKey:@"newsc"];
 }
 
 - (NSArray *)recentNews
