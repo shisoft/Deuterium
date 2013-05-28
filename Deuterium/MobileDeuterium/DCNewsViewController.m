@@ -76,14 +76,6 @@
 
 #pragma mark - Target actions
 
-- (NSArray *)recentNews
-{
-    DCNewsRequest *newsRequest = [[DCNewsRequest alloc] init];
-    newsRequest.count = 25;
-    newsRequest.lastT = [NSDate distantPast];
-    return [newsRequest getWhatzNew];
-}
-
 - (void)refresh:(id)sender
 {
     if (self.loading)
@@ -141,6 +133,11 @@
                                                 else
                                                 {
                                                     self.refreshButton.enabled = YES;
+                                                }
+                                                
+                                                if ([self respondsToSelector:@selector(newsDidUpdate)])
+                                                {
+                                                    [self newsDidUpdate];
                                                 }
                                                 
                                                 [self.tableView reloadData];
@@ -272,12 +269,6 @@
                          });
 }
 
-- (NSArray *)nextPage
-{
-    DCNewsRequest *newsRequest = [[DCNewsRequest alloc] init];
-    newsRequest.count = 25;
-    newsRequest.lastT = [[self.newsControllers lastObject] news].publishTime;
-    return [newsRequest getWhatzNew];
-}
+
 
 @end

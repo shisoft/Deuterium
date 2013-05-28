@@ -132,6 +132,8 @@
 		1D77B2A317543DAC00735165 /* DCNewsPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D77B2A117543DAC00735165 /* DCNewsPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D77B2A417543DAC00735165 /* DCNewsPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77B2A217543DAC00735165 /* DCNewsPoll.m */; };
 		1D77B2A517543E5900735165 /* DCNewsPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D77B2A117543DAC00735165 /* DCNewsPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D77B2A817543F9500735165 /* DCRecentNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77B2A717543F9500735165 /* DCRecentNewsViewController.m */; };
+		1D77B2A9175442E900735165 /* DCNewsPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77B2A217543DAC00735165 /* DCNewsPoll.m */; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
@@ -264,6 +266,8 @@
 		1D77B2981753E17900735165 /* BSDL.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BSDL.md; sourceTree = "<group>"; };
 		1D77B2A117543DAC00735165 /* DCNewsPoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNewsPoll.h; sourceTree = "<group>"; };
 		1D77B2A217543DAC00735165 /* DCNewsPoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsPoll.m; sourceTree = "<group>"; };
+		1D77B2A617543F9500735165 /* DCRecentNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRecentNewsViewController.h; sourceTree = "<group>"; };
+		1D77B2A717543F9500735165 /* DCRecentNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRecentNewsViewController.m; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -358,6 +362,8 @@
 				1D0289FD174DF7A900C76CEB /* DCLoginViewController.m */,
 				1D090967174FCF670037174F /* DCNewsViewController.h */,
 				1D090968174FCF670037174F /* DCNewsViewController.m */,
+				1D77B2A617543F9500735165 /* DCRecentNewsViewController.h */,
+				1D77B2A717543F9500735165 /* DCRecentNewsViewController.m */,
 				1D0909DA1750C4CC0037174F /* DCNewsDetailViewController.h */,
 				1D0909DB1750C4CD0037174F /* DCNewsDetailViewController.m */,
 				1D09098F17506A6F0037174F /* DCPreferencesViewController.h */,
@@ -827,6 +833,7 @@
 				1D0909AF175080DE0037174F /* DCPollRequest.m in Sources */,
 				1D0909B0175080DE0037174F /* DCUserServices.m in Sources */,
 				1D0909B1175080DE0037174F /* DCNewsRequest.m in Sources */,
+				1D77B2A9175442E900735165 /* DCNewsPoll.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,6 +857,7 @@
 				1D0909E41750DDE90037174F /* DCDiscoveryOptionViewController.m in Sources */,
 				1D0909E7175120000037174F /* NSString+DCUtilities.m in Sources */,
 				1D0909F1175120DC0037174F /* UIImage+DCUtilities.m in Sources */,
+				1D77B2A817543F9500735165 /* DCRecentNewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

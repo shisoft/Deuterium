@@ -105,7 +105,7 @@ static inline NSInteger __DCPollTimeFromTimeInterval(NSTimeInterval iv)
     
     CGIRemoteConnection *conn = [CGIRemoteConnection defaultRemoteConnection];
     
-    NSMutableURLRequest *request = [conn URLRequestForMethod:@"poll"];
+    NSMutableURLRequest *request = [conn URLRequestForMethod:@"Poll"];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:data];
     [request setValue:@"application/json;charset=utf-8"
@@ -113,7 +113,7 @@ static inline NSInteger __DCPollTimeFromTimeInterval(NSTimeInterval iv)
     
     _connection = [NSURLConnection connectionWithRequest:request
                                                 delegate:self];
-    
+    NSLog(@"poll: ping");
     [_connection start];
 }
 
@@ -125,6 +125,8 @@ static inline NSInteger __DCPollTimeFromTimeInterval(NSTimeInterval iv)
     _response = nil;
     _responseLength = 0;
     _responseData = nil;
+    
+    NSLog(@"poll: pong");
     
     if ([responseObject isKindOfClass:[NSDictionary class]])
     {
