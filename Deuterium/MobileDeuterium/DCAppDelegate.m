@@ -18,6 +18,7 @@ NSString *const DCHeartbeatNotification = @"info.maxchan.deuterium.heartbeat";
 @interface DCAppDelegate ()
 
 @property BOOL watchdogActiviated;
+@property NSDate *lastTerminateDate;
 
 @end
 
@@ -55,6 +56,53 @@ NSString *const DCHeartbeatNotification = @"info.maxchan.deuterium.heartbeat";
     }
 }
 
+- (void)__login
+{
+    dispatch_group_async(DCBackgroundTasks,
+                         dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                         ^
+                         {
+                             // Set up default connection.
+                             CGIRemoteConnection *connection = [[CGIRemoteConnection alloc] initWithServerRoot:[NSURL URLWithString:@"https://www.shisoft.net/ajax/"]];
+                             [connection makeDefaultServerRoot];
+                             
+                             // Query keychain for previously stored username and password.
+                             KeychainItemWrapper *keychainItem = [DCAppDelegate keychainItem];
+                             
+                             DCLoginRequest *login = [[DCLoginRequest alloc] init];
+                             login.user = keychainItem[(__bridge __strong NSString *)(kSecAttrAccount)];
+                             login.pass = keychainItem[(__bridge __strong NSString *)(kSecValueData)];
+                             
+                             if ([login.user length] && [login.pass length])
+                             {
+                                 DCWrapper *rv = [login login];
+                                 if ([rv isKindOfClass:[DCWrapper class]])
+                                 {
+                                     [DCAppDelegate thisDelegate].connected = [rv boolValue];
+                                     if ([DCAppDelegate thisDelegate].connected)
+                                         [[DCPoll defaultPoll] start];
+                                 }
+                                 else
+                                 {
+                                     dispatch_async(dispatch_get_main_queue(),
+                                                    ^{
+                                                        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title", @"")
+                                                                                    message:NSLocalizedString(@"err.no-server", @"")
+                                                                                   delegate:nil
+                                                                          cancelButtonTitle:NSLocalizedString(@"ui.ok", @"")
+                                                                          otherButtonTitles:nil] show];
+                                                    });
+                                     [DCAppDelegate thisDelegate].connected = NO;
+                                 }
+                             }
+                             else
+                             {
+                                 [DCAppDelegate thisDelegate].connected = NO;
+                             }
+                         }
+                         );
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     DCBackgroundTasks = dispatch_group_create();
@@ -65,47 +113,7 @@ NSString *const DCHeartbeatNotification = @"info.maxchan.deuterium.heartbeat";
                                    userInfo:nil
                                     repeats:YES];
     
-    dispatch_group_async(DCBackgroundTasks,
-                         dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
-                         ^
-    {
-        // Set up default connection.
-        CGIRemoteConnection *connection = [[CGIRemoteConnection alloc] initWithServerRoot:[NSURL URLWithString:@"https://www.shisoft.net/ajax/"]];
-        [connection makeDefaultServerRoot];
-        
-        // Query keychain for previously stored username and password.
-        KeychainItemWrapper *keychainItem = [DCAppDelegate keychainItem];
-        
-        DCLoginRequest *login = [[DCLoginRequest alloc] init];
-        login.user = keychainItem[(__bridge __strong NSString *)(kSecAttrAccount)];
-        login.pass = keychainItem[(__bridge __strong NSString *)(kSecValueData)];
-        
-        if ([login.user length] && [login.pass length])
-        {
-            DCWrapper *rv = [login login];
-            if ([rv isKindOfClass:[DCWrapper class]])
-            {
-                [DCAppDelegate thisDelegate].connected = [rv boolValue];
-            }
-            else
-            {
-                dispatch_async(dispatch_get_main_queue(),
-                               ^{
-                                   [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"title", @"")
-                                                               message:NSLocalizedString(@"err.no-server", @"")
-                                                              delegate:nil
-                                                     cancelButtonTitle:NSLocalizedString(@"ui.ok", @"")
-                                                     otherButtonTitles:nil] show];
-                               });
-                [DCAppDelegate thisDelegate].connected = NO;
-            }
-        }
-        else
-        {
-            [DCAppDelegate thisDelegate].connected = NO;
-        }
-    }
-                         );
+    [self __login];
     
     return YES;
 }
@@ -114,6 +122,8 @@ NSString *const DCHeartbeatNotification = @"info.maxchan.deuterium.heartbeat";
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
+    [[DCPoll defaultPoll] stop];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -130,6 +140,8 @@ NSString *const DCHeartbeatNotification = @"info.maxchan.deuterium.heartbeat";
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [self __login];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

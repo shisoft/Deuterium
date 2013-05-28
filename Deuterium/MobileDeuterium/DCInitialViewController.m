@@ -56,7 +56,6 @@
         {
             if ([DCAppDelegate thisDelegate].connected)
             {
-                [[DCPoll defaultPoll] start];
                 [self performSegueWithIdentifier:@"main" sender:self];
             }
             else
