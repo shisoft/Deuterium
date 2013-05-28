@@ -165,9 +165,9 @@
         NSUInteger index = indexPath.row;
         DCNewsCellController *controller = self.newsControllers[index];
         controller.newsCell = cell;
-        if (cell.tag > 0)
-            [self.newsControllers[cell.tag - 1] setNewsCell:nil];
-        cell.tag = index + 1;
+        if ([cell.controller respondsToSelector:@selector(setNewsCell:)])
+            [cell.controller setNewsCell:nil];
+        cell.controller = controller;
         [controller displayNews];
         
         return cell;

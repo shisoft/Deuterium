@@ -78,10 +78,7 @@
 - (void)newsDidUpdate
 {
     self.unread = 0;
-    if (self.unread > 0)
-    {
-        self.navigationController.tabBarItem.badgeValue = CGISTR(@"%i", self.unread);
-    }
+    self.navigationController.tabBarItem.badgeValue = nil;
 }
 
 @end
