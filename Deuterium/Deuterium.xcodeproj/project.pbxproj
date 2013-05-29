@@ -210,7 +210,6 @@
 		1D0289A2174DDB4300C76CEB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		1D0289A6174DDB4300C76CEB /* MobileDeuterium-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MobileDeuterium-Info.plist"; sourceTree = "<group>"; };
 		1D0289AA174DDB4300C76CEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1D0289AC174DDB4300C76CEB /* MobileDeuterium-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MobileDeuterium-Prefix.pch"; sourceTree = "<group>"; };
 		1D0289AD174DDB4300C76CEB /* DCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCAppDelegate.h; sourceTree = "<group>"; };
 		1D0289AE174DDB4300C76CEB /* DCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCAppDelegate.m; sourceTree = "<group>"; };
 		1D0289BF174DDDB100C76CEB /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
@@ -445,7 +444,6 @@
 				1D090972174FD6B40037174F /* Localizable.strings */,
 				1D0909DD1750C6770037174F /* NewsTemplate.html */,
 				1D0289AA174DDB4300C76CEB /* main.m */,
-				1D0289AC174DDB4300C76CEB /* MobileDeuterium-Prefix.pch */,
 				1D0909BE1750BEA90037174F /* apps.png */,
 				1D0909BF1750BEA90037174F /* apps@2x.png */,
 				1D0909C01750BEA90037174F /* contacts.png */,
