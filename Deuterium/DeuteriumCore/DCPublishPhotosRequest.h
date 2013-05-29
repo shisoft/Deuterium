@@ -7,6 +7,7 @@
 //
 
 #import <CGIJSONRemoteObject/CGIJSONRemoteObject.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface DCPublishPhotosRequest : CGIRemoteObject
 
@@ -17,9 +18,9 @@
 @property NSData *image;
 @property NSString *path;  //Server path (use when 'image' is empty)
 @property NSString *linnid; //use for POI in places
-@property double lat;
-@property double lon;
-@property char located;
+@property CLLocationDegrees lat;
+@property CLLocationDegrees lon;
+@property NSString *located;
 
 @end
 

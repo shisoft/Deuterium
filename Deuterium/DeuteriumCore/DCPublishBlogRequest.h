@@ -7,6 +7,7 @@
 //
 
 #import <CGIJSONRemoteObject/CGIJSONRemoteObject.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface DCPublishBlogRequest : CGIRemoteObject
 
@@ -14,11 +15,11 @@
 @property NSString *content;
 @property NSString *exceptions;
 @property NSString *audience;
-@property double lat;
-@property double lon;
-@property char located;
-@property char richText;
-@property char checkin;
+@property CLLocationDegrees lat;
+@property CLLocationDegrees lon;
+@property NSString *located;
+@property NSString *richText;
+@property NSString *checkin;
 
 @end
 
