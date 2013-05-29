@@ -134,6 +134,8 @@
 		1D77B2A517543E5900735165 /* DCNewsPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D77B2A117543DAC00735165 /* DCNewsPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D77B2A817543F9500735165 /* DCRecentNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77B2A717543F9500735165 /* DCRecentNewsViewController.m */; };
 		1D77B2A9175442E900735165 /* DCNewsPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77B2A217543DAC00735165 /* DCNewsPoll.m */; };
+		1DCCCFF61755DCC9002B4423 /* NSData+DCPersistance.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DCCCFF41755DCC9002B4423 /* NSData+DCPersistance.h */; };
+		1DCCCFF71755DCC9002B4423 /* NSData+DCPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCCFF51755DCC9002B4423 /* NSData+DCPersistance.m */; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
@@ -281,6 +283,8 @@
 		1D77B2A217543DAC00735165 /* DCNewsPoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsPoll.m; sourceTree = "<group>"; };
 		1D77B2A617543F9500735165 /* DCRecentNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRecentNewsViewController.h; sourceTree = "<group>"; };
 		1D77B2A717543F9500735165 /* DCRecentNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRecentNewsViewController.m; sourceTree = "<group>"; };
+		1DCCCFF41755DCC9002B4423 /* NSData+DCPersistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+DCPersistance.h"; sourceTree = "<group>"; };
+		1DCCCFF51755DCC9002B4423 /* NSData+DCPersistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+DCPersistance.m"; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -413,8 +417,7 @@
 				1D0909F0175120DB0037174F /* UIImage+DCUtilities.m */,
 				1D0289A5174DDB4300C76CEB /* Supporting Files */,
 			);
-			name = MobileDeuterium;
-			path = ../MobileDeuterium;
+			path = MobileDeuterium;
 			sourceTree = "<group>";
 		};
 		1D0289A5174DDB4300C76CEB /* Supporting Files */ = {
@@ -466,6 +469,7 @@
 			children = (
 				1D77B2981753E17900735165 /* BSDL.md */,
 				1DED1D63174C861500AE1D98 /* DeuteriumCore */,
+				1D0289A4174DDB4300C76CEB /* MobileDeuterium */,
 				1DED1D5C174C861500AE1D98 /* Frameworks */,
 				1DED1D5B174C861500AE1D98 /* Products */,
 			);
@@ -480,6 +484,8 @@
 				F56096D3174CDAAB0033D72B /* NSDate+DCPersistance.m */,
 				1D090955174FBFC80037174F /* NSURL+DCPersistance.h */,
 				1D090956174FBFC80037174F /* NSURL+DCPersistance.m */,
+				1DCCCFF41755DCC9002B4423 /* NSData+DCPersistance.h */,
+				1DCCCFF51755DCC9002B4423 /* NSData+DCPersistance.m */,
 			);
 			name = "External Persistance";
 			sourceTree = "<group>";
@@ -576,7 +582,6 @@
 				F56096CD174CD8BF0033D72B /* DCMedia.m */,
 				1D09095B174FC0710037174F /* DCUniversalContact.h */,
 				1D09095C174FC0710037174F /* DCUniversalContact.m */,
-				1D0289A4174DDB4300C76CEB /* MobileDeuterium */,
 				1D09098A17504BAF0037174F /* External Persistance */,
 				1DED1D64174C861500AE1D98 /* Supporting Files */,
 			);
@@ -656,6 +661,7 @@
 				F5AB26B01755186C00616652 /* DCPublishBlogRequest.h in Headers */,
 				F5AB26B41755198400616652 /* DCAddBookmarkRequest.h in Headers */,
 				F5AB26B817551B0E00616652 /* DCRepostRequest.h in Headers */,
+				1DCCCFF61755DCC9002B4423 /* NSData+DCPersistance.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -937,6 +943,7 @@
 				F5AB26B11755186C00616652 /* DCPublishBlogRequest.m in Sources */,
 				F5AB26B51755198400616652 /* DCAddBookmarkRequest.m in Sources */,
 				F5AB26B917551B0E00616652 /* DCRepostRequest.m in Sources */,
+				1DCCCFF71755DCC9002B4423 /* NSData+DCPersistance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

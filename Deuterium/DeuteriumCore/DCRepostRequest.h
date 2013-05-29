@@ -19,6 +19,6 @@
 
 @interface DCRepostRequest (DCMethods)
 
-- (id *)repost;
+- (id)repost;
 
 @end

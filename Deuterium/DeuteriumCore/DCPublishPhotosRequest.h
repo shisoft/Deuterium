@@ -14,7 +14,7 @@
 @property NSString *exceptions;
 @property NSString *audience;
 @property NSString *album;
-@property NSString *image; //Base64 string (recommend)
+@property NSData *image;
 @property NSString *path;  //Server path (use when 'image' is empty)
 @property NSString *linnid; //use for POI in places
 @property double lat;
@@ -25,6 +25,6 @@
 
 @interface DCPublishPhotosRequest (DCMethods)
 
-- (id *)publishPhotos;
+- (id)publishPhotos;
 
 @end

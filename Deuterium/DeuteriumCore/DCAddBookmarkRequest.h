@@ -15,9 +15,9 @@
 @property id ID;
 @property NSString *group;
 @property NSString *note;
-@property char later;
-@property char svrMark;
-@property int type;
+@property NSString *later;
+@property NSString *svrMark;
+@property NSInteger type;
 
 @end
 

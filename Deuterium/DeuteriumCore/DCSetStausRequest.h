@@ -24,6 +24,6 @@
 
 @interface DCSetStausRequest (DCMethods)
 
-- (id *)setStausRequest;
+- (id)setStausRequest;
 
 @end
