@@ -8,6 +8,8 @@
 
 #import <CGIJSONRemoteObject/CGIJSONRemoteObject.h>
 
+#define DCSETSTATUS_MISSPELLED
+
 @interface DCSetStatusRequest : CGIRemoteObject
 
 @property NSString *content;
@@ -24,6 +26,9 @@
 
 @interface DCSetStatusRequest (DCMethods)
 
-- (id)setStatusRequest;
+- (id)setStatus;
+#ifdef DCSETSTATUS_MISSPELLED
+- (id)setStaus;
+#endif
 
 @end

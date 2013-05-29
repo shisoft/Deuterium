@@ -25,6 +25,6 @@
 
 @interface DCPublishBlogRequest (DCMethods)
 
-- (id)publishBlogRequest;
+- (id)publishBlog;
 
 @end

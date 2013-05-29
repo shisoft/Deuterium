@@ -23,6 +23,6 @@
 
 @interface DCAddBookmarkRequest (DCMethods)
 
-- (DCWrapper *)addBookmark;
+- (DCWrapper *)addBookmark; // return bookmark id if success, '*' star if exists.
 
 @end

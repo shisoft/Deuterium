@@ -11,6 +11,6 @@
 
 @implementation DCAddBookmarkRequest
 
-CGIRemoteMethodClass(addBookmark, DCWrapper); // return bookmark id if success, '*' star if exists.
+CGIRemoteMethodClass(addBookmark, DCWrapper);
 
 @end

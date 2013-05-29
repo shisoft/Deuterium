@@ -10,4 +10,11 @@
 
 @implementation DCSetStatusRequest
 
+#ifdef DCSETSTATUS_MISSPELLED
+- (id)setStatus
+{
+    return [self setStaus];
+}
+#endif
+
 @end
