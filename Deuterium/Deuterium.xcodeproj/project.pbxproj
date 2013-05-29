@@ -140,6 +140,7 @@
 		1D2E9728175667F800CD4D0B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2E9727175667F800CD4D0B /* AssetsLibrary.framework */; };
 		1D2E972A17566BEF00CD4D0B /* DCCreateBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E972917566BEF00CD4D0B /* DCCreateBar.xib */; };
 		1D2E972D1756739500CD4D0B /* DCLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E972C1756739500CD4D0B /* DCLocationPickerController.m */; };
+		1D2E972F175681CA00CD4D0B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2E972E175681CA00CD4D0B /* MediaPlayer.framework */; };
 		1D77B2991753E17900735165 /* BSDL.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D77B2981753E17900735165 /* BSDL.md */; };
 		1D77B2A317543DAC00735165 /* DCNewsPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D77B2A117543DAC00735165 /* DCNewsPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D77B2A417543DAC00735165 /* DCNewsPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77B2A217543DAC00735165 /* DCNewsPoll.m */; };
@@ -317,6 +318,7 @@
 		1D2E972917566BEF00CD4D0B /* DCCreateBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCCreateBar.xib; sourceTree = "<group>"; };
 		1D2E972B1756739500CD4D0B /* DCLocationPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCLocationPickerController.h; sourceTree = "<group>"; };
 		1D2E972C1756739500CD4D0B /* DCLocationPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCLocationPickerController.m; sourceTree = "<group>"; };
+		1D2E972E175681CA00CD4D0B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		1D77B2981753E17900735165 /* BSDL.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BSDL.md; sourceTree = "<group>"; };
 		1D77B2A117543DAC00735165 /* DCNewsPoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNewsPoll.h; sourceTree = "<group>"; };
 		1D77B2A217543DAC00735165 /* DCNewsPoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsPoll.m; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2E972F175681CA00CD4D0B /* MediaPlayer.framework in Frameworks */,
 				1D2E9728175667F800CD4D0B /* AssetsLibrary.framework in Frameworks */,
 				1D2E97261756676400CD4D0B /* MobileCoreServices.framework in Frameworks */,
 				1D0909BD1750AE1F0037174F /* CoreLocation.framework in Frameworks */,
@@ -563,6 +566,7 @@
 		1DED1D5C174C861500AE1D98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D2E972E175681CA00CD4D0B /* MediaPlayer.framework */,
 				1D2E9727175667F800CD4D0B /* AssetsLibrary.framework */,
 				1D2E97251756676400CD4D0B /* MobileCoreServices.framework */,
 				1D0909BC1750AE1E0037174F /* CoreLocation.framework */,

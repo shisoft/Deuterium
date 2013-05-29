@@ -12,6 +12,7 @@
 #import <DeuteriumCore/DeuteriumCore.h>
 #import "DCImagePickerController.h"
 #import "DCLocationPickerController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface DCCreateNewsViewController () <UITextViewDelegate>
 
@@ -113,6 +114,56 @@
     }
     
     self.textView.inputAccessoryView = self.accessoryView;
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    self.lengthLabel.text = CGISTR(@"%i", [textView.text length]);
+    [self.lengthLabel sizeToFit];
+}
+
+- (void)typeSwitched:(id)sender
+{
+    self.isPost = !self.isPost;
+    
+    if (self.isPost)
+    {
+        self.typeButton.tintColor = [UIColor blueColor];
+    }
+    else
+    {
+        self.typeButton.tintColor = nil;
+    }
+}
+
+- (void)nowPlayingPressed:(id)sender
+{
+    MPMusicPlayerController *iPod = [MPMusicPlayerController iPodMusicPlayer];
+    MPMediaItem *item = [iPod nowPlayingItem];
+    
+    if (item)
+    {
+        NSString *title = [item valueForProperty:MPMediaItemPropertyTitle];
+        NSString *artist = [item valueForProperty:MPMediaItemPropertyArtist];
+        NSString *string = nil;
+        if ([title length] && [artist length])
+            string = CGISTR(@"#nowplaying %@ by %@", title, artist);
+        else if ([title length])
+            string = CGISTR(@"#nowplaying %@", title);
+        
+        if (string)
+        {
+            UITextRange *range = [self.textView selectedTextRange];
+            if (range)
+            {
+                [self.textView replaceRange:range withText:string];
+            }
+            else
+            {
+                self.textView.text = [self.textView.text stringByAppendingString:string];
+            }
+        }
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
