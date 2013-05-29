@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSMutableDictionary *__DCAvatarQueues;
+extern dispatch_queue_t __DCDispatchQueueForHost(NSString *host);
+
 @interface DCNewsCell : UITableViewCell
 
 @property (weak) IBOutlet UILabel *authorField;

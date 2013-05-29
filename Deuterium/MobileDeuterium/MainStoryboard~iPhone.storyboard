@@ -177,30 +177,47 @@
             </objects>
             <point key="canvasLocation" x="1106" y="-49"/>
         </scene>
-        <!--Table View Controller - 联系人-->
+        <!--Contact List View Controller - 联系人-->
         <scene sceneID="tNY-e1-3De">
             <objects>
-                <tableViewController id="qzU-QG-hsb" sceneMemberID="viewController">
+                <tableViewController id="qzU-QG-hsb" customClass="DCContactListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="X0R-fa-g6V">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="396-AG-ndu" style="IBUITableViewCellStyleDefault" id="cSR-Ru-hCJ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="contactCell" id="xtY-ad-mGU" customClass="DCCachedCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="396-AG-ndu">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnf-hV-bU2">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="34" id="QBf-MX-KTu"/>
+                                                <constraint firstAttribute="height" constant="34" id="lkN-Re-d82"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exo-dq-Q31">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="Pnf-hV-bU2" firstAttribute="centerY" secondItem="xtY-ad-mGU" secondAttribute="centerY" type="default" id="5vF-Na-NLE"/>
+                                    <constraint firstItem="Exo-dq-Q31" firstAttribute="top" secondItem="xtY-ad-mGU" secondAttribute="top" constant="11" id="PJg-9E-xVb"/>
+                                    <constraint firstItem="Exo-dq-Q31" firstAttribute="leading" secondItem="Pnf-hV-bU2" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Qum-wp-8x4"/>
+                                    <constraint firstAttribute="trailing" secondItem="Exo-dq-Q31" secondAttribute="trailing" constant="10" type="user" id="gu4-c3-8RM"/>
+                                    <constraint firstItem="Pnf-hV-bU2" firstAttribute="leading" secondItem="xtY-ad-mGU" secondAttribute="leading" constant="10" type="user" id="yKf-hc-w1u"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="avatarView" destination="Pnf-hV-bU2" id="AY9-Fc-ZgV"/>
+                                    <outlet property="titleField" destination="Exo-dq-Q31" id="WK4-2n-7hX"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -1062,6 +1079,19 @@
         <image name="preferences" width="16" height="16"/>
     </resources>
     <classes>
+        <class className="DCCachedCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCCachedCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="avatarView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleField" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DCContactListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCContactListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
+        </class>
         <class className="DCCreateNewsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DCCreateNewsViewController.h"/>
             <relationships>
@@ -1200,8 +1230,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pIQ-RN-1Nu"/>
-        <segue reference="JjR-U9-U3l"/>
+        <segue reference="tmp-pv-WhI"/>
+        <segue reference="8JL-JE-xbc"/>
         <segue reference="tgD-gi-dWw"/>
     </inferredMetricsTieBreakers>
 </document>

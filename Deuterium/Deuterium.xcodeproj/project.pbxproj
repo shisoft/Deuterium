@@ -156,6 +156,9 @@
 		1D2E974C1756994300CD4D0B /* DCUserContactRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E974A1756994300CD4D0B /* DCUserContactRequest.m */; };
 		1D2E974D17569A7D00CD4D0B /* DCUserContactRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2E97491756994300CD4D0B /* DCUserContactRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D2E974E17569A8200CD4D0B /* DCUserContactRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E974A1756994300CD4D0B /* DCUserContactRequest.m */; };
+		1D2E975117569DDA00CD4D0B /* DCCachedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E975017569DDA00CD4D0B /* DCCachedCell.m */; };
+		1D2E975A1756AA3300CD4D0B /* dict.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E97571756AA3000CD4D0B /* dict.txt */; };
+		1D2E975B1756AA3300CD4D0B /* NSString+Pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E97591756AA3200CD4D0B /* NSString+Pinyin.m */; };
 		1D77B2991753E17900735165 /* BSDL.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D77B2981753E17900735165 /* BSDL.md */; };
 		1D77B2A317543DAC00735165 /* DCNewsPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D77B2A117543DAC00735165 /* DCNewsPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D77B2A417543DAC00735165 /* DCNewsPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77B2A217543DAC00735165 /* DCNewsPoll.m */; };
@@ -343,6 +346,11 @@
 		1D2E97441756986B00CD4D0B /* DCUserContactLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCUserContactLink.m; sourceTree = "<group>"; };
 		1D2E97491756994300CD4D0B /* DCUserContactRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUserContactRequest.h; sourceTree = "<group>"; };
 		1D2E974A1756994300CD4D0B /* DCUserContactRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCUserContactRequest.m; sourceTree = "<group>"; };
+		1D2E974F17569DDA00CD4D0B /* DCCachedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCachedCell.h; sourceTree = "<group>"; };
+		1D2E975017569DDA00CD4D0B /* DCCachedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCachedCell.m; sourceTree = "<group>"; };
+		1D2E97571756AA3000CD4D0B /* dict.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dict.txt; sourceTree = "<group>"; };
+		1D2E97581756AA3100CD4D0B /* NSString+Pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Pinyin.h"; sourceTree = "<group>"; };
+		1D2E97591756AA3200CD4D0B /* NSString+Pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Pinyin.m"; sourceTree = "<group>"; };
 		1D77B2981753E17900735165 /* BSDL.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BSDL.md; sourceTree = "<group>"; };
 		1D77B2A117543DAC00735165 /* DCNewsPoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNewsPoll.h; sourceTree = "<group>"; };
 		1D77B2A217543DAC00735165 /* DCNewsPoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsPoll.m; sourceTree = "<group>"; };
@@ -492,6 +500,8 @@
 				1D09099317506A920037174F /* DCExternalServicesViewController.m */,
 				1D2E97331756974400CD4D0B /* DCContactListViewController.h */,
 				1D2E97341756974400CD4D0B /* DCContactListViewController.m */,
+				1D2E974F17569DDA00CD4D0B /* DCCachedCell.h */,
+				1D2E975017569DDA00CD4D0B /* DCCachedCell.m */,
 				1D090961174FCAD60037174F /* DCNewsCell.h */,
 				1D090962174FCAD60037174F /* DCNewsCell.m */,
 				1D090964174FCAFF0037174F /* DCNewsCellController.h */,
@@ -500,6 +510,8 @@
 				1D0909E617511FFF0037174F /* NSString+DCUtilities.m */,
 				1D0909EF175120DB0037174F /* UIImage+DCUtilities.h */,
 				1D0909F0175120DB0037174F /* UIImage+DCUtilities.m */,
+				1D2E97581756AA3100CD4D0B /* NSString+Pinyin.h */,
+				1D2E97591756AA3200CD4D0B /* NSString+Pinyin.m */,
 				1D0289A5174DDB4300C76CEB /* Supporting Files */,
 			);
 			path = MobileDeuterium;
@@ -511,6 +523,7 @@
 				1D0289A6174DDB4300C76CEB /* MobileDeuterium-Info.plist */,
 				1D0289A7174DDB4300C76CEB /* InfoPlist.strings */,
 				1D090972174FD6B40037174F /* Localizable.strings */,
+				1D2E97571756AA3000CD4D0B /* dict.txt */,
 				1D0909DD1750C6770037174F /* NewsTemplate.html */,
 				1D0289AA174DDB4300C76CEB /* main.m */,
 				1D0909BE1750BEA90037174F /* apps.png */,
@@ -923,6 +936,7 @@
 				1D2E9721175637DD00CD4D0B /* default-user.png in Resources */,
 				1D2E972A17566BEF00CD4D0B /* DCCreateBar.xib in Resources */,
 				1D2E97321756906400CD4D0B /* DCReplyBar.xib in Resources */,
+				1D2E975A1756AA3300CD4D0B /* dict.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1044,6 +1058,8 @@
 				1D2E97241756613E00CD4D0B /* DCImagePickerController.m in Sources */,
 				1D2E972D1756739500CD4D0B /* DCLocationPickerController.m in Sources */,
 				1D2E97351756974400CD4D0B /* DCContactListViewController.m in Sources */,
+				1D2E975117569DDA00CD4D0B /* DCCachedCell.m in Sources */,
+				1D2E975B1756AA3300CD4D0B /* NSString+Pinyin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define refreshButton navigationItem.leftBarButtonItem
+
 @interface DCContactListViewController : UITableViewController
 
 @end

@@ -7,8 +7,18 @@
 //
 
 #import "DCContactListViewController.h"
+#import "DCAppDelegate.h"
+#import <DeuteriumCore/DeuteriumCore.h>
+#import "DCCachedCell.h"
+#import "NSString+Pinyin.h"
 
 @interface DCContactListViewController ()
+
+@property NSArray *headers;
+@property NSMutableDictionary *sections;
+@property BOOL loaded;
+
+- (IBAction)refresh:(id)sender;
 
 @end
 
@@ -26,12 +36,41 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    if (DCHasRefreshControl())
+    {
+        UIRefreshControl *_refreshControl = [[UIRefreshControl alloc] init];
+        
+        [_refreshControl addTarget:self
+                            action:@selector(refresh:)
+                  forControlEvents:UIControlEventValueChanged];
+        
+        self.refreshControl = _refreshControl;
+    }
+    else
+    {
+        UIBarButtonItem *_refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                        target:self
+                                                                                        action:@selector(refresh:)];
+        
+        self.refreshButton = _refreshButton;
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (!self.loaded)
+    {
+        [self refresh:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,82 +79,182 @@
     // Dispose of any resources that can be recreated.
 }
 
+NSString *__DCLatinizedString(NSString *string)
+{
+    string = [string pinyinTransliteration];
+    
+    static NSMutableCharacterSet *accepted;
+    if (!accepted)
+    {
+        accepted = [[NSMutableCharacterSet alloc] init];
+        [accepted formUnionWithCharacterSet:[NSCharacterSet letterCharacterSet]];
+        [accepted formUnionWithCharacterSet:[NSCharacterSet decimalDigitCharacterSet]];
+    }
+    
+    NSData *washer = [string dataUsingEncoding:NSASCIIStringEncoding
+                          allowLossyConversion:YES];
+    NSString *washed = [[NSString alloc] initWithData:washer
+                                             encoding:NSASCIIStringEncoding];
+    
+    NSString *out = [[washed componentsSeparatedByCharactersInSet:[accepted invertedSet]] componentsJoinedByString:@""];
+    return out;
+}
+
+NSString *__DCLatinizedStringWithSpaces(NSString *string)
+{
+    string = [string pinyinTransliteration];
+    
+    static NSMutableCharacterSet *accepted;
+    if (!accepted)
+    {
+        accepted = [[NSMutableCharacterSet alloc] init];
+        [accepted formUnionWithCharacterSet:[NSCharacterSet letterCharacterSet]];
+        [accepted formUnionWithCharacterSet:[NSCharacterSet decimalDigitCharacterSet]];
+        [accepted formUnionWithCharacterSet:[NSCharacterSet whitespaceCharacterSet]];
+    }
+    
+    NSData *washer = [string dataUsingEncoding:NSASCIIStringEncoding
+                          allowLossyConversion:YES];
+    NSString *washed = [[NSString alloc] initWithData:washer
+                                             encoding:NSASCIIStringEncoding];
+    
+    NSString *out = [[washed componentsSeparatedByCharactersInSet:[accepted invertedSet]] componentsJoinedByString:@""];
+    return out;
+}
+
+- (void)refresh:(id)sender
+{
+    dispatch_group_async(DCBackgroundTasks,
+                         dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                         ^{
+                             // FIXME: This is abusive.
+                             NSMutableArray *contacts = [NSMutableArray array];
+                             NSUInteger page = 0;
+                             
+                             DCUserContactRequest *request = [[DCUserContactRequest alloc] init];
+                             request.query = @"";
+                             request.group = @"";
+                             
+                             NSArray *responseArray = nil;
+                             
+                             do
+                             {
+                                 request.page = page;
+                                 responseArray = [request getContactNames];
+                                 
+                                 if ([responseArray isKindOfClass:[NSArray class]])
+                                 {
+                                     [contacts addObjectsFromArray:responseArray];
+                                     page++;
+                                 }
+                                 else
+                                 {
+                                     responseArray = @[];
+                                 }
+                             } while ([responseArray count]);
+                             
+                             [contacts sortUsingComparator:^NSComparisonResult(DCUserContact *obj1, DCUserContact *obj2)
+                              {
+                                  return [obj1.name localizedCompare:obj2.name];
+                              }];
+                             
+                             if (!self.headers)
+                             {
+                                 NSMutableArray *headers = [NSMutableArray arrayWithCapacity:27];
+                                 NSString *headersString = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ#";
+                                 
+                                 for (NSUInteger i = 0; i < [headersString length]; i++)
+                                 {
+                                     [headers addObject:CGISTR(@"%C", [headersString characterAtIndex:i])];
+                                 }
+                                 
+                                 self.headers = [headers copy];
+                             }
+                             
+                             self.sections = [NSMutableDictionary dictionary];
+                             
+                             for (DCUserContact *contact in contacts)
+                             {
+                                 NSString *latinized = __DCLatinizedString(contact.name);
+                                 NSString *header = ([latinized length]) ? [[latinized substringToIndex:1] uppercaseString] : @"#";
+                                 if (![header length] ||
+                                     ![[NSCharacterSet letterCharacterSet] characterIsMember:[header characterAtIndex:0]])
+                                 {
+                                     header = @"#";
+                                 }
+                                 NSMutableArray *headerArray = self.sections[header];
+                                 
+                                 if (headerArray)
+                                 {
+                                     [headerArray addObject:contact];
+                                 }
+                                 else
+                                 {
+                                     self.sections[header] = [@[contact] mutableCopy];
+                                 }
+                             }
+                             
+                             for (NSString *key in self.sections)
+                             {
+                                 NSMutableArray *array = self.sections[key];
+                                 [array sortUsingComparator:^NSComparisonResult(DCUserContact *obj1, DCUserContact *obj2)
+                                  {
+                                      return [obj1.name localizedCaseInsensitiveCompare:obj2.name];
+                                  }];
+                             }
+                             
+                             dispatch_async(dispatch_get_main_queue(),
+                                            ^{
+                                                [self.tableView reloadData];
+                                            });
+                             
+                             self.loaded = YES;
+                         });
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return [self.headers count];
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return self.headers;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    return index;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.sections[self.headers[section]] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return self.headers[section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    DCCachedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"contactCell"
+                                                         forIndexPath:indexPath];
     
-    // Configure the cell...
+    DCUserContact *contact = self.sections[self.headers[indexPath.section]][indexPath.row];
+    
+    cell.titleField.text = contact.name;
+    cell.avatarURL = contact.avatar.avatar;
+    [cell loadAvatar];
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
 @end
