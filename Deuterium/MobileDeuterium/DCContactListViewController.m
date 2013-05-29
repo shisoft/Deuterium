@@ -16,6 +16,8 @@
 
 @property NSArray *headers;
 @property NSMutableDictionary *sections;
+
+@property BOOL loading;
 @property BOOL loaded;
 
 - (IBAction)refresh:(id)sender;
@@ -124,6 +126,15 @@ NSString *__DCLatinizedStringWithSpaces(NSString *string)
 
 - (void)refresh:(id)sender
 {
+    if (self.loading)
+        return;
+    self.loading = YES;
+    
+    if (DCHasRefreshControl())
+    {
+        [self.refreshControl beginRefreshing];
+    }
+    
     dispatch_group_async(DCBackgroundTasks,
                          dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                          ^{
@@ -203,12 +214,18 @@ NSString *__DCLatinizedStringWithSpaces(NSString *string)
                                   }];
                              }
                              
+                             self.loaded = YES;
+                             
                              dispatch_async(dispatch_get_main_queue(),
                                             ^{
+                                                self.loading = NO;
+                                                
+                                                if (DCHasRefreshControl())
+                                                {
+                                                    [self.refreshControl endRefreshing];
+                                                }
                                                 [self.tableView reloadData];
                                             });
-                             
-                             self.loaded = YES;
                          });
 }
 
@@ -216,12 +233,12 @@ NSString *__DCLatinizedStringWithSpaces(NSString *string)
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.headers count];
+    return (self.loaded) ? [self.headers count] : 1;
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    return self.headers;
+    return (self.loaded) ? self.headers : nil;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
@@ -232,26 +249,34 @@ NSString *__DCLatinizedStringWithSpaces(NSString *string)
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.sections[self.headers[section]] count];
+    return (self.loaded) ? [self.sections[self.headers[section]] count] : 1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return self.headers[section];
+    return (self.loaded) ? CGISTR(@"%@ (%i)", self.headers[section], [self.sections[self.headers[section]] count]) : nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DCCachedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"contactCell"
-                                                         forIndexPath:indexPath];
-    
-    DCUserContact *contact = self.sections[self.headers[indexPath.section]][indexPath.row];
-    
-    cell.titleField.text = contact.name;
-    cell.avatarURL = contact.avatar.avatar;
-    [cell loadAvatar];
-    
-    return cell;
+    if (self.loaded)
+    {
+        DCCachedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"contactCell"
+                                                             forIndexPath:indexPath];
+        
+        DCUserContact *contact = self.sections[self.headers[indexPath.section]][indexPath.row];
+        
+        cell.titleField.text = contact.name;
+        cell.avatarURL = contact.avatar.avatar;
+        [cell loadAvatar];
+        
+        return cell;
+    }
+    else
+    {
+        return [tableView dequeueReusableCellWithIdentifier:@"loadingCell"
+                                               forIndexPath:indexPath];
+    }
 }
 
 #pragma mark - Table view delegate

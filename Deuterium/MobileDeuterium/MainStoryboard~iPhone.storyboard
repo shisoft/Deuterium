@@ -219,6 +219,22 @@
                                     <outlet property="titleField" destination="Exo-dq-Q31" id="WK4-2n-7hX"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="loadingCell" id="Xcz-Ds-HRg">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Lls-WX-hXw"/>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="Lls-WX-hXw" firstAttribute="centerX" secondItem="Xcz-Ds-HRg" secondAttribute="centerX" type="default" id="BVp-kR-vRu"/>
+                                    <constraint firstItem="Lls-WX-hXw" firstAttribute="centerY" secondItem="Xcz-Ds-HRg" secondAttribute="centerY" type="default" id="QV1-so-1pc"/>
+                                </constraints>
+                            </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="联系人" id="O10-Ce-aLM"/>
