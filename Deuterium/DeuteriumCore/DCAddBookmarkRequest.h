@@ -10,6 +10,12 @@
 
 @class DCWrapper;
 
+typedef NS_ENUM(NSUInteger, DCBookmarkType)
+{
+    DCBookmarkNews,
+    DCBookmarkPost
+};
+
 @interface DCAddBookmarkRequest : CGIRemoteObject
 
 @property id ID;
@@ -17,7 +23,7 @@
 @property NSString *note;
 @property NSString *later;
 @property NSString *svrMark;
-@property NSInteger type;
+@property DCBookmarkType type;
 
 @end
 

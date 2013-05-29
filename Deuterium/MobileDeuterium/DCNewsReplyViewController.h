@@ -14,7 +14,8 @@ typedef NS_ENUM(NSUInteger, DCNewsReplyMode)
 {
     DCNewsReply,
     DCNewsRepost,
-    DCNewsBookmark
+    DCNewsBookmark,
+    DCNewsReadLater
 };
 
 @interface DCNewsReplyViewController : UIViewController

@@ -39,7 +39,8 @@
     NSArray *names = @[
                        NSLocalizedString(@"ui.reply", @""),
                        NSLocalizedString(@"ui.repost", @""),
-                       NSLocalizedString(@"ui.bookmark", @"")
+                       NSLocalizedString(@"ui.bookmark", @""),
+                       NSLocalizedString(@"ui.read-later", @"")
                        ];
     
     self.replyButton.title = names[self.mode];
@@ -96,7 +97,23 @@
                                  }
                                  case DCNewsBookmark:
                                  {
-                                     DC
+                                     DCAddBookmarkRequest *addbm = [[DCAddBookmarkRequest alloc] init];
+                                     addbm.ID = self.news.ID;
+                                     addbm.note = content;
+                                     addbm.later = @"-";
+                                     addbm.svrMark = @"-";
+                                     addbm.type = DCBookmarkNews;
+                                     break;
+                                 }
+                                 case DCNewsReadLater:
+                                 {
+                                     DCAddBookmarkRequest *addbm = [[DCAddBookmarkRequest alloc] init];
+                                     addbm.ID = self.news.ID;
+                                     addbm.note = content;
+                                     addbm.later = @"+";
+                                     addbm.svrMark = @"-";
+                                     addbm.type = DCBookmarkNews;
+                                     break;
                                  }
                              }
                          });

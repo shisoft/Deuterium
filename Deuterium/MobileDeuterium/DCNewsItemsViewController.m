@@ -54,7 +54,8 @@
                                               otherButtonTitles:
                             NSLocalizedString(@"ui.reply", @""),
                             NSLocalizedString(@"ui.repost", @""),
-                            NSLocalizedString(@"ui.bookmark", @""), nil];
+                            NSLocalizedString(@"ui.bookmark", @""),
+                            NSLocalizedString(@"ui.read-later", @""), nil];
     }
     
     [self.actionSheet showFromBarButtonItem:sender animated:YES];
