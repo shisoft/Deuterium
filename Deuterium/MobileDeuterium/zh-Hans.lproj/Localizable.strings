@@ -16,6 +16,8 @@
 "ui.repost"         = "转发";
 "ui.bookmark"       = "收藏";
 "ui.read-later"     = "稍后再读";
+"ui.camera"         = "相机";
+"ui.picture-lib"    = "照片图库";
 
 /* Timing */
 "ui.just-now"       = "刚才";

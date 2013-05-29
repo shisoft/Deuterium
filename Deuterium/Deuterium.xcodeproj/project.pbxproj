@@ -128,6 +128,18 @@
 		1D090A0C1751BF8E0037174F /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 1D0909FF1751BF8E0037174F /* iTunesArtwork */; };
 		1D090A0D1751BF8E0037174F /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 1D090A001751BF8E0037174F /* iTunesArtwork@2x */; };
 		1D285CB11754E18B004A786E /* DCNewsItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D285CB01754E18B004A786E /* DCNewsItemsViewController.m */; };
+		1D2E97181756331900CD4D0B /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E97141756331900CD4D0B /* location.png */; };
+		1D2E97191756331900CD4D0B /* location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E97151756331900CD4D0B /* location@2x.png */; };
+		1D2E971A1756331900CD4D0B /* playing.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E97161756331900CD4D0B /* playing.png */; };
+		1D2E971B1756331900CD4D0B /* playing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E97171756331900CD4D0B /* playing@2x.png */; };
+		1D2E971E1756339900CD4D0B /* blog.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E971C1756339900CD4D0B /* blog.png */; };
+		1D2E971F1756339900CD4D0B /* blog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E971D1756339900CD4D0B /* blog@2x.png */; };
+		1D2E9721175637DD00CD4D0B /* default-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E9720175637DD00CD4D0B /* default-user.png */; };
+		1D2E97241756613E00CD4D0B /* DCImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E97231756613E00CD4D0B /* DCImagePickerController.m */; };
+		1D2E97261756676400CD4D0B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2E97251756676400CD4D0B /* MobileCoreServices.framework */; };
+		1D2E9728175667F800CD4D0B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2E9727175667F800CD4D0B /* AssetsLibrary.framework */; };
+		1D2E972A17566BEF00CD4D0B /* DCCreateBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E972917566BEF00CD4D0B /* DCCreateBar.xib */; };
+		1D2E972D1756739500CD4D0B /* DCLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E972C1756739500CD4D0B /* DCLocationPickerController.m */; };
 		1D77B2991753E17900735165 /* BSDL.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D77B2981753E17900735165 /* BSDL.md */; };
 		1D77B2A317543DAC00735165 /* DCNewsPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D77B2A117543DAC00735165 /* DCNewsPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D77B2A417543DAC00735165 /* DCNewsPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77B2A217543DAC00735165 /* DCNewsPoll.m */; };
@@ -291,6 +303,20 @@
 		1D090A001751BF8E0037174F /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		1D285CAF1754E18B004A786E /* DCNewsItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNewsItemsViewController.h; sourceTree = "<group>"; };
 		1D285CB01754E18B004A786E /* DCNewsItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsItemsViewController.m; sourceTree = "<group>"; };
+		1D2E97141756331900CD4D0B /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
+		1D2E97151756331900CD4D0B /* location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@2x.png"; sourceTree = "<group>"; };
+		1D2E97161756331900CD4D0B /* playing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playing.png; sourceTree = "<group>"; };
+		1D2E97171756331900CD4D0B /* playing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing@2x.png"; sourceTree = "<group>"; };
+		1D2E971C1756339900CD4D0B /* blog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blog.png; sourceTree = "<group>"; };
+		1D2E971D1756339900CD4D0B /* blog@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blog@2x.png"; sourceTree = "<group>"; };
+		1D2E9720175637DD00CD4D0B /* default-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-user.png"; sourceTree = "<group>"; };
+		1D2E97221756613E00CD4D0B /* DCImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCImagePickerController.h; sourceTree = "<group>"; };
+		1D2E97231756613E00CD4D0B /* DCImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCImagePickerController.m; sourceTree = "<group>"; };
+		1D2E97251756676400CD4D0B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		1D2E9727175667F800CD4D0B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
+		1D2E972917566BEF00CD4D0B /* DCCreateBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCCreateBar.xib; sourceTree = "<group>"; };
+		1D2E972B1756739500CD4D0B /* DCLocationPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCLocationPickerController.h; sourceTree = "<group>"; };
+		1D2E972C1756739500CD4D0B /* DCLocationPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCLocationPickerController.m; sourceTree = "<group>"; };
 		1D77B2981753E17900735165 /* BSDL.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BSDL.md; sourceTree = "<group>"; };
 		1D77B2A117543DAC00735165 /* DCNewsPoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNewsPoll.h; sourceTree = "<group>"; };
 		1D77B2A217543DAC00735165 /* DCNewsPoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsPoll.m; sourceTree = "<group>"; };
@@ -367,6 +393,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2E9728175667F800CD4D0B /* AssetsLibrary.framework in Frameworks */,
+				1D2E97261756676400CD4D0B /* MobileCoreServices.framework in Frameworks */,
 				1D0909BD1750AE1F0037174F /* CoreLocation.framework in Frameworks */,
 				1D0909B71750A71D0037174F /* QuartzCore.framework in Frameworks */,
 				1D0289FB174DEC0400C76CEB /* Security.framework in Frameworks */,
@@ -424,6 +452,11 @@
 				1DCCCFF91755E72B002B4423 /* DCNewsReplyViewController.m */,
 				1DCCD00717562642002B4423 /* DCCreateNewsViewController.h */,
 				1DCCD00817562643002B4423 /* DCCreateNewsViewController.m */,
+				1D2E972917566BEF00CD4D0B /* DCCreateBar.xib */,
+				1D2E97221756613E00CD4D0B /* DCImagePickerController.h */,
+				1D2E97231756613E00CD4D0B /* DCImagePickerController.m */,
+				1D2E972B1756739500CD4D0B /* DCLocationPickerController.h */,
+				1D2E972C1756739500CD4D0B /* DCLocationPickerController.m */,
 				1D0909B3175081DF0037174F /* DCEditableCell.h */,
 				1D0909B4175081DF0037174F /* DCEditableCell.m */,
 				1D09099217506A920037174F /* DCExternalServicesViewController.h */,
@@ -463,6 +496,13 @@
 				1D0909C91750BEA90037174F /* preferences@2x.png */,
 				1D0909CA1750BEA90037174F /* store.png */,
 				1D0909CB1750BEA90037174F /* store@2x.png */,
+				1D2E97141756331900CD4D0B /* location.png */,
+				1D2E97151756331900CD4D0B /* location@2x.png */,
+				1D2E97161756331900CD4D0B /* playing.png */,
+				1D2E97171756331900CD4D0B /* playing@2x.png */,
+				1D2E971C1756339900CD4D0B /* blog.png */,
+				1D2E971D1756339900CD4D0B /* blog@2x.png */,
+				1D2E9720175637DD00CD4D0B /* default-user.png */,
 				1D0909F71751BF8C0037174F /* Icon-72.png */,
 				1D0909F81751BF8D0037174F /* Icon-72@2x.png */,
 				1D0909F91751BF8D0037174F /* Icon-Small-50.png */,
@@ -523,6 +563,8 @@
 		1DED1D5C174C861500AE1D98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D2E9727175667F800CD4D0B /* AssetsLibrary.framework */,
+				1D2E97251756676400CD4D0B /* MobileCoreServices.framework */,
 				1D0909BC1750AE1E0037174F /* CoreLocation.framework */,
 				1D0909B61750A71D0037174F /* QuartzCore.framework */,
 				1D0289FA174DEC0400C76CEB /* Security.framework */,
@@ -828,6 +870,14 @@
 				1D090A0B1751BF8E0037174F /* Icon@2x.png in Resources */,
 				1D090A0C1751BF8E0037174F /* iTunesArtwork in Resources */,
 				1D090A0D1751BF8E0037174F /* iTunesArtwork@2x in Resources */,
+				1D2E97181756331900CD4D0B /* location.png in Resources */,
+				1D2E97191756331900CD4D0B /* location@2x.png in Resources */,
+				1D2E971A1756331900CD4D0B /* playing.png in Resources */,
+				1D2E971B1756331900CD4D0B /* playing@2x.png in Resources */,
+				1D2E971E1756339900CD4D0B /* blog.png in Resources */,
+				1D2E971F1756339900CD4D0B /* blog@2x.png in Resources */,
+				1D2E9721175637DD00CD4D0B /* default-user.png in Resources */,
+				1D2E972A17566BEF00CD4D0B /* DCCreateBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -943,6 +993,8 @@
 				1D285CB11754E18B004A786E /* DCNewsItemsViewController.m in Sources */,
 				1DCCCFFA1755E72C002B4423 /* DCNewsReplyViewController.m in Sources */,
 				1DCCD00917562646002B4423 /* DCCreateNewsViewController.m in Sources */,
+				1D2E97241756613E00CD4D0B /* DCImagePickerController.m in Sources */,
+				1D2E972D1756739500CD4D0B /* DCLocationPickerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

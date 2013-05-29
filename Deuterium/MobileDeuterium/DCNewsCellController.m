@@ -91,7 +91,9 @@
 - (NSString *)authorDescription
 {
     // Set up author name:
-    if ([self.news.authorUC.dispName length] && [self.news.authorUC.scrName length])
+    if ([self.news.authorUC.dispName length] &&
+        [self.news.authorUC.scrName length] &&
+        ![self.news.authorUC.dispName isEqualToString:self.news.authorUC.scrName])
     {
         return CGISTR(@"%@ (%@)",
                       self.news.authorUC.dispName,

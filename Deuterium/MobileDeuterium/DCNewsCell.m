@@ -10,6 +10,8 @@
 #import "DCAppDelegate.h"
 #import "UIImage+DCUtilities.h"
 
+NSMutableDictionary *__DCAvatarQueues;
+
 @implementation DCNewsCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -41,12 +43,28 @@
     }
 }
 
+dispatch_queue_t __DCDispatchQueueForHost(NSString *host)
+{
+    if (!host)
+        host = @"";
+    
+    if (!__DCAvatarQueues)
+        __DCAvatarQueues = [NSMutableDictionary dictionary];
+    
+    if (!__DCAvatarQueues[host])
+        __DCAvatarQueues[host] = dispatch_queue_create(CGICSTR(CGISTR(@"info.maxchan.info.avatar.%@",
+                                                                      host)),
+                                                       0);
+    
+    return __DCAvatarQueues[host];
+}
+
 - (void)loadAvatar
 {
     NSURL *avatarURL = self.avatarURL;
     self.avatarView.image = nil;
     dispatch_group_async(DCBackgroundTasks,
-                         dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                         __DCDispatchQueueForHost([avatarURL host]),
                          ^{
                              NSURLRequest *request = [NSURLRequest requestWithURL:avatarURL];
                              
@@ -68,10 +86,12 @@
                              }
                              
                              UIImage *image = [UIImage imageWithData:[cachedResponse data]];
-                             if (image)
+                             if (!image)
                              {
-                                 image = [[image scaledImageToSize:CGSizeMake(68, 68)] roundedImageWithRadius:10]; // Retina!!
+                                 image = [UIImage imageNamed:@"default-user"];
                              }
+                             
+                             image = [[image scaledImageToSize:CGSizeMake(68, 68)] roundedImageWithRadius:10]; // Retina!!
                              
                              dispatch_async(dispatch_get_main_queue(),
                                             ^{
