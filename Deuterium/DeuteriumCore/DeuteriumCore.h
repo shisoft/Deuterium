@@ -32,3 +32,6 @@
 #import <DeuteriumCore/DCNewsRequest.h>
 #import <DeuteriumCore/DCMedia.h>
 #import <DeuteriumCore/DCUniversalContact.h>
+#import <DeuteriumCore/DCUserContact.h>
+#import <DeuteriumCore/DCUserContactLink.h>
+#import <DeuteriumCore/DCUserContactRequest.h>

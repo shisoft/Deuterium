@@ -143,6 +143,19 @@
 		1D2E972F175681CA00CD4D0B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2E972E175681CA00CD4D0B /* MediaPlayer.framework */; };
 		1D2E97301756890400CD4D0B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0909BC1750AE1E0037174F /* CoreLocation.framework */; };
 		1D2E97321756906400CD4D0B /* DCReplyBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E97311756906300CD4D0B /* DCReplyBar.xib */; };
+		1D2E97351756974400CD4D0B /* DCContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E97341756974400CD4D0B /* DCContactListViewController.m */; };
+		1D2E973F175697AC00CD4D0B /* DCUserContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2E973D175697AC00CD4D0B /* DCUserContact.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D2E9740175697AC00CD4D0B /* DCUserContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E973E175697AC00CD4D0B /* DCUserContact.m */; };
+		1D2E9741175697B000CD4D0B /* DCUserContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E973E175697AC00CD4D0B /* DCUserContact.m */; };
+		1D2E9742175697B500CD4D0B /* DCUserContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2E973D175697AC00CD4D0B /* DCUserContact.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D2E97451756986B00CD4D0B /* DCUserContactLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2E97431756986B00CD4D0B /* DCUserContactLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D2E97461756986B00CD4D0B /* DCUserContactLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E97441756986B00CD4D0B /* DCUserContactLink.m */; };
+		1D2E97471756988400CD4D0B /* DCUserContactLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2E97431756986B00CD4D0B /* DCUserContactLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D2E97481756988A00CD4D0B /* DCUserContactLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E97441756986B00CD4D0B /* DCUserContactLink.m */; };
+		1D2E974B1756994300CD4D0B /* DCUserContactRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2E97491756994300CD4D0B /* DCUserContactRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D2E974C1756994300CD4D0B /* DCUserContactRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E974A1756994300CD4D0B /* DCUserContactRequest.m */; };
+		1D2E974D17569A7D00CD4D0B /* DCUserContactRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D2E97491756994300CD4D0B /* DCUserContactRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D2E974E17569A8200CD4D0B /* DCUserContactRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E974A1756994300CD4D0B /* DCUserContactRequest.m */; };
 		1D77B2991753E17900735165 /* BSDL.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D77B2981753E17900735165 /* BSDL.md */; };
 		1D77B2A317543DAC00735165 /* DCNewsPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D77B2A117543DAC00735165 /* DCNewsPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D77B2A417543DAC00735165 /* DCNewsPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77B2A217543DAC00735165 /* DCNewsPoll.m */; };
@@ -322,6 +335,14 @@
 		1D2E972C1756739500CD4D0B /* DCLocationPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCLocationPickerController.m; sourceTree = "<group>"; };
 		1D2E972E175681CA00CD4D0B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		1D2E97311756906300CD4D0B /* DCReplyBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCReplyBar.xib; sourceTree = "<group>"; };
+		1D2E97331756974400CD4D0B /* DCContactListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCContactListViewController.h; sourceTree = "<group>"; };
+		1D2E97341756974400CD4D0B /* DCContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCContactListViewController.m; sourceTree = "<group>"; };
+		1D2E973D175697AC00CD4D0B /* DCUserContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUserContact.h; sourceTree = "<group>"; };
+		1D2E973E175697AC00CD4D0B /* DCUserContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCUserContact.m; sourceTree = "<group>"; };
+		1D2E97431756986B00CD4D0B /* DCUserContactLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUserContactLink.h; sourceTree = "<group>"; };
+		1D2E97441756986B00CD4D0B /* DCUserContactLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCUserContactLink.m; sourceTree = "<group>"; };
+		1D2E97491756994300CD4D0B /* DCUserContactRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUserContactRequest.h; sourceTree = "<group>"; };
+		1D2E974A1756994300CD4D0B /* DCUserContactRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCUserContactRequest.m; sourceTree = "<group>"; };
 		1D77B2981753E17900735165 /* BSDL.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BSDL.md; sourceTree = "<group>"; };
 		1D77B2A117543DAC00735165 /* DCNewsPoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNewsPoll.h; sourceTree = "<group>"; };
 		1D77B2A217543DAC00735165 /* DCNewsPoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsPoll.m; sourceTree = "<group>"; };
@@ -469,6 +490,8 @@
 				1D0909B4175081DF0037174F /* DCEditableCell.m */,
 				1D09099217506A920037174F /* DCExternalServicesViewController.h */,
 				1D09099317506A920037174F /* DCExternalServicesViewController.m */,
+				1D2E97331756974400CD4D0B /* DCContactListViewController.h */,
+				1D2E97341756974400CD4D0B /* DCContactListViewController.m */,
 				1D090961174FCAD60037174F /* DCNewsCell.h */,
 				1D090962174FCAD60037174F /* DCNewsCell.m */,
 				1D090964174FCAFF0037174F /* DCNewsCellController.h */,
@@ -653,6 +676,12 @@
 				F56096CD174CD8BF0033D72B /* DCMedia.m */,
 				1D09095B174FC0710037174F /* DCUniversalContact.h */,
 				1D09095C174FC0710037174F /* DCUniversalContact.m */,
+				1D2E973D175697AC00CD4D0B /* DCUserContact.h */,
+				1D2E973E175697AC00CD4D0B /* DCUserContact.m */,
+				1D2E97431756986B00CD4D0B /* DCUserContactLink.h */,
+				1D2E97441756986B00CD4D0B /* DCUserContactLink.m */,
+				1D2E97491756994300CD4D0B /* DCUserContactRequest.h */,
+				1D2E974A1756994300CD4D0B /* DCUserContactRequest.m */,
 				1D09098A17504BAF0037174F /* External Persistance */,
 				1DED1D64174C861500AE1D98 /* Supporting Files */,
 			);
@@ -703,6 +732,9 @@
 				1DCCD0011755ECF5002B4423 /* DCPublishBlogRequest.h in Headers */,
 				1DCCD0031755ECF5002B4423 /* DCAddBookmarkRequest.h in Headers */,
 				1DCCD0051755ECF5002B4423 /* DCRepostRequest.h in Headers */,
+				1D2E9742175697B500CD4D0B /* DCUserContact.h in Headers */,
+				1D2E97471756988400CD4D0B /* DCUserContactLink.h in Headers */,
+				1D2E974D17569A7D00CD4D0B /* DCUserContactRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,6 +771,9 @@
 				F5AB26B41755198400616652 /* DCAddBookmarkRequest.h in Headers */,
 				F5AB26B817551B0E00616652 /* DCRepostRequest.h in Headers */,
 				1DCCCFF61755DCC9002B4423 /* NSData+DCPersistance.h in Headers */,
+				1D2E973F175697AC00CD4D0B /* DCUserContact.h in Headers */,
+				1D2E97451756986B00CD4D0B /* DCUserContactLink.h in Headers */,
+				1D2E974B1756994300CD4D0B /* DCUserContactRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,6 +1011,9 @@
 				1DCCD0021755ECF5002B4423 /* DCPublishBlogRequest.m in Sources */,
 				1DCCD0041755ECF5002B4423 /* DCAddBookmarkRequest.m in Sources */,
 				1DCCD0061755ECF5002B4423 /* DCRepostRequest.m in Sources */,
+				1D2E9741175697B000CD4D0B /* DCUserContact.m in Sources */,
+				1D2E97481756988A00CD4D0B /* DCUserContactLink.m in Sources */,
+				1D2E974E17569A8200CD4D0B /* DCUserContactRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1005,6 +1043,7 @@
 				1DCCD00917562646002B4423 /* DCCreateNewsViewController.m in Sources */,
 				1D2E97241756613E00CD4D0B /* DCImagePickerController.m in Sources */,
 				1D2E972D1756739500CD4D0B /* DCLocationPickerController.m in Sources */,
+				1D2E97351756974400CD4D0B /* DCContactListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1040,6 +1079,9 @@
 				F5AB26B51755198400616652 /* DCAddBookmarkRequest.m in Sources */,
 				F5AB26B917551B0E00616652 /* DCRepostRequest.m in Sources */,
 				1DCCCFF71755DCC9002B4423 /* NSData+DCPersistance.m in Sources */,
+				1D2E9740175697AC00CD4D0B /* DCUserContact.m in Sources */,
+				1D2E97461756986B00CD4D0B /* DCUserContactLink.m in Sources */,
+				1D2E974C1756994300CD4D0B /* DCUserContactRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
