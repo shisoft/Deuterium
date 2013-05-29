@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 muski. All rights reserved.
 //
 
-#import "DCSetStausRequest.h"
+#import "DCSetStatusRequest.h"
 
-@implementation DCSetStausRequest
+@implementation DCSetStatusRequest
 
 @end

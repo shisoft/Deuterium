@@ -8,7 +8,7 @@
 
 #import <CGIJSONRemoteObject/CGIJSONRemoteObject.h>
 
-@interface DCSetStausRequest : CGIRemoteObject
+@interface DCSetStatusRequest : CGIRemoteObject
 
 @property NSString *content;
 @property NSString *exceptions;
@@ -22,8 +22,8 @@
 
 @end
 
-@interface DCSetStausRequest (DCMethods)
+@interface DCSetStatusRequest (DCMethods)
 
-- (id)setStausRequest;
+- (id)setStatusRequest;
 
 @end

@@ -11,6 +11,10 @@
 /* UI elements */
 "ui.ok"             = "确定";
 "ui.messages-no"    = "条消息";
+"ui.cancel"         = "取消";
+"ui.reply"          = "回复";
+"ui.repost"         = "转发";
+"ui.bookmark"       = "收藏";
 
 /* Timing */
 "ui.just-now"       = "刚才";

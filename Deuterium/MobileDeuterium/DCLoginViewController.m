@@ -14,6 +14,7 @@
 
 @property (weak) IBOutlet UITextField *usernameField;
 @property (weak) IBOutlet UITextField *passwordField;
+@property (weak) IBOutlet UIBarButtonItem *loginButton;
 
 - (IBAction)usernameDidFinish:(id)sender;
 - (IBAction)login:(id)sender;
@@ -35,6 +36,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    self.loginButton.enabled = [self.usernameField.text length] && [self.passwordField.text length];
     
     if ([self.usernameField.text length])
     {

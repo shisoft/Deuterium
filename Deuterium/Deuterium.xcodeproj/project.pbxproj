@@ -136,6 +136,19 @@
 		1D77B2A9175442E900735165 /* DCNewsPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77B2A217543DAC00735165 /* DCNewsPoll.m */; };
 		1DCCCFF61755DCC9002B4423 /* NSData+DCPersistance.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DCCCFF41755DCC9002B4423 /* NSData+DCPersistance.h */; };
 		1DCCCFF71755DCC9002B4423 /* NSData+DCPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCCFF51755DCC9002B4423 /* NSData+DCPersistance.m */; };
+		1DCCCFFA1755E72C002B4423 /* DCNewsReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCCFF91755E72B002B4423 /* DCNewsReplyViewController.m */; };
+		1DCCCFFB1755ECF5002B4423 /* DCQuickReplyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26A2175513D100616652 /* DCQuickReplyRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DCCCFFC1755ECF5002B4423 /* DCQuickReplyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26A3175513D100616652 /* DCQuickReplyRequest.m */; };
+		1DCCCFFD1755ECF5002B4423 /* DCSetStatusRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26A61755158800616652 /* DCSetStatusRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DCCCFFE1755ECF5002B4423 /* DCSetStatusRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26A71755158900616652 /* DCSetStatusRequest.m */; };
+		1DCCCFFF1755ECF5002B4423 /* DCPublishPhotosRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26AA1755174C00616652 /* DCPublishPhotosRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DCCD0001755ECF5002B4423 /* DCPublishPhotosRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26AB1755174C00616652 /* DCPublishPhotosRequest.m */; };
+		1DCCD0011755ECF5002B4423 /* DCPublishBlogRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26AE1755186B00616652 /* DCPublishBlogRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DCCD0021755ECF5002B4423 /* DCPublishBlogRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26AF1755186C00616652 /* DCPublishBlogRequest.m */; };
+		1DCCD0031755ECF5002B4423 /* DCAddBookmarkRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26B21755198300616652 /* DCAddBookmarkRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DCCD0041755ECF5002B4423 /* DCAddBookmarkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26B31755198300616652 /* DCAddBookmarkRequest.m */; };
+		1DCCD0051755ECF5002B4423 /* DCRepostRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26B617551B0D00616652 /* DCRepostRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DCCD0061755ECF5002B4423 /* DCRepostRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26B717551B0D00616652 /* DCRepostRequest.m */; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
@@ -167,17 +180,17 @@
 		F56096D1174CDA630033D72B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56096D0174CDA630033D72B /* CoreLocation.framework */; };
 		F56096D4174CDAAB0033D72B /* NSDate+DCPersistance.h in Headers */ = {isa = PBXBuildFile; fileRef = F56096D2174CDAAB0033D72B /* NSDate+DCPersistance.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F56096D5174CDAAB0033D72B /* NSDate+DCPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = F56096D3174CDAAB0033D72B /* NSDate+DCPersistance.m */; };
-		F5AB26A4175513D100616652 /* DCQuickReplyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26A2175513D100616652 /* DCQuickReplyRequest.h */; };
+		F5AB26A4175513D100616652 /* DCQuickReplyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26A2175513D100616652 /* DCQuickReplyRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5AB26A5175513D100616652 /* DCQuickReplyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26A3175513D100616652 /* DCQuickReplyRequest.m */; };
-		F5AB26A81755158900616652 /* DCSetStausRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26A61755158800616652 /* DCSetStausRequest.h */; };
-		F5AB26A91755158900616652 /* DCSetStausRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26A71755158900616652 /* DCSetStausRequest.m */; };
-		F5AB26AC1755174D00616652 /* DCPublishPhotosRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26AA1755174C00616652 /* DCPublishPhotosRequest.h */; };
+		F5AB26A81755158900616652 /* DCSetStatusRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26A61755158800616652 /* DCSetStatusRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5AB26A91755158900616652 /* DCSetStatusRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26A71755158900616652 /* DCSetStatusRequest.m */; };
+		F5AB26AC1755174D00616652 /* DCPublishPhotosRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26AA1755174C00616652 /* DCPublishPhotosRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5AB26AD1755174D00616652 /* DCPublishPhotosRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26AB1755174C00616652 /* DCPublishPhotosRequest.m */; };
-		F5AB26B01755186C00616652 /* DCPublishBlogRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26AE1755186B00616652 /* DCPublishBlogRequest.h */; };
+		F5AB26B01755186C00616652 /* DCPublishBlogRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26AE1755186B00616652 /* DCPublishBlogRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5AB26B11755186C00616652 /* DCPublishBlogRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26AF1755186C00616652 /* DCPublishBlogRequest.m */; };
-		F5AB26B41755198400616652 /* DCAddBookmarkRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26B21755198300616652 /* DCAddBookmarkRequest.h */; };
+		F5AB26B41755198400616652 /* DCAddBookmarkRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26B21755198300616652 /* DCAddBookmarkRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5AB26B51755198400616652 /* DCAddBookmarkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26B31755198300616652 /* DCAddBookmarkRequest.m */; };
-		F5AB26B817551B0E00616652 /* DCRepostRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26B617551B0D00616652 /* DCRepostRequest.h */; };
+		F5AB26B817551B0E00616652 /* DCRepostRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26B617551B0D00616652 /* DCRepostRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5AB26B917551B0E00616652 /* DCRepostRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26B717551B0D00616652 /* DCRepostRequest.m */; };
 /* End PBXBuildFile section */
 
@@ -285,6 +298,8 @@
 		1D77B2A717543F9500735165 /* DCRecentNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRecentNewsViewController.m; sourceTree = "<group>"; };
 		1DCCCFF41755DCC9002B4423 /* NSData+DCPersistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+DCPersistance.h"; sourceTree = "<group>"; };
 		1DCCCFF51755DCC9002B4423 /* NSData+DCPersistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+DCPersistance.m"; sourceTree = "<group>"; };
+		1DCCCFF81755E72B002B4423 /* DCNewsReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNewsReplyViewController.h; sourceTree = "<group>"; };
+		1DCCCFF91755E72B002B4423 /* DCNewsReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsReplyViewController.m; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -323,8 +338,8 @@
 		F56096D3174CDAAB0033D72B /* NSDate+DCPersistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DCPersistance.m"; sourceTree = "<group>"; };
 		F5AB26A2175513D100616652 /* DCQuickReplyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCQuickReplyRequest.h; sourceTree = "<group>"; };
 		F5AB26A3175513D100616652 /* DCQuickReplyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCQuickReplyRequest.m; sourceTree = "<group>"; };
-		F5AB26A61755158800616652 /* DCSetStausRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSetStausRequest.h; sourceTree = "<group>"; };
-		F5AB26A71755158900616652 /* DCSetStausRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSetStausRequest.m; sourceTree = "<group>"; };
+		F5AB26A61755158800616652 /* DCSetStatusRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSetStatusRequest.h; sourceTree = "<group>"; };
+		F5AB26A71755158900616652 /* DCSetStatusRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSetStatusRequest.m; sourceTree = "<group>"; };
 		F5AB26AA1755174C00616652 /* DCPublishPhotosRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPublishPhotosRequest.h; sourceTree = "<group>"; };
 		F5AB26AB1755174C00616652 /* DCPublishPhotosRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPublishPhotosRequest.m; sourceTree = "<group>"; };
 		F5AB26AE1755186B00616652 /* DCPublishBlogRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPublishBlogRequest.h; sourceTree = "<group>"; };
@@ -403,6 +418,8 @@
 				1D0909DB1750C4CD0037174F /* DCNewsDetailViewController.m */,
 				1D09098F17506A6F0037174F /* DCPreferencesViewController.h */,
 				1D09099017506A6F0037174F /* DCPreferencesViewController.m */,
+				1DCCCFF81755E72B002B4423 /* DCNewsReplyViewController.h */,
+				1DCCCFF91755E72B002B4423 /* DCNewsReplyViewController.m */,
 				1D0909B3175081DF0037174F /* DCEditableCell.h */,
 				1D0909B4175081DF0037174F /* DCEditableCell.m */,
 				1D09099217506A920037174F /* DCExternalServicesViewController.h */,
@@ -554,8 +571,8 @@
 				F50167851750779200FF5DE1 /* DCChangeNicknameRequest.m */,
 				F5AB26A2175513D100616652 /* DCQuickReplyRequest.h */,
 				F5AB26A3175513D100616652 /* DCQuickReplyRequest.m */,
-				F5AB26A61755158800616652 /* DCSetStausRequest.h */,
-				F5AB26A71755158900616652 /* DCSetStausRequest.m */,
+				F5AB26A61755158800616652 /* DCSetStatusRequest.h */,
+				F5AB26A71755158900616652 /* DCSetStatusRequest.m */,
 				F5AB26AA1755174C00616652 /* DCPublishPhotosRequest.h */,
 				F5AB26AB1755174C00616652 /* DCPublishPhotosRequest.m */,
 				F5AB26AE1755186B00616652 /* DCPublishBlogRequest.h */,
@@ -626,6 +643,12 @@
 				1D0909A5175078850037174F /* DCUserServices.h in Headers */,
 				1D0909A6175078850037174F /* DCNewsRequest.h in Headers */,
 				1D77B2A517543E5900735165 /* DCNewsPoll.h in Headers */,
+				1DCCCFFB1755ECF5002B4423 /* DCQuickReplyRequest.h in Headers */,
+				1DCCCFFD1755ECF5002B4423 /* DCSetStatusRequest.h in Headers */,
+				1DCCCFFF1755ECF5002B4423 /* DCPublishPhotosRequest.h in Headers */,
+				1DCCD0011755ECF5002B4423 /* DCPublishBlogRequest.h in Headers */,
+				1DCCD0031755ECF5002B4423 /* DCAddBookmarkRequest.h in Headers */,
+				1DCCD0051755ECF5002B4423 /* DCRepostRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,7 +679,7 @@
 				F50167861750779200FF5DE1 /* DCChangeNicknameRequest.h in Headers */,
 				1D77B2A317543DAC00735165 /* DCNewsPoll.h in Headers */,
 				F5AB26A4175513D100616652 /* DCQuickReplyRequest.h in Headers */,
-				F5AB26A81755158900616652 /* DCSetStausRequest.h in Headers */,
+				F5AB26A81755158900616652 /* DCSetStatusRequest.h in Headers */,
 				F5AB26AC1755174D00616652 /* DCPublishPhotosRequest.h in Headers */,
 				F5AB26B01755186C00616652 /* DCPublishBlogRequest.h in Headers */,
 				F5AB26B41755198400616652 /* DCAddBookmarkRequest.h in Headers */,
@@ -884,6 +907,12 @@
 				1D0909B0175080DE0037174F /* DCUserServices.m in Sources */,
 				1D0909B1175080DE0037174F /* DCNewsRequest.m in Sources */,
 				1D77B2A9175442E900735165 /* DCNewsPoll.m in Sources */,
+				1DCCCFFC1755ECF5002B4423 /* DCQuickReplyRequest.m in Sources */,
+				1DCCCFFE1755ECF5002B4423 /* DCSetStatusRequest.m in Sources */,
+				1DCCD0001755ECF5002B4423 /* DCPublishPhotosRequest.m in Sources */,
+				1DCCD0021755ECF5002B4423 /* DCPublishBlogRequest.m in Sources */,
+				1DCCD0041755ECF5002B4423 /* DCAddBookmarkRequest.m in Sources */,
+				1DCCD0061755ECF5002B4423 /* DCRepostRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,6 +938,7 @@
 				1D0909F1175120DC0037174F /* UIImage+DCUtilities.m in Sources */,
 				1D77B2A817543F9500735165 /* DCRecentNewsViewController.m in Sources */,
 				1D285CB11754E18B004A786E /* DCNewsItemsViewController.m in Sources */,
+				1DCCCFFA1755E72C002B4423 /* DCNewsReplyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,7 +968,7 @@
 				F50167871750779200FF5DE1 /* DCChangeNicknameRequest.m in Sources */,
 				1D77B2A417543DAC00735165 /* DCNewsPoll.m in Sources */,
 				F5AB26A5175513D100616652 /* DCQuickReplyRequest.m in Sources */,
-				F5AB26A91755158900616652 /* DCSetStausRequest.m in Sources */,
+				F5AB26A91755158900616652 /* DCSetStatusRequest.m in Sources */,
 				F5AB26AD1755174D00616652 /* DCPublishPhotosRequest.m in Sources */,
 				F5AB26B11755186C00616652 /* DCPublishBlogRequest.m in Sources */,
 				F5AB26B51755198400616652 /* DCAddBookmarkRequest.m in Sources */,

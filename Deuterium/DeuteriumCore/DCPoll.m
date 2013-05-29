@@ -113,7 +113,6 @@ static inline NSInteger __DCPollTimeFromTimeInterval(NSTimeInterval iv)
     
     _connection = [NSURLConnection connectionWithRequest:request
                                                 delegate:self];
-    NSLog(@"poll: ping");
     [_connection start];
 }
 
@@ -125,8 +124,6 @@ static inline NSInteger __DCPollTimeFromTimeInterval(NSTimeInterval iv)
     _response = nil;
     _responseLength = 0;
     _responseData = nil;
-    
-    NSLog(@"poll: pong");
     
     if ([responseObject isKindOfClass:[NSDictionary class]])
     {

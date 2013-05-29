@@ -168,6 +168,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="loginButton" destination="D3V-hy-iq0" id="MHP-MZ-NR0"/>
                         <outlet property="passwordField" destination="66l-wb-gSo" id="Xjv-eo-Ww8"/>
                         <outlet property="usernameField" destination="hVV-9d-xuN" id="uEy-Rb-lLB"/>
                     </connections>
@@ -584,9 +585,16 @@
                             <constraint firstItem="voJ-wK-48p" firstAttribute="trailing" secondItem="p4G-vt-4Od" secondAttribute="trailing" type="default" id="zqz-Z8-59R"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KrT-jL-LFC"/>
+                    <navigationItem key="navigationItem" id="KrT-jL-LFC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Rxr-uH-3hM">
+                            <connections>
+                                <action selector="morePressed:" destination="yWT-GB-5U5" id="VcN-A4-nLj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="voJ-wK-48p" id="mjq-op-dx3"/>
+                        <segue destination="yZi-RU-nbv" kind="modal" identifier="reply" id="tgD-gi-dWw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ixr-Av-H9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -868,14 +876,76 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="0 条消息" id="BfL-Bp-boh"/>
+                    <navigationItem key="navigationItem" title="0 条消息" id="BfL-Bp-boh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="SZG-2J-pCP">
+                            <connections>
+                                <action selector="morePressed:" destination="QGl-Zm-1xF" id="BRo-ya-Qyf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="yWT-GB-5U5" kind="push" identifier="contents" id="eBi-ub-u9j"/>
+                        <segue destination="yZi-RU-nbv" kind="modal" identifier="reply" id="aGu-j6-6YB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5rE-mn-vmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2175" y="1337"/>
+        </scene>
+        <!--News Reply View Controller-->
+        <scene sceneID="lzg-fC-ZEf">
+            <objects>
+                <viewController id="yZi-RU-nbv" customClass="DCNewsReplyViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dHt-el-NsD">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4h-6f-nQ6">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yZi-RU-nbv" id="UfO-uK-GqT"/>
+                                </connections>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKO-W8-MTK">
+                                <items>
+                                    <navigationItem title="回复" id="NBg-5l-yf3">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Wk8-qX-TCQ">
+                                            <connections>
+                                                <action selector="cancel:" destination="yZi-RU-nbv" id="mIK-pg-Iwz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="回复" style="done" id="6z3-vo-hVd">
+                                            <connections>
+                                                <action selector="publish:" destination="yZi-RU-nbv" id="C9B-88-MY6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a4h-6f-nQ6" firstAttribute="top" secondItem="vKO-W8-MTK" secondAttribute="bottom" type="default" id="Hib-xC-0A1"/>
+                            <constraint firstItem="a4h-6f-nQ6" firstAttribute="leading" secondItem="dHt-el-NsD" secondAttribute="leading" type="default" id="PT8-y8-9w7"/>
+                            <constraint firstItem="vKO-W8-MTK" firstAttribute="top" secondItem="dHt-el-NsD" secondAttribute="top" type="default" id="cRa-Zm-grW"/>
+                            <constraint firstItem="a4h-6f-nQ6" firstAttribute="trailing" secondItem="dHt-el-NsD" secondAttribute="trailing" type="default" id="o3l-R7-q2a"/>
+                            <constraint firstItem="vKO-W8-MTK" firstAttribute="leading" secondItem="dHt-el-NsD" secondAttribute="leading" type="default" id="qc6-Fq-c5u"/>
+                            <constraint firstItem="vKO-W8-MTK" firstAttribute="trailing" secondItem="dHt-el-NsD" secondAttribute="trailing" type="default" id="rbM-9k-735"/>
+                            <constraint firstItem="a4h-6f-nQ6" firstAttribute="bottom" secondItem="dHt-el-NsD" secondAttribute="bottom" type="default" id="zJb-UI-GEV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Bh-gP-eZB"/>
+                    <connections>
+                        <outlet property="replyButton" destination="6z3-vo-hVd" id="669-3P-psi"/>
+                        <outlet property="textView" destination="a4h-6f-nQ6" id="qNz-dR-SU3"/>
+                        <outlet property="titleBar" destination="NBg-5l-yf3" id="SUd-tM-Z7Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QDS-QT-Fai" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2712" y="1337"/>
         </scene>
     </scenes>
     <resources>
@@ -883,86 +953,6 @@
         <image name="news" width="16" height="16"/>
         <image name="preferences" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="DCDiscoveryOptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCDiscoveryOptionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refresh:"/>
-                <relationship kind="action" name="reset:"/>
-            </relationships>
-        </class>
-        <class className="DCDiscoveryViewController" superclassName="DCNewsViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCDiscoveryViewController.h"/>
-        </class>
-        <class className="DCEditableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCEditableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="DCExternalServicesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCExternalServicesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refresh:"/>
-            </relationships>
-        </class>
-        <class className="DCInitialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCInitialViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="DCLoginViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="login:"/>
-                <relationship kind="action" name="usernameDidFinish:"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="DCNewsCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="authorField" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="avatarView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="contentField" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="numberLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeField" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleField" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DCNewsDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="DCNewsItemsViewController" superclassName="DCNewsViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsItemsViewController.h"/>
-        </class>
-        <class className="DCNewsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCNewsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="loadMore:"/>
-                <relationship kind="action" name="refresh:"/>
-            </relationships>
-        </class>
-        <class className="DCPreferencesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCPreferencesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refresh:"/>
-                <relationship kind="outlet" name="displayNameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="usernameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DCRecentNewsViewController" superclassName="DCNewsViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DCRecentNewsViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -971,5 +961,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="pIQ-RN-1Nu"/>
         <segue reference="eBi-ub-u9j"/>
+        <segue reference="tgD-gi-dWw"/>
     </inferredMetricsTieBreakers>
 </document>

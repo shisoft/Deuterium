@@ -17,6 +17,12 @@
 #import <DeuteriumCore/DCGetUserServicesRequest.h>
 #import <DeuteriumCore/DCGetUserNicknameRequest.h>
 #import <DeuteriumCore/DCChangeNicknameRequest.h>
+#import <DeuteriumCore/DCQuickReplyRequest.h>
+#import <DeuteriumCore/DCSetStatusRequest.h>
+#import <DeuteriumCore/DCPublishPhotosRequest.h>
+#import <DeuteriumCore/DCPublishBlogRequest.h>
+#import <DeuteriumCore/DCAddBookmarkRequest.h>
+#import <DeuteriumCore/DCRepostRequest.h>
 #import <DeuteriumCore/DCPoll.h>
 #import <DeuteriumCore/DCDiscoveryPoll.h>
 #import <DeuteriumCore/DCNewsPoll.h>
