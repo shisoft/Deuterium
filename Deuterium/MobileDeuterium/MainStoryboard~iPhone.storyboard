@@ -550,7 +550,11 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="新鲜事" id="VV6-tC-m3S">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="compose" id="Sml-bi-ABq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Sml-bi-ABq">
+                            <connections>
+                                <segue destination="Ig6-WI-ikM" kind="modal" id="AKL-9B-w2T"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="yWT-GB-5U5" kind="push" identifier="contents" id="JjR-U9-U3l"/>
@@ -560,6 +564,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jnq-aZ-iXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1640" y="639"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KJE-jp-M81">
+            <objects>
+                <viewController id="Ig6-WI-ikM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uGQ-WC-TAn">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0ef-qF-Au1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EWd-xD-r3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2175" y="-49"/>
         </scene>
         <!--News Detail View Controller-->
         <scene sceneID="Ki9-ql-HZD">
@@ -960,7 +979,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="pIQ-RN-1Nu"/>
-        <segue reference="eBi-ub-u9j"/>
+        <segue reference="JjR-U9-U3l"/>
         <segue reference="tgD-gi-dWw"/>
     </inferredMetricsTieBreakers>
 </document>

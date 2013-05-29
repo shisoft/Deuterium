@@ -149,6 +149,7 @@
 		1DCCD0041755ECF5002B4423 /* DCAddBookmarkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26B31755198300616652 /* DCAddBookmarkRequest.m */; };
 		1DCCD0051755ECF5002B4423 /* DCRepostRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AB26B617551B0D00616652 /* DCRepostRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DCCD0061755ECF5002B4423 /* DCRepostRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AB26B717551B0D00616652 /* DCRepostRequest.m */; };
+		1DCCD00917562646002B4423 /* DCCreateNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCD00817562643002B4423 /* DCCreateNewsViewController.m */; };
 		1DED1D5E174C861500AE1D98 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D5D174C861500AE1D98 /* Cocoa.framework */; };
 		1DED1D68174C861500AE1D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DED1D66174C861500AE1D98 /* InfoPlist.strings */; };
 		1DED1D72174C863500AE1D98 /* CGIJSONObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DED1D70174C863500AE1D98 /* CGIJSONObject.framework */; };
@@ -299,6 +300,8 @@
 		1DCCCFF51755DCC9002B4423 /* NSData+DCPersistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+DCPersistance.m"; sourceTree = "<group>"; };
 		1DCCCFF81755E72B002B4423 /* DCNewsReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNewsReplyViewController.h; sourceTree = "<group>"; };
 		1DCCCFF91755E72B002B4423 /* DCNewsReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsReplyViewController.m; sourceTree = "<group>"; };
+		1DCCD00717562642002B4423 /* DCCreateNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCreateNewsViewController.h; sourceTree = "<group>"; };
+		1DCCD00817562643002B4423 /* DCCreateNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCreateNewsViewController.m; sourceTree = "<group>"; };
 		1DED1D5A174C861500AE1D98 /* DeuteriumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeuteriumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DED1D5D174C861500AE1D98 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1DED1D60174C861500AE1D98 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -419,6 +422,8 @@
 				1D09099017506A6F0037174F /* DCPreferencesViewController.m */,
 				1DCCCFF81755E72B002B4423 /* DCNewsReplyViewController.h */,
 				1DCCCFF91755E72B002B4423 /* DCNewsReplyViewController.m */,
+				1DCCD00717562642002B4423 /* DCCreateNewsViewController.h */,
+				1DCCD00817562643002B4423 /* DCCreateNewsViewController.m */,
 				1D0909B3175081DF0037174F /* DCEditableCell.h */,
 				1D0909B4175081DF0037174F /* DCEditableCell.m */,
 				1D09099217506A920037174F /* DCExternalServicesViewController.h */,
@@ -937,6 +942,7 @@
 				1D77B2A817543F9500735165 /* DCRecentNewsViewController.m in Sources */,
 				1D285CB11754E18B004A786E /* DCNewsItemsViewController.m in Sources */,
 				1DCCCFFA1755E72C002B4423 /* DCNewsReplyViewController.m in Sources */,
+				1DCCD00917562646002B4423 /* DCCreateNewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
