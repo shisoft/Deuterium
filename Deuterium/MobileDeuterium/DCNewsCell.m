@@ -27,7 +27,7 @@ NSMutableDictionary *__DCAvatarQueues;
 {
     [super setHighlighted:selected animated:animated];
     
-    for (UILabel *label in @[self.titleField, self.authorField, self.contentField, self.timeField])
+    for (UILabel *label in @[self.titleField, self.authorField, self.contentField, self.timeField, self.numberLabel])
     {
         label.highlighted = self.highlighted || self.selected;
     }
@@ -37,7 +37,7 @@ NSMutableDictionary *__DCAvatarQueues;
 {
     [super setSelected:selected animated:animated];
     
-    for (UILabel *label in @[self.titleField, self.authorField, self.contentField, self.timeField])
+    for (UILabel *label in @[self.titleField, self.authorField, self.contentField, self.timeField, self.numberLabel])
     {
         label.highlighted = self.highlighted || self.selected;
     }

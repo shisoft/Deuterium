@@ -8,6 +8,9 @@
 
 #import "DCWrapper.h"
 
+NSString *const DCDefaultTrue = @"+";
+NSString *const DCDefaultFalse = @"-";
+
 @implementation DCWrapper
 
 @end
@@ -23,7 +26,7 @@
 {
     if ([self.d isKindOfClass:[NSString class]])
     {
-        return [self.d isEqualToString:@"+"] || [self.d boolValue];
+        return [self.d isEqualToString:DCDefaultTrue] || [self.d boolValue];
     }
     else if ([self.d respondsToSelector:@selector(boolValue)])
     {

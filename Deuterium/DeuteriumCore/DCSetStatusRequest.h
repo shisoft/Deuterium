@@ -8,6 +8,8 @@
 
 #import <CGIJSONRemoteObject/CGIJSONRemoteObject.h>
 
+#import <CoreLocation/CoreLocation.h>
+
 #define DCSETSTATUS_MISSPELLED
 
 @interface DCSetStatusRequest : CGIRemoteObject
@@ -15,11 +17,11 @@
 @property NSString *content;
 @property NSString *exceptions;
 @property NSString *audience;
-@property double lat;
-@property double lon;
-@property char located;
-@property char richText;
-@property char checkin;
+@property CLLocationDegrees lat;
+@property CLLocationDegrees lon;
+@property NSString *located;
+@property NSString *richText;
+@property NSString *checkin;
 
 
 @end
@@ -28,7 +30,7 @@
 
 - (id)setStatus;
 #ifdef DCSETSTATUS_MISSPELLED
-- (id)setStaus;
+- (id)setStaus __attribute__((deprecated("This is a misspelled function. Will go away any time.")));
 #endif
 
 @end

@@ -34,3 +34,6 @@
 
 /* Error */
 "err.no-server"     = "无法连接到服务器。";
+
+/* Accessing server */
+"server.pic-album"  = "手机相册";

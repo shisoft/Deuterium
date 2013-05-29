@@ -141,6 +141,8 @@
 		1D2E972A17566BEF00CD4D0B /* DCCreateBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E972917566BEF00CD4D0B /* DCCreateBar.xib */; };
 		1D2E972D1756739500CD4D0B /* DCLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2E972C1756739500CD4D0B /* DCLocationPickerController.m */; };
 		1D2E972F175681CA00CD4D0B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2E972E175681CA00CD4D0B /* MediaPlayer.framework */; };
+		1D2E97301756890400CD4D0B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0909BC1750AE1E0037174F /* CoreLocation.framework */; };
+		1D2E97321756906400CD4D0B /* DCReplyBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E97311756906300CD4D0B /* DCReplyBar.xib */; };
 		1D77B2991753E17900735165 /* BSDL.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D77B2981753E17900735165 /* BSDL.md */; };
 		1D77B2A317543DAC00735165 /* DCNewsPoll.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D77B2A117543DAC00735165 /* DCNewsPoll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D77B2A417543DAC00735165 /* DCNewsPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D77B2A217543DAC00735165 /* DCNewsPoll.m */; };
@@ -319,6 +321,7 @@
 		1D2E972B1756739500CD4D0B /* DCLocationPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCLocationPickerController.h; sourceTree = "<group>"; };
 		1D2E972C1756739500CD4D0B /* DCLocationPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCLocationPickerController.m; sourceTree = "<group>"; };
 		1D2E972E175681CA00CD4D0B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		1D2E97311756906300CD4D0B /* DCReplyBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCReplyBar.xib; sourceTree = "<group>"; };
 		1D77B2981753E17900735165 /* BSDL.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BSDL.md; sourceTree = "<group>"; };
 		1D77B2A117543DAC00735165 /* DCNewsPoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNewsPoll.h; sourceTree = "<group>"; };
 		1D77B2A217543DAC00735165 /* DCNewsPoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNewsPoll.m; sourceTree = "<group>"; };
@@ -385,6 +388,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2E97301756890400CD4D0B /* CoreLocation.framework in Frameworks */,
 				1D028998174DDA4600C76CEB /* CGIJSONObject.framework in Frameworks */,
 				1D028999174DDA4600C76CEB /* CGIJSONRemoteObject.framework in Frameworks */,
 				1D02897B174DD9B900C76CEB /* Foundation.framework in Frameworks */,
@@ -453,6 +457,7 @@
 				1D09099017506A6F0037174F /* DCPreferencesViewController.m */,
 				1DCCCFF81755E72B002B4423 /* DCNewsReplyViewController.h */,
 				1DCCCFF91755E72B002B4423 /* DCNewsReplyViewController.m */,
+				1D2E97311756906300CD4D0B /* DCReplyBar.xib */,
 				1DCCD00717562642002B4423 /* DCCreateNewsViewController.h */,
 				1DCCD00817562643002B4423 /* DCCreateNewsViewController.m */,
 				1D2E972917566BEF00CD4D0B /* DCCreateBar.xib */,
@@ -882,6 +887,7 @@
 				1D2E971F1756339900CD4D0B /* blog@2x.png in Resources */,
 				1D2E9721175637DD00CD4D0B /* default-user.png in Resources */,
 				1D2E972A17566BEF00CD4D0B /* DCCreateBar.xib in Resources */,
+				1D2E97321756906400CD4D0B /* DCReplyBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

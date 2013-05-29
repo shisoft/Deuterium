@@ -8,6 +8,9 @@
 
 #import <CGIJSONObject/CGIJSONObject.h>
 
+extern NSString *const DCDefaultTrue;
+extern NSString *const DCDefaultFalse;
+
 @interface DCWrapper : CGIPersistantObject
 
 @property id d;
