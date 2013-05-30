@@ -10,9 +10,9 @@
 
 @class DCNews, DCNewsCell;
 
-@interface DCNewsCellController : NSObject
+@interface DCNewsCellController : NSObject <NSCoding>
 
-@property (weak) DCNews *news;
+@property DCNews *news;
 @property (weak) DCNewsCell *newsCell;
 
 - (NSString *)timeDescription;

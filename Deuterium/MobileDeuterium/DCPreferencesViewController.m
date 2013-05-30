@@ -171,25 +171,73 @@
 
 #pragma mark - Table view delegate
 
+- (void)clearCache
+{
+    // Clear URL cache
+    NSURLCache *cache = [NSURLCache sharedURLCache];
+    [cache removeAllCachedResponses];
+    
+    // Clear cache files
+    NSString *cacheFiles = CGISTR(@"%@/Library/Caches/%@", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier]);
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray *files = [fm contentsOfDirectoryAtPath:cacheFiles
+                                             error:NULL];
+    for (NSString *file in files)
+    {
+        if ([[file pathExtension] compare:@"plist" options:NSCaseInsensitiveSearch] == NSOrderedSame)
+        {
+            NSString *target = [cacheFiles stringByAppendingPathComponent:file];
+            [fm removeItemAtPath:target
+                           error:NULL];
+        }
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:DCCachePurgedNotification
+                                                        object:self];
+}
+
+- (void)clearCookies
+{
+    NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    NSArray *cookies = [cookieStorage cookies];
+    
+    for (id cookie in cookies)
+    {
+        [cookieStorage deleteCookie:cookie];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger tag = [tableView cellForRowAtIndexPath:indexPath].tag;
     
     switch (tag)
     {
+        case 30: // Clear cache
+        {
+            [self clearCache];
+            break;
+        }
         case 50: // Log out (delete keychain item)
         {
             KeychainItemWrapper *keychainItem = [DCAppDelegate keychainItem];
             [keychainItem resetKeychainItem];
             [DCAppDelegate thisDelegate].connected = NO;
             [[DCPoll defaultPoll] stop];
+            [self clearCache];
+            [self clearCookies];
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults removeObjectForKey:@"DiscoveryAspects"];
             [defaults synchronize];
             [self dismissViewControllerAnimated:YES
                                      completion:nil];
+            break;
         }
     }
+    
+    [tableView selectRowAtIndexPath:nil
+                           animated:YES
+                     scrollPosition:UITableViewScrollPositionNone];
 }
 
 @end

@@ -14,6 +14,7 @@ dispatch_group_t DCBackgroundTasks;
 NSString *const DCUsernameKeychainItemName = @"username";
 NSString *const DCDeuteriumKeychainAccessGroup = @"info.maxchan.deuterium";
 NSString *const DCHeartbeatNotification = @"info.maxchan.deuterium.heartbeat";
+NSString *const DCCachePurgedNotification = @"info.maxchan.deuterium.cache-purged";
 
 @interface DCAppDelegate ()
 

@@ -13,6 +13,7 @@
 @interface DCNewsViewController : UITableViewController
 
 @property NSMutableArray *newsControllers;
+@property BOOL realData;
 
 - (void)newsDidUpdate;
 - (BOOL)newsCanUpdate;

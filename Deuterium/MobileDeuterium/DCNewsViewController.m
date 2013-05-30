@@ -59,16 +59,49 @@
             self.refreshButton = _refreshButton;
         }
     }
+    
+    NSString *cacheFile = CGISTR(@"%@/Library/Caches/%@/%@.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier], NSStringFromClass([self class]));
+    self.newsControllers = [NSKeyedUnarchiver unarchiveObjectWithFile:cacheFile];
+    [self.tableView reloadData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(cachePurged:)
+                                                 name:DCCachePurgedNotification
+                                               object:nil];
 }    
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)cachePurged:(NSNotification *)aNotification
+{
+    self.realData = NO;
+    self.newsControllers = nil;
+    [self.tableView reloadData];
+    self.navigationController.tabBarItem.badgeValue = nil;
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    if (![self.newsControllers count])
+    if (![self.newsControllers count] || !self.realData)
     {
         [self refresh:self];
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    dispatch_group_async(DCBackgroundTasks,
+                         dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                         ^{
+                             NSString *cacheFile = CGISTR(@"%@/Library/Caches/%@/%@.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier], NSStringFromClass([self class]));
+                             [NSKeyedArchiver archiveRootObject:self.newsControllers toFile:cacheFile];
+                         });
 }
 
 - (void)didReceiveMemoryWarning
@@ -143,6 +176,7 @@
                                                 [self.tableView reloadData];
                                                 [self.tableView setNeedsLayout];
                                                 self.loading = NO;
+                                                self.realData = YES;
                                             });
                          });
 }

@@ -27,6 +27,7 @@ extern dispatch_group_t DCBackgroundTasks;
 extern NSString *const DCUsernameKeychainItemName;
 extern NSString *const DCDeuteriumKeychainAccessGroup;
 extern NSString *const DCHeartbeatNotification;
+extern NSString *const DCCachePurgedNotification;
 
 @interface DCAppDelegate : UIResponder <UIApplicationDelegate>
 

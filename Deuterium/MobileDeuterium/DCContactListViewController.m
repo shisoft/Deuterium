@@ -63,6 +63,23 @@
         
         self.refreshButton = _refreshButton;
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(cachePurged:)
+                                                 name:DCCachePurgedNotification
+                                               object:nil];
+}
+
+- (void)cachePurged:(NSNotification *)aNotification
+{
+    self.sections = nil;
+    self.loaded = NO;
+    [self.tableView reloadData];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -78,9 +95,12 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
-    NSString *cacheFile = CGISTR(@"%@/Library/Caches/%@/contacts.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier]);
-    [NSKeyedArchiver archiveRootObject:self.sections toFile:cacheFile];
+    dispatch_group_async(DCBackgroundTasks,
+                         dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                         ^{
+                             NSString *cacheFile = CGISTR(@"%@/Library/Caches/%@/%@.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier], NSStringFromClass([self class]));
+                             [NSKeyedArchiver archiveRootObject:self.sections toFile:cacheFile];
+                         });
 }
 
 static inline NSString *__DCLatinizedString(NSString *string)
@@ -141,7 +161,7 @@ static inline NSString *__DCLatinizedStringWithSpaces(NSString *string)
                          dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                          ^{
                              
-                             NSString *cacheFile = CGISTR(@"%@/Library/Caches/%@/contacts.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier]);
+                             NSString *cacheFile = CGISTR(@"%@/Library/Caches/%@/%@.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier], NSStringFromClass([self class]));
                              self.sections = [NSKeyedUnarchiver unarchiveObjectWithFile:cacheFile];
                              NSMutableArray *contacts = nil;
                              

@@ -45,7 +45,7 @@
 
 - (id)poll:(DCPoll *)poll objectForKey:(NSString *)key
 {
-    if ([self.newsControllers count])
+    if ([self.newsControllers count] && self.realData)
     {
         DCNewsPoll *poll = [[DCNewsPoll alloc] init];
         poll.dvt = self.unread;
