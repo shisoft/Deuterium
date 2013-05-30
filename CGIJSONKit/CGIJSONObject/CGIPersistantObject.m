@@ -114,6 +114,102 @@
     }
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super init])
+    {
+        
+        // Get a list of properties.
+        unsigned int propertyCount = 0;
+        objc_property_t *properties = class_copyPropertyList([self class], &propertyCount);
+        
+        if (properties)
+        {
+            // Enumerate all properties.
+            
+            for (unsigned int i = 0; i < propertyCount; i++)
+            {
+                objc_property_t property = properties[i];
+                NSString *name = @(property_getName(property));         // Property name.
+                NSString *attr = @(property_getAttributes(property));   // Property attributes
+                BOOL readonly = NO;
+                
+                // Check the property type.
+                NSArray *attrs = [attr componentsSeparatedByString:@","];
+                for (NSString *attribute in attrs)
+                {
+                    if ([attribute hasPrefix:@"R"])
+                    {
+                        readonly = YES;
+                    }
+                }
+                
+                id value = [aDecoder decodeObjectForKey:name];                            // Find the value.
+                
+                if (!readonly && value)
+                {
+                    @try
+                    {
+                        [self setValue:value forKey:name];
+                    }
+                    @catch (NSException *exception)
+                    {
+                        dbgprintf("WARNING: Cannot find property: %s", CGICSTR(name));
+                    }
+                }
+            }
+            free(properties);
+            properties = NULL;
+        } // (properties)
+        
+    } // (self = [super init])
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    // Get a list of properties.
+    unsigned int propertyCount = 0;
+    objc_property_t *properties = class_copyPropertyList([self class], &propertyCount);
+    
+    if (properties)
+    {
+        // Enumerate all properties.
+        
+        for (unsigned int i = 0; i < propertyCount; i++)
+        {
+            objc_property_t property = properties[i];
+            NSString *name = @(property_getName(property)); // Property name.
+            
+#if defined(GNUSTEP)                                        // For GNUstep, this _end property is handled.
+            if ([name hasPrefix:@"_end"])
+                break;
+#endif
+            
+            id value = nil;
+            
+            @try
+            {
+                value = [self valueForKey:name];            // Find the value, using KVO.
+            }
+            @catch (NSException *exception)
+            {
+                dbgprintf("WARNING: Cannot find key: %s", CGICSTR(name));
+            }
+            
+            if (!value)
+            {
+                continue;                                   // Ignore null keys.
+            }
+            
+            [aCoder encodeObject:value forKey:name];
+        }
+        free(properties);
+        properties = NULL;
+    }
+
+}
+
 - (id)init
 {
     if (self = [super init])

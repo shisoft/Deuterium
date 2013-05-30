@@ -12,7 +12,7 @@
 - (Class)classForKey ##__key { return [__class class]; }
 #define CGIIdentifierProperty @property id ID
 
-@protocol CGIPersistantObject <NSObject>
+@protocol CGIPersistantObject <NSObject, NSCoding>
 
 - (id)initWithPersistanceObject:(id)persistance;
 - (id)persistaceObject;

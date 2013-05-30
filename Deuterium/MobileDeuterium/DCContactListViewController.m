@@ -75,13 +75,15 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillDisappear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewWillDisappear:animated];
+    
+    NSString *cacheFile = CGISTR(@"%@/Library/Caches/%@/contacts.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier]);
+    [NSKeyedArchiver archiveRootObject:self.sections toFile:cacheFile];
 }
 
-NSString *__DCLatinizedString(NSString *string)
+static inline NSString *__DCLatinizedString(NSString *string)
 {
     string = [string pinyinTransliteration];
     
@@ -102,7 +104,7 @@ NSString *__DCLatinizedString(NSString *string)
     return out;
 }
 
-NSString *__DCLatinizedStringWithSpaces(NSString *string)
+static inline NSString *__DCLatinizedStringWithSpaces(NSString *string)
 {
     string = [string pinyinTransliteration];
     
@@ -138,36 +140,10 @@ NSString *__DCLatinizedStringWithSpaces(NSString *string)
     dispatch_group_async(DCBackgroundTasks,
                          dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                          ^{
-                             // FIXME: This is abusive.
-                             NSMutableArray *contacts = [NSMutableArray array];
-                             NSUInteger page = 0;
                              
-                             DCUserContactRequest *request = [[DCUserContactRequest alloc] init];
-                             request.query = @"";
-                             request.group = @"";
-                             
-                             NSArray *responseArray = nil;
-                             
-                             do
-                             {
-                                 request.page = page;
-                                 responseArray = [request getContactNames];
-                                 
-                                 if ([responseArray isKindOfClass:[NSArray class]])
-                                 {
-                                     [contacts addObjectsFromArray:responseArray];
-                                     page++;
-                                 }
-                                 else
-                                 {
-                                     responseArray = @[];
-                                 }
-                             } while ([responseArray count]);
-                             
-                             [contacts sortUsingComparator:^NSComparisonResult(DCUserContact *obj1, DCUserContact *obj2)
-                              {
-                                  return [obj1.name localizedCompare:obj2.name];
-                              }];
+                             NSString *cacheFile = CGISTR(@"%@/Library/Caches/%@/contacts.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier]);
+                             self.sections = [NSKeyedUnarchiver unarchiveObjectWithFile:cacheFile];
+                             NSMutableArray *contacts = nil;
                              
                              if (!self.headers)
                              {
@@ -182,27 +158,58 @@ NSString *__DCLatinizedStringWithSpaces(NSString *string)
                                  self.headers = [headers copy];
                              }
                              
-                             self.sections = [NSMutableDictionary dictionary];
-                             
-                             for (DCUserContact *contact in contacts)
+                             if (!self.sections || self.loaded)
                              {
-                                 NSString *latinized = __DCLatinizedString(contact.name);
-                                 NSString *header = ([latinized length]) ? [[latinized substringToIndex:1] uppercaseString] : @"#";
-                                 if (![header length] ||
-                                     ![[NSCharacterSet letterCharacterSet] characterIsMember:[header characterAtIndex:0]])
-                                 {
-                                     header = @"#";
-                                 }
-                                 NSMutableArray *headerArray = self.sections[header];
+                                 // FIXME: This is abusive.
+                                 contacts = [NSMutableArray array];
+                                 NSUInteger page = 0;
                                  
-                                 if (headerArray)
+                                 DCUserContactRequest *request = [[DCUserContactRequest alloc] init];
+                                 request.query = @"";
+                                 request.group = @"";
+                                 
+                                 NSArray *responseArray = nil;
+                                 
+                                 do
                                  {
-                                     [headerArray addObject:contact];
-                                 }
-                                 else
+                                     request.page = page;
+                                     responseArray = [request getContactNames];
+                                     
+                                     if ([responseArray isKindOfClass:[NSArray class]])
+                                     {
+                                         [contacts addObjectsFromArray:responseArray];
+                                         page++;
+                                     }
+                                     else
+                                     {
+                                         responseArray = @[];
+                                     }
+                                 } while ([responseArray count]);
+                                 
+                                 self.sections = [NSMutableDictionary dictionary];
+                                 
+                                 for (DCUserContact *contact in contacts)
                                  {
-                                     self.sections[header] = [@[contact] mutableCopy];
+                                     NSString *latinized = __DCLatinizedString(contact.name);
+                                     NSString *header = ([latinized length]) ? [[latinized substringToIndex:1] uppercaseString] : @"#";
+                                     if (![header length] ||
+                                         ![[NSCharacterSet letterCharacterSet] characterIsMember:[header characterAtIndex:0]])
+                                     {
+                                         header = @"#";
+                                     }
+                                     NSMutableArray *headerArray = self.sections[header];
+                                     
+                                     if (headerArray)
+                                     {
+                                         [headerArray addObject:contact];
+                                     }
+                                     else
+                                     {
+                                         self.sections[header] = [@[contact] mutableCopy];
+                                     }
                                  }
+                                 
+                                 [NSKeyedArchiver archiveRootObject:self.sections toFile:cacheFile];
                              }
                              
                              for (NSString *key in self.sections)
