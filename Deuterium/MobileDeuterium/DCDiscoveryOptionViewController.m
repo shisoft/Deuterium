@@ -19,6 +19,7 @@
 @property NSMutableArray *currentUserInterests;
 
 @property BOOL loading;
+@property BOOL realData;
 
 - (IBAction)reset:(id)sender;
 - (IBAction)refresh:(id)sender;
@@ -59,7 +60,11 @@
 {
     [super viewDidAppear:animated];
     
-    [self refresh:self];
+    if (![self.orderedInterests count] || !self.realData)
+    {
+        [self refresh:self];
+    }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -144,6 +149,7 @@
                                                     
                                                     [self.tableView reloadData];
                                                     self.loading = NO;
+                                                    self.realData = YES;
                                                 });
                              }
                          });

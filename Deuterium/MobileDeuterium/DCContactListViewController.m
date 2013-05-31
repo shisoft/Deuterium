@@ -98,7 +98,7 @@
     dispatch_group_async(DCBackgroundTasks,
                          dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                          ^{
-                             NSString *cacheFile = CGISTR(@"%@/Library/Caches/%@/%@.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier], NSStringFromClass([self class]));
+                             NSString *cacheFile = DCCacheFile();
                              [NSKeyedArchiver archiveRootObject:self.sections toFile:cacheFile];
                          });
 }
@@ -161,7 +161,7 @@ static inline NSString *__DCLatinizedStringWithSpaces(NSString *string)
                          dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                          ^{
                              
-                             NSString *cacheFile = CGISTR(@"%@/Library/Caches/%@/%@.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier], NSStringFromClass([self class]));
+                             NSString *cacheFile = DCCacheFile();
                              self.sections = [NSKeyedUnarchiver unarchiveObjectWithFile:cacheFile];
                              NSMutableArray *contacts = nil;
                              

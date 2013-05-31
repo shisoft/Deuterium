@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <DeuteriumCore/DeuteriumCore.h>
 
+#define DCCacheFile() CGISTR(@"%@/Library/Caches/%@/%@.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier], NSStringFromClass([self class]));
+
 static inline BOOL DCHasRefreshControl(void)
 {
     return ((NSClassFromString(@"UIRefreshControl")) ? YES : NO);

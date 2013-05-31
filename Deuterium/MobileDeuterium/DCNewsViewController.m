@@ -60,7 +60,7 @@
         }
     }
     
-    NSString *cacheFile = CGISTR(@"%@/Library/Caches/%@/%@.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier], NSStringFromClass([self class]));
+    NSString *cacheFile = DCCacheFile();
     self.newsControllers = [NSKeyedUnarchiver unarchiveObjectWithFile:cacheFile];
     [self.tableView reloadData];
     
@@ -99,7 +99,7 @@
     dispatch_group_async(DCBackgroundTasks,
                          dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                          ^{
-                             NSString *cacheFile = CGISTR(@"%@/Library/Caches/%@/%@.plist", NSHomeDirectory(), [[NSBundle mainBundle] bundleIdentifier], NSStringFromClass([self class]));
+                             NSString *cacheFile = DCCacheFile();
                              [NSKeyedArchiver archiveRootObject:self.newsControllers toFile:cacheFile];
                          });
 }
