@@ -2,6 +2,8 @@ Deuterium
 =========
 Deuterium is the modified 4th iteration of FusionKit, now under muski branding.
 
+This project is currently not maintained. Anyone that want to keep it going please contact me.
+
 CGIJSONKit
 ----------
 This is a dependency from ohttpd2, hence inherited both its CGI* class prefix and its 2-clause BSDL licensing.
