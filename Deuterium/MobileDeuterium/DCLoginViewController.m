@@ -71,7 +71,8 @@
     
     dispatch_group_async(DCBackgroundTasks,
                          dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
-     ^{
+                         ^
+    {
         
         if ([login.user length] && [login.pass length])
         {
